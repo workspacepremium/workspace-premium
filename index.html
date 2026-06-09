@@ -12,62 +12,15 @@
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             letter-spacing: -0.015em;
-            background: radial-gradient(circle at 50% 20%, #0d1b2a 0%, #000000 70%) !important;
+            background-color: #000000 !important;
             color: #F5F5F7 !important;
-            overflow-x: hidden;
-            position: relative;
-            min-height: 100 screen;
         }
         .apple-blur {
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
         }
         
-        /* 🌌 INTERACTION REVOLUTION: Full-Screen Cosmic Starfield */
-        #spaceCanvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 1;
-        }
-        .star {
-            position: absolute;
-            background-color: #ffffff;
-            border-radius: 50%;
-            animation: twinkle 4s infinite ease-in-out;
-        }
-        @keyframes twinkle {
-            0%, 100% { opacity: 0.2; transform: scale(0.8); }
-            50% { opacity: 1; transform: scale(1.3); }
-        }
-
-        /* 🐈 INTERACTION REVOLUTION: Unified Layer Pixel Cat Animation Loop */
-        .pixel-cat {
-            position: fixed;
-            bottom: 25px;
-            left: -100px;
-            font-size: 36px;
-            user-select: none;
-            z-index: 45;
-            pointer-events: none;
-            animation: horizontalRun 22s linear infinite, leapMotion 0.55s ease-in-out infinite;
-        }
-        @keyframes horizontalRun {
-            0% { left: -100px; transform: scaleX(1); }
-            49% { left: 110%; transform: scaleX(1); }
-            50% { left: 110%; transform: scaleX(-1); }
-            99% { left: -100px; transform: scaleX(-1); }
-            100% { left: -100px; transform: scaleX(1); }
-        }
-        @keyframes leapMotion {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-16px); }
-        }
-
-        /* Premium Micro-Transitions Layout */
+        /* 📈 ADVANCED INTERACTION: Premium Micro-Transitions */
         .interactive-card {
             transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
                         box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
@@ -75,9 +28,10 @@
         }
         .interactive-card:hover {
             transform: translateY(-6px) scale(1.01);
-            box-shadow: 0 20px 40px rgba(41, 151, 255, 0.05);
+            box-shadow: 0 20px 40px rgba(255, 255, 255, 0.03);
             border-color: #2997FF !important;
         }
+
         .nav-link {
             position: relative;
         }
@@ -94,22 +48,20 @@
         .nav-link:hover::after {
             width: 100%;
         }
+
         .floating-hero {
-            animation: appleFloating 4s ease-in-out infinite;
+            animation: appleFloating 3.5s ease-in-out infinite;
         }
         @keyframes appleFloating {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-6px); }
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+            100% { transform: translateY(0px); }
         }
     </style>
 </head>
-<body class="antialiased selection:bg-[#2997FF]/20 relative z-10">
+<body class="min-h-screen flex flex-col justify-between antialiased selection:bg-[#2997FF]/20">
 
-    <div id="spaceCanvas"></div>
-
-    <div class="pixel-cat">🐈‍⬛</div>
-
-    <header class="border-b border-[#2C2C2E]/70 bg-[#000000]/70 apple-blur sticky top-0 z-50 transition-colors">
+    <header class="border-b border-[#2C2C2E]/70 bg-[#000000]/80 apple-blur sticky top-0 z-50">
         <div class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
             <div class="flex items-center space-x-3 cursor-pointer transition-transform active:scale-95" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
                 <span class="text-base font-bold tracking-tight text-white">Workspace Premium</span>
@@ -127,7 +79,7 @@
         </div>
     </header>
 
-    <main class="max-w-4xl mx-auto px-6 py-16 md:py-24 flex-grow w-full space-y-40 relative z-20">
+    <main class="max-w-4xl mx-auto px-6 py-16 md:py-24 flex-grow w-full space-y-40">
         
         <section class="text-center space-y-6 floating-hero">
             <h1 class="text-5xl md:text-7xl font-black tracking-tight text-white leading-[1.1]">
@@ -135,7 +87,7 @@
                 <span class="text-[#2997FF]">Advanced AI & Sovereign Cloud.</span>
             </h1>
 
-            <div class="inline-flex items-center space-x-2 bg-[#1C1C1E]/80 border border-[#2C2C2E] px-4 py-2 rounded-full text-xs font-semibold shadow-sm backdrop-blur-sm transition-all hover:scale-105">
+            <div class="inline-flex items-center space-x-2 bg-[#1C1C1E] border border-[#2C2C2E] px-4 py-2 rounded-full text-xs font-semibold shadow-sm transition-all hover:scale-105">
                 <span class="flex h-2 w-2 relative">
                     <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#30D158] opacity-75"></span>
                     <span class="relative inline-flex rounded-full h-2 w-2 bg-[#30D158]"></span>
@@ -145,7 +97,7 @@
         </section>
 
         <section id="mainCardSection" class="flex justify-center scroll-mt-24">
-            <div class="w-full max-w-md bg-[#1C1C1E]/90 border border-[#2C2C2E] p-8 rounded-3xl shadow-sm relative group interactive-card backdrop-blur-sm">
+            <div class="w-full max-w-md bg-[#1C1C1E] border border-[#2C2C2E] p-8 rounded-3xl shadow-sm transition-all duration-300 relative group interactive-card">
                 
                 <div class="absolute top-4 right-4 flex space-x-1.5">
                     <span class="bg-[#BF4800] text-white text-[9px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider animate-pulse">New</span>
@@ -192,7 +144,7 @@
                 <p class="text-sm text-[#AEAEB2] max-w-xl mx-auto">An overwhelming cost advantage. 18 full months of premium scale access for the retail pricing metric of just 2 months.</p>
             </div>
             
-            <div class="overflow-x-auto border border-[#2C2C2E] rounded-3xl bg-[#1C1C1E]/80 shadow-sm backdrop-blur-sm">
+            <div class="overflow-x-auto border border-[#2C2C2E] rounded-3xl bg-[#1C1C1E] shadow-sm">
                 <table class="w-full text-left text-sm border-collapse">
                     <thead>
                         <tr class="bg-[#2C2C2E]/60 border-b border-[#2C2C2E] text-xs font-bold text-[#AEAEB2]">
@@ -227,50 +179,17 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
-                <div class="bg-[#1C1C1E]/80 border border-[#2C2C2E] p-6 rounded-2xl text-center shadow-sm interactive-card border-t-2 border-t-[#30D158] backdrop-blur-sm">
+                <div class="bg-[#1C1C1E] border border-[#2C2C2E] p-6 rounded-2xl text-center shadow-sm interactive-card border-t-2 border-t-[#30D158]">
                     <div class="text-xs text-[#8E8E93] font-bold uppercase tracking-wider">Effective Monthly Fee</div>
                     <div class="text-3xl font-black text-[#30D158] mt-1.5">$0.27</div>
                 </div>
-                <div class="bg-[#1C1C1E]/80 border border-[#2C2C2E] p-6 rounded-2xl text-center shadow-sm interactive-card border-t-2 border-t-[#2997FF] backdrop-blur-sm">
+                <div class="bg-[#1C1C1E] border border-[#2C2C2E] p-6 rounded-2xl text-center shadow-sm interactive-card border-t-2 border-t-[#2997FF]">
                     <div class="text-xs text-[#8E8E93] font-bold uppercase tracking-wider">18-Month Cost Total</div>
                     <div class="text-3xl font-black text-[#2997FF] mt-1.5">$4.99</div>
                 </div>
-                <div class="bg-[#1C1C1E]/80 border border-[#2C2C2E] p-6 rounded-2xl text-center shadow-sm interactive-card border-t-2 border-t-[#48484A] backdrop-blur-sm">
+                <div class="bg-[#1C1C1E] border border-[#2C2C2E] p-6 rounded-2xl text-center shadow-sm interactive-card border-t-2 border-t-[#48484A]">
                     <div class="text-xs text-[#8E8E93] font-bold uppercase tracking-wider">Teammate Allocation Fee</div>
                     <div class="text-3xl font-black text-white mt-1.5">$0.00</div>
-                </div>
-            </div>
-            <p class="text-xs text-[#8E8E93] text-center italic mt-2">Even if you use it completely solo, you are still saving 88% compared to retail pricing &mdash; equivalent to getting 18 months for the price of just 2 regular months!</p>
-        </section>
-
-        <section class="space-y-12 border-t border-[#2C2C2E] pt-16">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="space-y-4 group">
-                    <div class="text-3xl font-black text-[#2997FF] transition-transform duration-300 group-hover:translate-x-1">01</div>
-                    <h4 class="text-xl font-bold text-white uppercase tracking-tight">Service Core Plan</h4>
-                    <ul class="space-y-2 text-xs text-[#AEAEB2]">
-                        <li>• Solo use saves 88% / Group invites save up to 98%</li>
-                        <li>• 100% official activation path via corporate backend nodes</li>
-                        <li>• No passwords or credentials ever requested</li>
-                    </ul>
-                </div>
-                <div class="space-y-4 group">
-                    <div class="text-3xl font-black text-[#30D158] transition-transform duration-300 group-hover:translate-x-1">02</div>
-                    <h4 class="text-xl font-bold text-white uppercase tracking-tight">Security Vault Shield</h4>
-                    <ul class="space-y-2 text-xs text-[#AEAEB2]">
-                        <li>• Generated exclusively via Google B2B overstock benefits channels</li>
-                        <li>• Chats and cloud files remain completely private to you</li>
-                        <li>• Direct official Gemini Advanced badge visible instantly</li>
-                    </ul>
-                </div>
-                <div class="space-y-4 group">
-                    <div class="text-3xl font-black text-[#FF9500] transition-transform duration-300 group-hover:translate-x-1">03</div>
-                    <h4 class="text-xl font-bold text-white uppercase tracking-tight">Logistics Guarantee</h4>
-                    <ul class="space-y-2 text-xs text-[#AEAEB2]">
-                        <li>• 100% guaranteed same-day automated instant link delivery</li>
-                        <li>• 365-Day non-stop automated infrastructure support loop</li>
-                        <li>• Premium verified user satisfaction with a 91% re-activation rate</li>
-                    </ul>
                 </div>
             </div>
         </section>
@@ -280,23 +199,14 @@
                 <h2 class="text-3xl md:text-5xl font-black tracking-tight text-white">What Gemini Advanced Can Do</h2>
                 <p class="text-sm text-[#AEAEB2]">Deploy next-generation multimodal logic maps directly over your enterprise operations.</p>
             </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
-                <div class="bg-[#1C1C1E]/80 border border-[#2C2C2E] p-5 rounded-2xl interactive-card shadow-sm backdrop-blur-sm">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
+                <div class="bg-[#1C1C1E] p-6 rounded-2xl border border-[#2C2C2E] interactive-card hover:border-[#2997FF] shadow-sm">
                     <div class="font-bold text-white text-sm mb-2 flex items-center"><i class="fa-solid fa-eye text-[#2997FF] mr-2"></i> Visual Object Context Mapping</div>
-                    <p class="text-[#AEAEB2] leading-relaxed">Recognizes complex elements within real-world imagery and creates precise ingredient lists or step-by-step contextual responses instantly.</p>
+                    <p class="text-[#AEAEB2] leading-relaxed text-xs">Extracts precise structural variables from multi-layered blueprints or spatial captures to build automated response flows immediately.</p>
                 </div>
-                <div class="bg-[#1C1C1E]/80 border border-[#2C2C2E] p-5 rounded-2xl interactive-card shadow-sm backdrop-blur-sm">
+                <div class="bg-[#1C1C1E] p-6 rounded-2xl border border-[#2C2C2E] interactive-card hover:border-[#2997FF] shadow-sm">
                     <div class="font-bold text-white text-sm mb-2 flex items-center"><i class="fa-solid fa-file-invoice text-[#2997FF] mr-2"></i> High-Density Document Auditing</div>
-                    <p class="text-[#AEAEB2] leading-relaxed">Scans extensive corporate balance records and financial reports to identify anomalies or tax field exceptions immediately.</p>
-                </div>
-                <div class="bg-[#1C1C1E]/80 border border-[#2C2C2E] p-5 rounded-2xl interactive-card shadow-sm backdrop-blur-sm">
-                    <div class="font-bold text-white text-sm mb-2 flex items-center"><i class="fa-solid fa-video text-[#2997FF] mr-2"></i> Color Restoration & Motion Synthetics</div>
-                    <p class="text-[#AEAEB2] leading-relaxed">Converts legacy black-and-white asset matrices into fully colored high-definition frames powered by the native Veo generative pipeline.</p>
-                </div>
-                <div class="bg-[#1C1C1E]/80 border border-[#2C2C2E] p-5 rounded-2xl interactive-card shadow-sm backdrop-blur-sm">
-                    <div class="font-bold text-white text-sm mb-2 flex items-center"><i class="fa-solid fa-book text-[#2997FF] mr-2"></i> High-Density Semantic Summarization</div>
-                    <p class="text-[#AEAEB2] leading-relaxed">Digests overwhelming 200+ page textbook manuals to extract core study maps and structured text definitions for workflows.</p>
+                    <p class="text-[#AEAEB2] leading-relaxed text-xs">Audits massive financial spreadsheets and compliance statements line-by-line to securely flags anomalous exceptions.</p>
                 </div>
             </div>
         </section>
@@ -304,23 +214,22 @@
         <section id="process" class="space-y-8 border-t border-[#2C2C2E] pt-16 scroll-mt-24">
             <div class="text-center space-y-2">
                 <h2 class="text-3xl md:text-5xl font-black tracking-tight text-white">Completed in 3 Simple Steps</h2>
-                <p class="text-sm text-[#AEAEB2]">No complex technical layers. Get fully integrated within seconds.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs">
-                <div class="bg-[#1C1C1E]/80 border border-[#2C2C2E] p-6 rounded-2xl interactive-card backdrop-blur-sm">
+                <div class="bg-[#1C1C1E] border border-[#2C2C2E] p-6 rounded-2xl interactive-card">
                     <div class="text-[#2997FF] font-black text-2xl mb-1">01</div>
                     <h3 class="font-bold text-white text-sm mb-1">Secure Gateway Checkout</h3>
-                    <p class="text-[#AEAEB2] leading-relaxed">Place your secure order and complete the fixed one-time payment seamlessly via our global checking financial gateway.</p>
+                    <p class="text-[#AEAEB2] leading-relaxed">Secure your license parameters effortlessly through our world-class encrypted payment layers.</p>
                 </div>
-                <div class="bg-[#1C1C1E]/80 border border-[#2C2C2E] p-6 rounded-2xl interactive-card backdrop-blur-sm">
+                <div class="bg-[#1C1C1E] border border-[#2C2C2E] p-6 rounded-2xl interactive-card">
                     <div class="text-[#2997FF] font-black text-2xl mb-1">02</div>
-                    <h3 class="font-bold text-white text-sm mb-1">Automated Dispatch Link</h3>
-                    <p class="text-[#AEAEB2] leading-relaxed">The cloud logistics system registers parameters immediately and dispatches your invitation link straight to your inbox.</p>
+                    <h3 class="font-bold text-white text-sm mb-1">Automated Link Dispatch</h3>
+                    <p class="text-[#AEAEB2] leading-relaxed">The processing core maps constraints immediately and dispatches your official invitation directly to your inbox.</p>
                 </div>
-                <div class="bg-[#1C1C1E]/80 border border-[#2C2C2E] p-6 rounded-2xl interactive-card backdrop-blur-sm">
+                <div class="bg-[#1C1C1E] border border-[#2C2C2E] p-6 rounded-2xl interactive-card">
                     <div class="text-[#2997FF] font-black text-2xl mb-1">03</div>
                     <h3 class="font-bold text-white text-sm mb-1">One-Second Mapping</h3>
-                    <p class="text-[#AEAEB2] leading-relaxed">Open the invitation link, click 'Accept Benefits', and watch your personal account instantly unlock the 2TB pipeline parameters.</p>
+                    <p class="text-[#AEAEB2] leading-relaxed">Accept your official group credentials to seamlessly provision the 2TB pipeline directly to your account matrix.</p>
                 </div>
             </div>
         </section>
@@ -330,24 +239,22 @@
                 <h2 class="text-3xl md:text-5xl font-black tracking-tight text-white">Sovereignty Shield Compliance</h2>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
-                <div class="p-6 bg-[#1C1C1E]/50 border border-[#2C2C2E] rounded-2xl opacity-60 backdrop-blur-sm">
-                    <h3 class="font-bold text-[#FF453A] mb-2 uppercase tracking-wider"><i class="fa-solid fa-triangle-exclamation"></i> Traditional Gray Subscriptions</h3>
-                    <p class="text-[#AEAEB2] leading-relaxed">Forcing users to inherit unstable third-party shared credential pools or sensitive password matrices, heavily risking critical logs being exposed.</p>
+                <div class="p-6 bg-[#1C1C1E] border border-[#2C2C2E] rounded-2xl opacity-60">
+                    <h3 class="font-bold text-[#FF453A] mb-2 uppercase tracking-wider"><i class="fa-solid fa-triangle-exclamation"></i> Unsafe Third-Party Solutions</h3>
+                    <p class="text-[#AEAEB2] leading-relaxed">Forcing users to inherit unstable public shared credentials or sensitive password matrices, risking permanent profile blocking errors.</p>
                 </div>
-                <div class="p-6 bg-[#1C1C1E]/90 border border-[#2C2C2E] rounded-2xl shadow-md border-l-4 border-l-[#30D158] backdrop-blur-sm">
+                <div class="p-6 bg-[#1C1C1E] border border-[#2C2C2E] rounded-2xl shadow-md border-l-4 border-l-[#30D158]">
                     <h3 class="font-bold text-[#30D158] mb-2 uppercase tracking-wider"><i class="fa-solid fa-shield-halved"></i> Private Pipeline Architecture</h3>
-                    <p class="text-white leading-relaxed">Direct enterprise-grade invitation structures mapped over your private account parameters. Total sovereign data encryption control guaranteed.</p>
+                    <p class="text-[#F5F5F7] leading-relaxed">Direct enterprise-grade invitation structures across your private personal parameters. Total sovereign encryption control guaranteed.</p>
                 </div>
             </div>
         </section>
 
         <section id="reviews" class="space-y-8 border-t border-[#2C2C2E] pt-16 scroll-mt-24">
             <div class="text-center space-y-2">
-                <h2 class="text-3xl md:text-5xl font-black tracking-tight text-white">Verified Professional Reviews</h2>
-                <p class="text-sm text-[#AEAEB2]">See how over 60,000+ active global tech power users rate their premium upgrade experience.</p>
+                <h2 class="text-3xl md:text-5xl font-black tracking-tight text-white">Global Scalability Verification</h2>
             </div>
-
-            <div class="grid grid-cols-3 gap-4 border border-[#2C2C2E] rounded-3xl bg-[#1C1C1E]/80 p-6 text-center backdrop-blur-sm">
+            <div class="grid grid-cols-3 gap-4 border border-[#2C2C2E] rounded-3xl bg-[#1C1C1E] p-6 text-center">
                 <div>
                     <div class="text-3xl font-black text-[#2997FF]">4.9 ★</div>
                     <div class="text-[10px] text-[#AEAEB2] font-bold uppercase mt-1 tracking-wider">Satisfaction Score</div>
@@ -361,33 +268,6 @@
                     <div class="text-[10px] text-[#AEAEB2] font-bold uppercase mt-1 tracking-wider">Re-Activation Rate</div>
                 </div>
             </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
-                <div class="bg-[#1C1C1E]/80 p-5 rounded-xl border border-[#2C2C2E] space-y-2 backdrop-blur-sm">
-                    <div class="text-[#FFD60A]">★★★★★</div>
-                    <h5 class="font-bold text-white text-xs">"Saved my whole academic semester."</h5>
-                    <p class="text-[#AEAEB2]">Audited a 200-page core research data textbook right before my thesis presentation. Priority speed levels are incredible.</p>
-                    <div class="text-[10px] text-[#636366] font-semibold">&mdash; Kim * Young (Academic Researcher)</div>
-                </div>
-                <div class="bg-[#1C1C1E]/80 p-5 rounded-xl border border-[#2C2C2E] space-y-2 backdrop-blur-sm">
-                    <div class="text-[#FFD60A]">★★★★★</div>
-                    <h5 class="font-bold text-white text-xs">"Workflow optimization at its finest."</h5>
-                    <p class="text-[#AEAEB2]">Drafting executive communications logs and meeting summaries takes seconds now. Outstanding price-to-performance matrix.</p>
-                    <div class="text-[10px] text-[#636366] font-semibold">&mdash; Choi * Hyun (Senior Enterprise Architect)</div>
-                </div>
-                <div class="bg-[#1C1C1E]/80 p-5 rounded-xl border border-[#2C2C2E] space-y-2 backdrop-blur-sm">
-                    <div class="text-[#FFD60A]">★★★★★</div>
-                    <h5 class="font-bold text-white text-xs">"Saved thousands in outsourcing outlays."</h5>
-                    <p class="text-[#AEAEB2]">I generate advanced animation elements directly via the priority lane. Exceptionally stable workflow pipeline.</p>
-                    <div class="text-[10px] text-[#636366] font-semibold">&mdash; Lee * Jun (Digital Creator)</div>
-                </div>
-                <div class="bg-[#1C1C1E]/80 p-5 rounded-xl border border-[#2C2C2E] space-y-2 backdrop-blur-sm">
-                    <div class="text-[#FFD60A]">★★★★★</div>
-                    <h5 class="font-bold text-white text-xs">"Flawless educational utility."</h5>
-                    <p class="text-[#AEAEB2]">My children upload tricky logic formulas, and the system outputs structural formulas immediately. Highly recommended.</p>
-                    <div class="text-[10px] text-[#636366] font-semibold">&mdash; Park * Soo (Enterprise Parent)</div>
-                </div>
-            </div>
         </section>
 
         <section id="faq" class="space-y-6 border-t border-[#2C2C2E] pt-16 scroll-mt-24">
@@ -395,12 +275,12 @@
                 <h2 class="text-3xl md:text-5xl font-black tracking-tight text-white">Frequently Asked Questions</h2>
             </div>
             <div class="space-y-4 text-xs max-w-2xl mx-auto">
-                <div class="bg-[#1C1C1E]/80 p-5 rounded-2xl border border-[#2C2C2E] backdrop-blur-sm">
-                    <h4 class="font-bold text-white text-sm mb-1">Q: Does this deployment model support international profiles?</h4>
+                <div class="bg-[#1C1C1E] p-5 rounded-2xl border border-[#2C2C2E] interactive-card">
+                    <h4 class="font-bold text-white text-sm mb-1">Q: Does this deployment model support international or cross-border profiles?</h4>
                     <p class="text-[#AEAEB2] leading-relaxed">A: Yes. Aligning your baseline hub metrics according to our instant automated dispatch manual ensures seamless full-speed mapping worldwide.</p>
                 </div>
-                <div class="bg-[#1C1C1E]/80 p-5 rounded-xl border border-[#2C2C2E] backdrop-blur-sm">
-                    <h4 class="font-bold text-white text-sm mb-1">Q: Will any recurring billing profiles trigger post completion?</h4>
+                <div class="bg-[#1C1C1E] p-5 rounded-xl border border-[#2C2C2E] interactive-card">
+                    <h4 class="font-bold text-white text-sm mb-1">Q: Will any recurring billing profiles trigger post 18-month completion?</h4>
                     <p class="text-[#AEAEB2] leading-relaxed">A: Absolutely not. This infrastructure is managed entirely on an automated corporate quota liquidating pipeline via a fixed one-time payment architecture.</p>
                 </div>
             </div>
@@ -413,25 +293,19 @@
             <button onclick="closeCheckoutModal()" class="absolute top-4 right-4 text-[#8E8E93] hover:text-white cursor-pointer text-xl font-bold transition-colors">&times;</button>
             
             <h3 class="text-lg font-bold text-white mb-1">Activation Prerequisites</h3>
-            <p class="text-xs text-[#AEAEB2] mb-5">Please review and check all items to activate the checkout sequence.</p>
+            <p class="text-xs text-[#AEAEB2] mb-5">Please acknowledge the system constraints below to unlock the secure gateway.</p>
 
             <div class="space-y-2.5 mb-5">
                 <label class="flex items-start p-3 bg-[#2C2C2E]/40 border border-[#2C2C2E] rounded-xl cursor-pointer hover:border-[#444444] transition-all">
                     <input type="checkbox" class="terms-checkbox mt-0.5 text-[#2997FF] focus:ring-[#2997FF] border-[#48484A] bg-[#1C1C1E] rounded">
                     <span class="ml-3 text-xs text-[#AEAEB2] leading-relaxed">
-                        I confirm that my account region has been adjusted to the designated promotional hub prior to access redemption.
+                        I confirm that my personal cloud profile parameters will be synchronized with the designated corporate promo hub location.
                     </span>
                 </label>
                 <label class="flex items-start p-3 bg-[#2C2C2E]/40 border border-[#2C2C2E] rounded-xl cursor-pointer hover:border-[#444444] transition-all">
                     <input type="checkbox" class="terms-checkbox mt-0.5 text-[#2997FF] focus:ring-[#2997FF] border-[#48484A] bg-[#1C1C1E] rounded">
                     <span class="ml-3 text-xs text-[#AEAEB2] leading-relaxed">
-                        I acknowledge that "Region Lock Errors" caused by failure to adjust the account region are strictly <strong class="text-[#FF453A] font-medium">NON-REFUNDABLE</strong> due to the instant nature of digital assets.
-                    </span>
-                </label>
-                <label class="flex items-start p-3 bg-[#2C2C2E]/40 border border-[#2C2C2E] rounded-xl cursor-pointer hover:border-[#444444] transition-all">
-                    <input type="checkbox" class="terms-checkbox mt-0.5 text-[#2997FF] focus:ring-[#2997FF] border-[#48484A] bg-[#1C1C1E] rounded">
-                    <span class="ml-3 text-xs text-[#AEAEB2] leading-relaxed">
-                        I agree that token delivery is 100% automated and its status verification is system-tracked immediately upon dispatch.
+                        I acknowledge that deployment lock errors caused by skipping local optimization configurations render this asset <strong class="text-[#FF453A] font-medium">NON-REFUNDABLE</strong>.
                     </span>
                 </label>
             </div>
@@ -460,7 +334,7 @@
         <i class="fa-regular fa-comment-dots"></i>
     </a>
 
-    <footer class="border-t border-[#2C2C2E]/50 bg-[#000000] py-6 text-[11px] text-[#8E8E93] text-center mt-auto relative z-30">
+    <footer class="border-t border-[#2C2C2E]/50 bg-[#000000] py-6 text-[11px] text-[#8E8E93] text-center mt-auto">
         <div class="max-w-4xl mx-auto px-6">
             <p>&copy; 2026 Workspace Premium Logistics. All Sovereign Infrastructure Rights Reserved.</p>
         </div>
@@ -476,34 +350,7 @@
         const csFloatingBtn = document.getElementById('csFloatingBtn');
 
         /**
-         * 🌌 [요구사항 2] 올 나이트 코스믹 우주 성단 생성 스크립트 (화면 전체 확장 처리)
-         */
-        function generateCosmicStarfield() {
-            const spaceCanvas = document.getElementById('spaceCanvas');
-            const totalStarsCount = 65; // High density stellar nodes
-
-            for (let i = 0; i < totalStarsCount; i++) {
-                const starElement = document.createElement('div');
-                starElement.className = 'star';
-                
-                const randomX = Math.random() * 100;
-                const randomY = Math.random() * 100;
-                const randomSize = Math.random() * 2.2 + 0.6;
-                const randomDelay = Math.random() * 4;
-
-                starElement.style.left = `${randomX}%`;
-                starElement.style.top = `${randomY}%`;
-                starElement.style.width = `${randomSize}px`;
-                starElement.style.height = `${randomSize}px`;
-                starElement.style.animationDelay = `${randomDelay}s`;
-
-                spaceCanvas.appendChild(starElement);
-            }
-        }
-        generateCosmicStarfield();
-
-        /**
-         * 📈 Micro-Interaction Responsive Scroller Mechanics
+         * 📈 Micro-Interaction Scroller Mechanics
          */
         window.addEventListener('scroll', () => {
             const thresholdPoint = mainCardSection.offsetTop + mainCardSection.offsetHeight;
@@ -531,7 +378,7 @@
         function openCheckoutModal() { checkoutModal.style.display = 'flex'; }
         function closeCheckoutModal() { checkoutModal.style.display = 'none'; }
 
-        // Prerequisites Checklist Observer (3-item matching validation tracking)
+        // Prerequisites Checklist Observer
         checkboxes.forEach(cb => {
             cb.addEventListener('change', () => {
                 const checkedAll = Array.from(checkboxes).every(item => item.checked);
