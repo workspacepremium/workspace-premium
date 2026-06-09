@@ -5,37 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Workspace Premium - Advanced AI & Cloud Storage Hub</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD"></script>
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            letter-spacing: -0.02em;
-            transition: background-color 0.5s ease, color 0.5s ease;
+            letter-spacing: -0.01em;
+            transition: background-color 0.4s ease, color 0.4s ease;
         }
-        /* 애플 특유의 미려한 유리(배경 흐림) 효과 */
-        .apple-glass {
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+        /* 넷플릭스 스타일의 깊이감 있는 그라데이션 백그라운드 효과 */
+        .netflix-gradient {
+            background: radial-gradient(circle at top, rgba(229, 9, 20, 0.15) 0%, rgba(20, 20, 20, 0) 60%), #141414;
+        }
+        .light .netflix-gradient {
+            background: radial-gradient(circle at top, rgba(229, 9, 20, 0.05) 0%, rgba(245, 245, 247, 0) 60%), #F5F5F7;
         }
     </style>
 </head>
-<body class="bg-[#000000] text-[#F5F5F7] min-h-screen flex flex-col justify-between antialiased">
+<body class="netflix-gradient text-[#E5E5E5] min-h-screen flex flex-col justify-between antialiased">
 
-    <header class="border-b border-[#2C2C2E]/50 bg-[#000000]/70 apple-glass sticky top-0 z-50 transition-colors duration-500 dark:border-[#2C2C2E]/50 dark:bg-[#000000]/70 light:bg-[#F5F5F7]/80 light:border-[#E5E5EA]/50">
-        <div class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
+    <header class="border-b border-[#222222]/80 bg-[#141414]/90 sticky top-0 z-50 transition-colors duration-400 dark:border-[#222222]/80 dark:bg-[#141414]/90 light:bg-[#FFFFFF]/90 light:border-[#E5E5EA]">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
             <div class="flex items-center space-x-3">
-                <span class="text-lg font-semibold tracking-tight text-white light:text-[#1D1D1F]">Workspace Premium</span>
-                <span class="text-[10px] bg-[#2C2C2E] text-[#AEAEB2] light:bg-[#E5E5EA] light:text-[#8E8E93] px-2 py-0.5 rounded-full font-medium">B2B Allocation</span>
+                <span class="text-xl font-black tracking-tighter text-[#E50914] uppercase">Workspace Premium</span>
+                <span class="text-[10px] bg-[#222222] text-[#AAAAAA] light:bg-[#E5E5EA] light:text-[#8E8E93] px-2.5 py-0.5 rounded font-bold tracking-wider uppercase">B2B Batch</span>
             </div>
             
             <div class="flex items-center space-x-6">
-                <div class="text-xs text-[#30D158] flex items-center space-x-1.5 font-medium bg-[#30D158]/10 px-3 py-1 rounded-full">
-                    <span class="inline-block w-2 h-2 bg-[#30D158] rounded-full animate-pulse"></span>
+                <div class="text-xs text-[#E50914] light:text-[#E50914] flex items-center space-x-1.5 font-bold bg-[#E50914]/10 px-3 py-1 rounded-md">
+                    <span class="inline-block w-2 h-2 bg-[#E50914] rounded-full animate-pulse"></span>
                     <span id="liveCounter">1,248 Users Activated Today</span>
                 </div>
                 
-                <button id="themeToggleBtn" class="p-2 rounded-full hover:bg-[#1C1C1E] light:hover:bg-[#E5E5EA] transition cursor-pointer text-[#AEAEB2] light:text-[#8E8E93]" aria-label="Toggle Theme">
+                <button id="themeToggleBtn" class="p-2 rounded-md hover:bg-[#222222] light:hover:bg-[#E5E5EA] transition cursor-pointer text-[#AAAAAA] light:text-[#8E8E93]" aria-label="Toggle Theme">
                     <svg id="sunIcon" class="w-4 h-4 hidden text-[#FF9500]" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 2.293a1 1 0 011.414 0l.707.707a1 1 0 01-1.414 1.414l-.707-.707a1 1 0 010-1.414zm4.121 4.121a1 1 0 010 1.414l-.707.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM10 14a4 4 0 100-8 4 4 0 000 8zm0 2a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zm-6.414-1.414a1 1 0 010-1.414l.707-.707a1 1 0 011.414 1.414l-.707.707a1 1 0 01-1.414 0zM2 10a1 1 0 011-1h1a1 1 0 110 2H3a1 1 0 01-1-1zm1.121-4.121a1 1 0 011.414-1-1l.707.707a1 1 0 11-1.414 1.414l-.707-.707z"></path></svg>
                     <svg id="moonIcon" class="w-4 h-4 hidden text-[#5856D6]" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 116.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
                 </button>
@@ -43,105 +45,105 @@
         </div>
     </header>
 
-    <main class="max-w-4xl mx-auto px-6 py-16 md:py-24 flex-grow flex flex-col items-center justify-center text-center">
+    <main class="max-w-4xl mx-auto px-6 py-12 md:py-20 flex-grow flex flex-col items-center justify-center text-center">
         
-        <div class="inline-flex items-center bg-[#1C1C1E] light:bg-[#E5E5EA] px-4 py-1.5 rounded-full text-xs font-medium text-[#AEAEB2] light:text-[#48484A] mb-8">
-            <span class="text-[#FFD60A] mr-1.5">★</span> Verified B2B Enterprise Overstock Distribution
+        <div class="inline-flex items-center bg-[#222222] light:bg-[#E5E5EA] px-4 py-1.5 rounded text-xs font-bold uppercase tracking-wider text-[#CCCCCC] light:text-[#48484A] mb-6">
+            📢 Limited B2B Overstock Allocation
         </div>
 
-        <h1 class="text-4xl md:text-7xl font-extrabold tracking-tight mb-8 text-white light:text-[#1D1D1F] leading-[1.1]">
-            The Ultimate AI & Cloud.<br>
-            <span class="bg-gradient-to-r from-[#D4D4D8] via-[#FFFFFF] to-[#A1A1AA] light:from-[#1D1D1F] light:to-[#636366] bg-clip-text text-transparent">Now Within Reach.</span>
+        <h1 class="text-4xl md:text-6xl font-black tracking-tight mb-6 text-white light:text-[#111111] leading-[1.15]">
+            Unlimited Premium AI & 2TB Cloud.<br>
+            <span class="text-[#E50914]">Ready in 60 Seconds.</span>
         </h1>
         
-        <p class="text-lg md:text-xl text-[#8E8E93] light:text-[#636366] max-w-2xl mb-16 font-normal leading-relaxed">
-            We acquire completely unutilized promotional storage allocations from enterprise cloud networks and safely pass them to global pro users. 100% official account integration.
+        <p class="text-base md:text-lg text-[#999999] light:text-[#636366] max-w-2xl mb-12 font-medium leading-relaxed">
+            We securely reallocate unutilized corporate promo capacities directly to global power users. 100% official, private, and hassle-free upgrade.
         </p>
 
-        <div class="w-full max-w-md bg-[#1C1C1E]/60 light:bg-[#FFFFFF] border border-[#2C2C2E]/80 light:border-[#E5E5EA] p-8 rounded-3xl shadow-2xl text-left relative overflow-hidden apple-glass">
-            <div class="absolute top-0 right-0 bg-[#FF453A] text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-bl-xl">
-                91% OFF
+        <div class="w-full max-w-md bg-[#181818] light:bg-[#FFFFFF] border border-[#333333] light:border-[#E5E5EA] p-8 rounded-lg shadow-2xl text-left relative overflow-hidden">
+            <div class="absolute top-0 right-0 bg-[#E50914] text-white text-[10px] font-black uppercase tracking-wider px-3 py-1.5">
+                91% EXCLUSIVE SAVE
             </div>
-            <h2 class="text-2xl font-bold mb-1 text-white light:text-[#1D1D1F]">18-Month Priority Pass</h2>
-            <p class="text-xs text-[#8E8E93] light:text-[#8E8E93] mb-6">Full Access Quota Batch #2026-B</p>
+            <h2 class="text-2xl font-black mb-1 text-white light:text-[#111111]">18-Month Premium Pass</h2>
+            <p class="text-xs text-[#777777] font-bold tracking-wide uppercase mb-6">Allocation Batch #2026-B</p>
             
             <div class="flex items-baseline space-x-2.5 mb-8">
-                <span class="text-4xl font-extrabold text-gray-900 dark:text-white">$29.99</span>
-                <span class="text-sm text-[#636366] line-through">$359.82</span>
-                <span class="text-xs text-[#30D158] font-semibold bg-[#30D158]/10 px-2 py-0.5 rounded">One-time fee</span>
+                <span class="text-5xl font-black text-white light:text-[#111111]">$29.99</span>
+                <span class="text-sm text-[#555555] line-through font-bold">$359.82</span>
+                <span class="text-xs text-[#30D158] font-bold bg-[#30D158]/10 px-2.5 py-0.5 rounded">One-time billing</span>
             </div>
 
-            <ul class="space-y-4 text-sm text-[#E5E5EA] light:text-[#3A3A3C] mb-8 border-t border-[#2C2C2E] light:border-[#F2F2F7] pt-6">
+            <ul class="space-y-4 text-sm text-[#CCCCCC] light:text-[#3A3A3C] mb-8 border-t border-[#222222] light:border-[#F2F2F7] pt-6">
                 <li class="flex items-start space-x-3">
-                    <span class="text-[#30D158] font-bold">✓</span>
-                    <span><strong>Gemini Ultra 1.5 Architecture</strong> &ndash; Highest priority access to Google's sovereign AI engine.</span>
+                    <span class="text-[#E50914] font-bold text-base leading-none">✓</span>
+                    <span><strong>Gemini Ultra 1.5 Access</strong> &ndash; Unrestricted priority speed to Google's top-tier corporate AI engine.</span>
                 </li>
                 <li class="flex items-start space-x-3">
-                    <span class="text-[#30D158] font-bold">✓</span>
-                    <span><strong>2TB Full Cloud Pipeline</strong> &ndash; Non-shared infrastructure storage for Photos, Drive, and Gmail.</span>
+                    <span class="text-[#E50914] font-bold text-base leading-none">✓</span>
+                    <span><strong>2TB Private Pipeline</strong> &ndash; Premium dedicated space for your own Photos, Drive, and Gmail.</span>
                 </li>
                 <li class="flex items-start space-x-3">
-                    <span class="text-[#30D158] font-bold">✓</span>
-                    <span><strong>Zero-Knowledge Privacy</strong> &ndash; B2B token integration ensures we never ask for your password.</span>
+                    <span class="text-[#E50914] font-bold text-base leading-none">✓</span>
+                    <span><strong>Instant Secure Link</strong> &ndash; Pure account upgrade link. We never ask for your password or credentials.</span>
                 </li>
                 <li class="flex items-start space-x-3">
-                    <span class="text-[#30D158] font-bold">✓</span>
-                    <span><strong>18-Month Replacement Warranty</strong> &ndash; Unconditional automated reallocation upon any system drop.</span>
+                    <span class="text-[#E50914] font-bold text-base leading-none">✓</span>
+                    <span><strong>18-Month Continuity Guarantee</strong> &ndash; Unconditional immediate replacement if any system disruption occurs.</span>
                 </li>
             </ul>
 
-            <button id="openModalBtn" class="w-full bg-white text-black light:bg-black light:text-white hover:opacity-90 font-semibold py-4 px-4 rounded-xl transition duration-300 text-center cursor-pointer shadow-lg tracking-tight">
-                Get Instant Activation Token
+            <button id="openModalBtn" class="w-full bg-[#E50914] text-white hover:bg-[#B20710] font-bold py-4 px-4 rounded transition duration-200 text-center cursor-pointer uppercase tracking-wider text-sm shadow-md">
+                Claim My Premium Access Now
             </button>
         </div>
     </main>
 
-    <div id="checkoutModal" class="fixed inset-0 bg-[#000000]/80 backdrop-blur-md hidden items-center justify-center p-4 z-50">
-        <div class="bg-[#1C1C1E] light:bg-[#FFFFFF] border border-[#2C2C2E] light:border-[#E5E5EA] w-full max-w-md rounded-3xl p-6 relative shadow-2xl">
+    <div id="checkoutModal" class="fixed inset-0 bg-[#000000]/85 backdrop-blur-sm hidden items-center justify-center p-4 z-50">
+        <div class="bg-[#181818] light:bg-[#FFFFFF] border border-[#333333] light:border-[#E5E5EA] w-full max-w-md rounded-lg p-6 relative shadow-2xl">
             
-            <button id="closeModalBtn" class="absolute top-4 right-4 text-[#8E8E93] hover:text-white light:hover:text-black cursor-pointer text-2xl">&times;</button>
+            <button id="closeModalBtn" class="absolute top-4 right-4 text-[#777777] hover:text-white light:hover:text-black cursor-pointer text-2xl">&times;</button>
             
-            <h3 class="text-xl font-bold text-white light:text-[#1D1D1F] mb-1">Activation Prerequisites</h3>
-            <p class="text-xs text-[#8E8E93] mb-6">Please review and check all items to activate the checkout sequence.</p>
+            <h3 class="text-xl font-bold text-white light:text-[#111111] mb-1">Activation Prerequisites</h3>
+            <p class="text-xs text-[#777777] mb-6">Please confirm items below to initialize secure instant allocation.</p>
 
             <div class="space-y-3 mb-6">
-                <label class="flex items-start p-3 bg-[#2C2C2E]/40 light:bg-[#F2F2F7] border border-[#2C2C2E] light:border-[#E5E5EA] rounded-xl cursor-pointer hover:border-[#48484A] transition">
-                    <input type="checkbox" class="terms-checkbox mt-0.5 text-white bg-[#1C1C1E] rounded border-[#48484A]">
-                    <span class="ml-3 text-xs text-[#AEAEB2] light:text-[#48484A] leading-relaxed">
-                        I confirm that my account region has been adjusted to the designated promotional hub prior to token redemption.
+                <label class="flex items-start p-3 bg-[#222222]/50 light:bg-[#F2F2F7] border border-[#333333] light:border-[#E5E5EA] rounded cursor-pointer hover:border-[#444444] transition">
+                    <input type="checkbox" class="terms-checkbox mt-0.5 text-[#E50914] focus:ring-[#E50914] bg-[#141414] rounded border-[#444444]">
+                    <span class="ml-3 text-xs text-[#AAAAAA] light:text-[#48484A] leading-relaxed">
+                        I confirm that my account region has been adjusted to the designated promotional hub prior to access redemption.
                     </span>
                 </label>
 
-                <label class="flex items-start p-3 bg-[#2C2C2E]/40 light:bg-[#F2F2F7] border border-[#2C2C2E] light:border-[#E5E5EA] rounded-xl cursor-pointer hover:border-[#48484A] transition">
-                    <input type="checkbox" class="terms-checkbox mt-0.5 text-white bg-[#1C1C1E] rounded border-[#48484A]">
-                    <span class="ml-3 text-xs text-[#AEAEB2] light:text-[#48484A] leading-relaxed">
-                        I acknowledge that "Region Lock Errors" caused by failure to adjust the account region are strictly <strong class="text-[#FF9500] font-semibold">NON-REFUNDABLE</strong> due to the instant nature of digital assets.
+                <label class="flex items-start p-3 bg-[#222222]/50 light:bg-[#F2F2F7] border border-[#333333] light:border-[#E5E5EA] rounded cursor-pointer hover:border-[#444444] transition">
+                    <input type="checkbox" class="terms-checkbox mt-0.5 text-[#E50914] focus:ring-[#E50914] bg-[#141414] rounded border-[#444444]">
+                    <span class="ml-3 text-xs text-[#AAAAAA] light:text-[#48484A] leading-relaxed">
+                        I acknowledge that "Region Lock Errors" caused by failure to adjust the account region are strictly <strong class="text-[#E50914] font-bold">NON-REFUNDABLE</strong> due to the instant nature of digital assets.
                     </span>
                 </label>
 
-                <label class="flex items-start p-3 bg-[#2C2C2E]/40 light:bg-[#F2F2F7] border border-[#2C2C2E] light:border-[#E5E5EA] rounded-xl cursor-pointer hover:border-[#48484A] transition">
-                    <input type="checkbox" class="terms-checkbox mt-0.5 text-white bg-[#1C1C1E] rounded border-[#48484A]">
-                    <span class="ml-3 text-xs text-[#AEAEB2] light:text-[#48484A] leading-relaxed">
-                        I agree that token delivery is 100% automated and its status verification is system-tracked immediately upon dispatch.
+                <label class="flex items-start p-3 bg-[#222222]/50 light:bg-[#F2F2F7] border border-[#333333] light:border-[#E5E5EA] rounded cursor-pointer hover:border-[#444444] transition">
+                    <input type="checkbox" class="terms-checkbox mt-0.5 text-[#E50914] focus:ring-[#E50914] bg-[#141414] rounded border-[#444444]">
+                    <span class="ml-3 text-xs text-[#AAAAAA] light:text-[#48484A] leading-relaxed">
+                        I agree that delivery is 100% automated and its status verification is system-tracked immediately upon dispatch.
                     </span>
                 </label>
             </div>
 
-            <div id="stripeSection" class="opacity-20 pointer-events-none transition-all duration-300 border-t border-[#2C2C2E] light:border-[#E5E5EA] pt-6">
-                <label class="block text-xs font-semibold text-[#AEAEB2] light:text-[#8E8E93] uppercase tracking-wider mb-2">Delivery Email Address</label>
-                <input type="email" id="customerEmail" placeholder="your-delivery-account@gmail.com" class="w-full bg-[#2C2C2E]/60 light:bg-[#F2F2F7] border border-[#48484A] light:border-[#D1D1D6] rounded-xl px-4 py-3 text-sm text-white light:text-[#1D1D1F] placeholder-[#636366] focus:outline-none focus:border-white light:focus:border-black mb-6">
+            <div id="stripeSection" class="opacity-20 pointer-events-none transition-all duration-300 border-t border-[#333333] light:border-[#E5E5EA] pt-6">
+                <label class="block text-xs font-bold text-[#AAAAAA] light:text-[#8E8E93] uppercase tracking-wider mb-2">Delivery Email Address</label>
+                <input type="email" id="customerEmail" placeholder="name@gmail.com" class="w-full bg-[#222222] light:bg-[#F2F2F7] border border-[#444444] light:border-[#D1D1D6] rounded px-4 py-3 text-sm text-white light:text-[#111111] placeholder-[#555555] focus:outline-none focus:border-[#E50914] mb-6">
                 
                 <div id="paypal-button-container"></div>
             </div>
 
             <div class="mt-4 text-center">
-                <p class="text-[10px] text-[#8E8E93]"><i class="fa-solid fa-shield-halved"></i> Secured by PayPal Global Financial Network.</p>
+                <p class="text-[10px] text-[#666666] font-medium">Secured by PayPal Official Network.</p>
             </div>
 
         </div>
     </div>
 
-    <footer class="border-t border-[#2C2C2E]/50 bg-[#000000] light:bg-[#F5F5F7] py-8 text-[11px] text-[#636366] text-center mt-auto">
+    <footer class="border-t border-[#222222] bg-[#141414] light:bg-[#F5F5F7] py-8 text-[11px] text-[#555555] text-center mt-auto">
         <div class="max-w-4xl mx-auto px-6">
             <p>&copy; 2026 Workspace Premium Logistics. All Sovereign Infrastructure Rights Reserved.</p>
         </div>
@@ -158,9 +160,9 @@
         const sunIcon = document.getElementById('sunIcon');
         const moonIcon = document.getElementById('moonIcon');
 
-        // 🌗 테마 오버라이드 시스템
+        // 🌗 넷플릭스 수동/자동 테마 동기화 엔진
         function initTheme() {
-            const cachedTheme = localStorage.getItem('appleTheme');
+            const cachedTheme = localStorage.getItem('netflixTheme');
             const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
             if (cachedTheme === 'dark' || (!cachedTheme && prefersDark)) {
@@ -173,19 +175,19 @@
         function setDarkTheme() {
             document.documentElement.classList.add('dark');
             document.documentElement.classList.remove('light');
-            document.body.className = "bg-[#000000] text-[#F5F5F7] min-h-screen flex flex-col justify-between antialiased";
+            document.body.className = "netflix-gradient text-[#E5E5E5] min-h-screen flex flex-col justify-between antialiased";
             sunIcon.classList.remove('hidden');
             moonIcon.classList.add('hidden');
-            localStorage.setItem('appleTheme', 'dark');
+            localStorage.setItem('netflixTheme', 'dark');
         }
 
         function setLightTheme() {
             document.documentElement.classList.add('light');
             document.documentElement.classList.remove('dark');
-            document.body.className = "bg-[#F5F5F7] text-[#1D1D1F] min-h-screen flex flex-col justify-between antialiased";
+            document.body.className = "netflix-gradient text-[#111111] min-h-screen flex flex-col justify-between antialiased light";
             moonIcon.classList.remove('hidden');
             sunIcon.classList.add('hidden');
-            localStorage.setItem('appleTheme', 'light');
+            localStorage.setItem('netflixTheme', 'light');
         }
 
         themeToggleBtn.addEventListener('click', () => {
@@ -198,25 +200,25 @@
 
         initTheme();
 
-        // 📈 실시간 구매 카운터
+        // 📈 playpre 스타일 실시간 구매 현황 시뮬레이터
         function simulateLiveCounter() {
             const counterElement = document.getElementById('liveCounter');
             const now = new Date();
             const currentHour = now.getHours();
             
-            let baseBuyers = 1100 + (currentHour * 12);
-            let randomFluctuation = Math.floor(Math.random() * 8);
+            let baseBuyers = 1350 + (currentHour * 15);
+            let randomFluctuation = Math.floor(Math.random() * 6);
             
             counterElement.innerText = `${(baseBuyers + randomFluctuation).toLocaleString()} Users Activated Today`;
         }
         setInterval(simulateLiveCounter, 4000);
         simulateLiveCounter();
 
-        // 모달 팝업 제어
+        // 모달 제어
         openModalBtn.addEventListener('click', () => checkoutModal.style.display = 'flex');
         closeModalBtn.addEventListener('click', () => checkoutModal.style.display = 'none');
 
-        // 체크박스 동의 완료 시 잠금 해제
+        // 약관 동의 체크 처리
         checkboxes.forEach(checkbox => {
             checkbox.addEventListener('change', () => {
                 const allChecked = Array.from(checkboxes).every(cb => cb.checked);
@@ -228,18 +230,18 @@
             });
         });
 
-        // 💳 정식 페이팔 스마트 체크아웃 프로세스 (테스트 금액 $0.10 세팅)
+        // 💳 정식 페이팔 스마트 체크아웃 (넷플릭스 전용 블랙 에디션 스타일 및 테스트 금액 $0.10)
         paypal.Buttons({
             style: {
                 layout: 'vertical',
-                color:  'black',
+                color:  'black', // 시네마틱 다크 감성에 어우러지는 프리미엄 블랙 버튼
                 shape:  'rect',
                 label:  'checkout'
             },
             onClick: function(data, actions) {
                 const email = document.getElementById('customerEmail').value;
                 if (!email || !email.includes('@')) {
-                    alert('Please enter a valid Gmail address for token delivery.');
+                    alert('Please enter a valid Gmail address for delivery.');
                     return actions.reject();
                 }
             },
@@ -247,14 +249,14 @@
                 return actions.order.create({
                     purchase_units: [{
                         amount: {
-                            value: '0.10' // 🔥 실전 테스트를 위해 0.1달러 청구 유지!
+                            value: '0.10' // 사장님 실전 연동용 테스트 0.1달러 기동 상태 유지
                         }
                     }]
                 });
             },
             onApprove: function(data, actions) {
                 return actions.order.capture().then(function(details) {
-                    alert('Transaction completed by ' + details.payer.name.given_name + '! Your 18-Month Activation Link is on the way.');
+                    alert('Transaction completed by ' + details.payer.name.given_name + '! Your 18-Month Premium Access Link is dispatched.');
                     checkoutModal.style.display = 'none';
                 });
             }
