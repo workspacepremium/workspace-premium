@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +11,7 @@
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             letter-spacing: -0.015em;
-            transition: background-color 0.4s ease, color 0.4s ease;
+            transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1), color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .apple-blur {
             backdrop-filter: blur(20px);
@@ -19,14 +19,23 @@
         }
     </style>
 </head>
-<body class="bg-[#F5F5F7] text-[#1D1D1F] dark:bg-[#000000] dark:text-[#F5F5F7] min-h-screen flex flex-col justify-between antialiased">
+<body class="bg-[#F5F5F7] text-[#1D1D1F] dark:bg-[#000000] dark:text-[#F5F5F7] min-h-screen flex flex-col justify-between antialiased selection:bg-[#0066CC]/20">
 
     <header class="border-b border-[#E5E5EA] bg-[#F5F5F7]/80 dark:border-[#2C2C2E]/50 dark:bg-[#000000]/70 apple-blur sticky top-0 z-50 transition-colors duration-400">
-        <div class="max-w-5xl mx-auto px-6 h-12 flex items-center justify-between">
-            <div class="flex items-center space-x-3">
-                <span class="text-base font-semibold tracking-tight text-[#1D1D1F] dark:text-white">Workspace Premium</span>
+        <div class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
+            <div class="flex items-center space-x-3 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                <span class="text-base font-bold tracking-tight text-[#1D1D1F] dark:text-white">Workspace Premium</span>
                 <span class="text-[9px] bg-[#E5E5EA] text-[#8E8E93] dark:bg-[#2C2C2E] dark:text-[#AEAEB2] px-2 py-0.5 rounded-full font-bold">B2B</span>
             </div>
+            
+            <nav class="hidden md:flex items-center space-x-8 text-xs font-medium text-[#636366] dark:text-[#8E8E93]">
+                <a href="#benefits" class="hover:text-[#0066CC] dark:hover:text-[#2997FF] transition-colors duration-200">Benefits</a>
+                <a href="#features" class="hover:text-[#0066CC] dark:hover:text-[#2997FF] transition-colors duration-200">Use Cases</a>
+                <a href="#process" class="hover:text-[#0066CC] dark:hover:text-[#2997FF] transition-colors duration-200">Process</a>
+                <a href="#security" class="hover:text-[#0066CC] dark:hover:text-[#2997FF] transition-colors duration-200">Security</a>
+                <a href="#reviews" class="hover:text-[#0066CC] dark:hover:text-[#2997FF] transition-colors duration-200">Reviews</a>
+                <a href="#faq" class="hover:text-[#0066CC] dark:hover:text-[#2997FF] transition-colors duration-200">FAQ</a>
+            </nav>
             
             <button id="themeToggleBtn" class="p-2 rounded-full hover:bg-[#E5E5EA] dark:hover:bg-[#1C1C1E] transition cursor-pointer text-[#8E8E93] dark:text-[#AEAEB2]" aria-label="Toggle Theme">
                 <svg id="sunIcon" class="w-4 h-4 hidden text-[#FF9500]" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 2.293a1 1 0 011.414 0l.707.707a1 1 0 01-1.414 1.414l-.707-.707a1 1 0 010-1.414zm4.121 4.121a1 1 0 010 1.414l-.707.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM10 14a4 4 0 100-8 4 4 0 000 8zm0 2a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zm-6.414-1.414a1 1 0 010-1.414l.707-.707a1 1 0 011.414 1.414l-.707.707a1 1 0 01-1.414 0zM2 10a1 1 0 011-1h1a1 1 0 110 2H3a1 1 0 01-1-1zm1.121-4.121a1 1 0 011.414-1-1l.707.707a1 1 0 11-1.414 1.414l-.707-.707z"></path></svg>
@@ -35,25 +44,25 @@
         </div>
     </header>
 
-    <main class="max-w-4xl mx-auto px-6 py-12 md:py-16 flex-grow w-full space-y-28">
+    <main class="max-w-4xl mx-auto px-6 py-16 md:py-24 flex-grow w-full space-y-36">
         
-        <section class="text-center space-y-5">
-            <h1 class="text-4xl md:text-6xl font-black tracking-tight text-[#1D1D1F] dark:text-white leading-[1.15]">
+        <section class="text-center space-y-6">
+            <h1 class="text-5xl md:text-7xl font-black tracking-tight text-[#1D1D1F] dark:text-white leading-[1.1] transition-transform duration-500 hover:scale-[1.01]">
                 Workspace Premium.<br>
                 <span class="text-[#0066CC] dark:text-[#2997FF]">Advanced AI & Sovereign Cloud.</span>
             </h1>
 
-            <div class="inline-flex items-center space-x-2 bg-white/80 dark:bg-[#1C1C1E]/80 border border-[#E5E5EA] dark:border-[#2C2C2E] px-4 py-2 rounded-full text-xs font-semibold shadow-sm">
+            <div class="inline-flex items-center space-x-2 bg-white dark:bg-[#1C1C1E] border border-[#E5E5EA] dark:border-[#2C2C2E] px-4 py-2 rounded-full text-xs font-semibold shadow-sm transition-all duration-300 hover:border-[#1D1D1F] dark:hover:border-white">
                 <span class="flex h-2 w-2 relative">
                     <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#30D158] opacity-75"></span>
                     <span class="relative inline-flex rounded-full h-2 w-2 bg-[#30D158]"></span>
                 </span>
-                <span class="text-[#48484A] dark:text-[#AEAEB2]">🔥 Real-Time Activity: <span id="liveCounter" class="text-[#0066CC] dark:text-[#2997FF] font-bold">1,248</span> users successfully activated today.</span>
+                <span class="text-[#48484A] dark:text-[#AEAEB2]">🔥 Real-Time Activity: <span id="liveCounter" class="text-[#0066CC] dark:text-[#2997FF] font-bold">1,248</span> global users secured priority access today.</span>
             </div>
         </section>
 
-        <section class="flex justify-center">
-            <div class="w-full max-w-md bg-white dark:bg-[#1C1C1E] border border-[#E5E5EA] dark:border-[#2C2C2E] p-8 rounded-2xl shadow-sm hover:shadow-md transition relative">
+        <section class="flex justify-center scroll-mt-24">
+            <div class="w-full max-w-md bg-white dark:bg-[#1C1C1E] border border-[#E5E5EA] dark:border-[#2C2C2E] p-8 rounded-3xl shadow-sm hover:shadow-xl dark:hover:shadow-2xl/30 transition-all duration-300 relative group">
                 
                 <div class="absolute top-4 right-4 flex space-x-1.5">
                     <span class="bg-[#BF4800] text-white text-[9px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider">New</span>
@@ -61,310 +70,268 @@
                 </div>
 
                 <h2 class="text-2xl font-bold tracking-tight text-[#1D1D1F] dark:text-white">18-Month Premium Pass</h2>
-                <p class="text-xs text-[#8E8E93] dark:text-[#8E8E93] mt-0.5 mb-6">Enterprise Infrastructure Hub Distribution</p>
+                <p class="text-xs text-[#8E8E93] dark:text-[#8E8E93] mt-0.5 mb-6">Enterprise Infrastructure Hub Allocation</p>
                 
                 <div class="flex items-baseline space-x-2 mb-6">
-                    <span class="text-4xl font-extrabold text-[#1D1D1F] dark:text-white">$29.99</span>
+                    <span class="text-5xl font-black tracking-tighter text-[#1D1D1F] dark:text-white">$29.99</span>
                     <span class="text-sm text-[#8E8E93] line-through font-medium">$359.82</span>
                     <span class="text-xs text-[#30D158] bg-[#30D158]/10 px-2 py-0.5 rounded font-semibold ml-1">One-time billing</span>
                 </div>
 
-                <ul class="space-y-3.5 text-sm text-[#48484A] dark:text-[#E5E5EA] border-t border-[#F5F5F7] dark:border-[#2C2C2E] pt-6 mb-8">
-                    <li class="flex items-start space-x-2.5">
+                <ul class="space-y-4 text-sm text-[#48484A] dark:text-[#E5E5EA] border-t border-[#F5F5F7] dark:border-[#2C2C2E] pt-6 mb-8">
+                    <li class="flex items-start space-x-3">
                         <span class="text-[#0066CC] dark:text-[#2997FF] font-bold">✓</span>
-                        <span><strong>Gemini Ultra 1.5 Architecture</strong> &ndash; Enterprise speed priority lane.</span>
+                        <span><strong>Gemini Ultra 1.5 Architecture</strong> &ndash; Enterprise speed lane network.</span>
                     </li>
-                    <li class="flex items-start space-x-2.5">
+                    <li class="flex items-start space-x-3">
                         <span class="text-[#0066CC] dark:text-[#2997FF] font-bold">✓</span>
-                        <span><strong>2TB Private Sovereign Storage</strong> &ndash; No pool sharing for Gmail, Drive, Photos.</span>
+                        <span><strong>2TB Private Sovereign Storage</strong> &ndash; Dedicated space for Gmail, Drive, Photos.</span>
                     </li>
-                    <li class="flex items-start space-x-2.5">
+                    <li class="flex items-start space-x-3">
                         <span class="text-[#0066CC] dark:text-[#2997FF] font-bold">✓</span>
-                        <span><strong>Safe Credential-Free Connection</strong> &ndash; Upgrade via secure invitation link.</span>
+                        <span><strong>Safe Credential-Free Setup</strong> &ndash; Instant activation link with no passwords.</span>
                     </li>
-                    <li class="flex items-start space-x-2.5">
+                    <li class="flex items-start space-x-3">
                         <span class="text-[#0066CC] dark:text-[#2997FF] font-bold">✓</span>
-                        <span><strong>18-Month Solid Shockproof Guard</strong> &ndash; Automated instant system drop protection.</span>
+                        <span><strong>18-Month Continuous Warranty</strong> &ndash; Zero risk automated drop replacement.</span>
                     </li>
                 </ul>
 
-                <button id="openModalBtn" class="w-full bg-[#0066CC] hover:bg-[#0077ED] dark:bg-[#2997FF] dark:hover:bg-[#42A5FF] text-white font-bold py-4 px-4 rounded-xl transition duration-200 text-center cursor-pointer tracking-tight text-sm shadow-sm uppercase">
+                <button id="openModalBtn" class="w-full bg-[#0066CC] hover:bg-[#0077ED] dark:bg-[#2997FF] dark:hover:bg-[#42A5FF] text-white font-bold py-4 px-4 rounded-xl transition-all duration-300 text-center cursor-pointer tracking-tight text-sm shadow-sm active:scale-[0.98]">
                     Claim Premium Access Now
                 </button>
             </div>
         </section>
 
-        <section class="space-y-6">
-            <div class="text-center space-y-1.5">
-                <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-[#1D1D1F] dark:text-white">Why Workspace Premium?</h2>
-                <p class="text-sm text-[#8E8E93]">No matter how you look at it, acquiring through us is an absolute mathematical advantage.</p>
+        <section id="benefits" class="space-y-8 scroll-mt-24">
+            <div class="text-center space-y-2">
+                <h2 class="text-3xl md:text-5xl font-black tracking-tight text-[#1D1D1F] dark:text-white">Why Workspace Premium?</h2>
+                <p class="text-base text-[#8E8E93] max-w-xl mx-auto font-medium">An unmatched mathematical advantage. 18 months for the cost of just 2 regular months.</p>
             </div>
             
-            <div class="overflow-x-auto border border-[#E5E5EA] dark:border-[#2C2C2E] rounded-2xl bg-white dark:bg-[#1C1C1E]">
+            <div class="overflow-x-auto border border-[#E5E5EA] dark:border-[#2C2C2E] rounded-2xl bg-white dark:bg-[#1C1C1E] shadow-sm">
                 <table class="w-full text-left text-sm border-collapse">
                     <thead>
                         <tr class="bg-[#F5F5F7] dark:bg-[#2C2C2E]/40 border-b border-[#E5E5EA] dark:border-[#2C2C2E] text-xs font-bold text-[#8E8E93]">
-                            <th class="p-4 md:p-5">Infrastructure Matrix</th>
-                            <th class="p-4 md:p-5 text-center">Official Retail Subscription</th>
-                            <th class="p-4 md:p-5 text-center text-[#0066CC] dark:text-[#2997FF]">Workspace Premium</th>
+                            <th class="p-5">Infrastructure Matrix</th>
+                            <th class="p-5 text-center">Official Retail Subscription</th>
+                            <th class="p-5 text-center text-[#0066CC] dark:text-[#2997FF]">Workspace Premium</th>
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-[#E5E5EA] dark:divide-[#2C2C2E] text-[#48484A] dark:text-[#E5E5EA]">
-                        <tr>
-                            <td class="p-4 md:p-5 font-semibold">18-Month Price Burden</td>
-                            <td class="p-4 md:p-5 text-center text-[#FF453A] line-through">$359.82 (Risk of Mid-term Price Hikes)</td>
-                            <td class="p-4 md:p-5 text-center font-bold text-[#30D158] bg-[#30D158]/5">$29.99 (Locked In, No Hikes)</td>
+                        <tr class="hover:bg-[#F5F5F7]/40 dark:hover:bg-[#2C2C2E]/20 transition-colors">
+                            <td class="p-5 font-semibold">18-Month Total Burden</td>
+                            <td class="p-5 text-center text-[#FF453A] line-through">$359.82 (Recurring Fees)</td>
+                            <td class="p-5 text-center font-black text-lg text-[#30D158] bg-[#30D158]/5">$29.99 (One-Time Fee)</td>
                         </tr>
-                        <tr>
-                            <td class="p-4 md:p-5 font-semibold">Cost Comparison Value</td>
-                            <td class="p-4 md:p-5 text-center">Heavy Ongoing Outlay</td>
-                            <td class="p-4 md:p-5 text-center font-semibold text-[#30D158]">88% Flat Discount Instantly</td>
+                        <tr class="hover:bg-[#F5F5F7]/40 dark:hover:bg-[#2C2C2E]/20 transition-colors">
+                            <td class="p-5 font-semibold">Cost Reduction Level</td>
+                            <td class="p-5 text-center">Standard Outlay</td>
+                            <td class="p-5 text-center font-bold text-[#30D158]">88% Flat Discount Instantly</td>
                         </tr>
-                        <tr>
-                            <td class="p-4 md:p-5 font-semibold">Gemini Advanced Access</td>
-                            <td class="p-4 md:p-5 text-center">100% Identical Feature Set</td>
-                            <td class="p-4 md:p-5 text-center font-medium">100% Identical Features Enabled</td>
+                        <tr class="hover:bg-[#F5F5F7]/40 dark:hover:bg-[#2C2C2E]/20 transition-colors">
+                            <td class="p-5 font-semibold">Gemini Advanced Access</td>
+                            <td class="p-5 text-center">100% Identical Pool</td>
+                            <td class="p-5 text-center font-semibold text-[#0066CC] dark:text-[#2997FF]">100% Identical Architecture</td>
                         </tr>
-                        <tr>
-                            <td class="p-4 md:p-5 font-semibold">Account Invitation Multiplier</td>
-                            <td class="p-4 md:p-5 text-center">Standard Support Pool</td>
-                            <td class="p-4 md:p-5 text-center font-bold text-[#0066CC] dark:text-[#2997FF]">Allows Up to 5 Additional Members!</td>
+                        <tr class="hover:bg-[#F5F5F7]/40 dark:hover:bg-[#2C2C2E]/20 transition-colors">
+                            <td class="p-5 font-semibold">Group Account Multiplier</td>
+                            <td class="p-5 text-center">Solo Usage Pool</td>
+                            <td class="p-5 text-center font-bold text-[#0066CC] dark:text-[#2997FF]">Allows Up to 5 Member Invites</td>
                         </tr>
-                        <tr>
-                            <td class="p-4 md:p-5 font-semibold">Maximum Potential Discount</td>
-                            <td class="p-4 md:p-5 text-center">0% Discount</td>
-                            <td class="p-4 md:p-5 text-center font-bold text-[#30D158]">Up to 98% Savings with Full Group</td>
+                        <tr class="hover:bg-[#F5F5F7]/40 dark:hover:bg-[#2C2C2E]/20 transition-colors">
+                            <td class="p-5 font-semibold">Maximum Potential Discount</td>
+                            <td class="p-5 text-center">0% Discount Available</td>
+                            <td class="p-5 text-center font-black text-[#30D158]">Up to 98% Savings metrics</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
-                <div class="bg-white dark:bg-[#1C1C1E] border border-[#E5E5EA] dark:border-[#2C2C2E] p-5 rounded-2xl text-center">
-                    <div class="text-xs text-[#8E8E93] font-medium">Effective Monthly Cost / Person</div>
-                    <div class="text-2xl font-black text-[#30D158] mt-1">$0.27 / Mo</div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+                <div class="bg-white dark:bg-[#1C1C1E] border border-[#E5E5EA] dark:border-[#2C2C2E] p-6 rounded-2xl text-center shadow-sm hover:border-[#0066CC] transition-all">
+                    <div class="text-xs text-[#8E8E93] font-bold uppercase tracking-wider">Monthly Cost / Person</div>
+                    <div class="text-3xl font-black text-[#30D158] mt-1.5">$0.27</div>
                 </div>
-                <div class="bg-white dark:bg-[#1C1C1E] border border-[#E5E5EA] dark:border-[#2C2C2E] p-5 rounded-2xl text-center">
-                    <div class="text-xs text-[#8E8E93] font-medium">18-Month Cost / Person</div>
-                    <div class="text-2xl font-black text-[#0066CC] dark:text-[#2997FF] mt-1">$4.99 / 18 Mos</div>
+                <div class="bg-white dark:bg-[#1C1C1E] border border-[#E5E5EA] dark:border-[#2C2C2E] p-6 rounded-2xl text-center shadow-sm hover:border-[#0066CC] transition-all">
+                    <div class="text-xs text-[#8E8E93] font-bold uppercase tracking-wider">18-Month Cost / Person</div>
+                    <div class="text-3xl font-black text-[#0066CC] dark:text-[#2997FF] mt-1.5">$4.99</div>
                 </div>
-                <div class="bg-white dark:bg-[#1C1C1E] border border-[#E5E5EA] dark:border-[#2C2C2E] p-5 rounded-2xl text-center">
-                    <div class="text-xs text-[#8E8E93] font-medium">Group Invitation Extra Fee</div>
-                    <div class="text-2xl font-black text-white mt-1">Zero ($0.00)</div>
+                <div class="bg-white dark:bg-[#1C1C1E] border border-[#E5E5EA] dark:border-[#2C2C2E] p-6 rounded-2xl text-center shadow-sm hover:border-[#0066CC] transition-all">
+                    <div class="text-xs text-[#8E8E93] font-bold uppercase tracking-wider">Group Extra Fee</div>
+                    <div class="text-3xl font-black text-[#48484A] dark:text-white mt-1.5">$0.00</div>
                 </div>
             </div>
-            <p class="text-xs text-[#8E8E93] text-center italic mt-2">Even if you have no one to invite and use it completely solo, you are still saving 88% compared to regular retail pricing &mdash; equivalent to getting 18 months for the price of just 2 regular months!</p>
         </section>
 
-        <section class="space-y-8 border-t border-[#E5E5EA] dark:border-[#2C2C2E] pt-12">
-            <div class="text-center space-y-1.5">
-                <h2 class="text-2xl font-bold tracking-tight text-[#1D1D1F] dark:text-white">Too Busy? Here is the 3-Line Summary</h2>
-                <p class="text-sm text-[#8E8E93]">Everything you need to know about our premium infrastructure in short.</p>
+        <section class="space-y-12 border-t border-[#E5E5EA] dark:border-[#2C2C2E] pt-16">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="space-y-4 group">
+                    <div class="text-3xl font-black text-[#0066CC] dark:text-[#2997FF] transition-transform duration-300 group-hover:translate-x-1">01</div>
+                    <h3 class="text-xl font-bold text-[#1D1D1F] dark:text-white">Solo saves 88%.<br>Group invites save 98%.</h3>
+                    <p class="text-xs text-[#8E8E93] leading-relaxed">No matter how you deploy your batch allocation, the absolute discount margin outperforms regular store transactions completely. Zero credential data requested.</p>
+                </div>
+                <div class="space-y-4 group">
+                    <div class="text-3xl font-black text-[#30D158] transition-transform duration-300 group-hover:translate-x-1">02</div>
+                    <h3 class="text-xl font-bold text-[#1D1D1F] dark:text-white">100% Official.<br>100% Private Sovereignty.</h3>
+                    <p class="text-xs text-[#8E8E93] leading-relaxed">Generated entirely through Google business promo overstock paths. Your files, documents, and private logs remain locked under your private key.</p>
+                </div>
+                <div class="space-y-4 group">
+                    <div class="text-3xl font-black text-[#FF9500] transition-transform duration-300 group-hover:translate-x-1">03</div>
+                    <h3 class="text-xl font-bold text-[#1D1D1F] dark:text-white">Instant Automated Delivery.<br>365-Day Infrastructure Guard.</h3>
+                    <p class="text-xs text-[#8E8E93] leading-relaxed">Processed instantly post-checkout via automated cloud routing. Backed fully by our robust 91% re-activation user satisfaction logistics.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="space-y-12 border-t border-[#E5E5EA] dark:border-[#2C2C2E] pt-16 scroll-mt-24">
+            <div class="text-center space-y-2">
+                <h2 class="text-3xl md:text-5xl font-black tracking-tight text-[#1D1D1F] dark:text-white">What Gemini Advanced Can Do</h2>
+                <p class="text-base text-[#8E8E93]">Unleash the full performance of Google's flagship AI model architecture.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+                <div class="bg-white dark:bg-[#1C1C1E] p-6 rounded-2xl border border-[#E5E5EA] dark:border-[#2C2C2E] transition-all duration-300 hover:scale-[1.01] hover:border-[#0066CC]">
+                    <div class="font-bold text-[#1D1D1F] dark:text-white text-sm mb-1">📸 Visual Object Extraction</div>
+                    <p class="text-[#8E8E93] leading-relaxed">Recognizes complex elements within real-world imagery and creates precise ingredient lists or step-by-step contextual responses instantly.</p>
+                </div>
+                <div class="bg-white dark:bg-[#1C1C1E] p-6 rounded-2xl border border-[#E5E5EA] dark:border-[#2C2C2E] transition-all duration-300 hover:scale-[1.01] hover:border-[#0066CC]">
+                    <div class="font-bold text-[#1D1D1F] dark:text-white text-sm mb-1">📄 Enterprise PDF & Document Audit</div>
+                    <p class="text-[#8E8E93] leading-relaxed">Scans multi-page corporate financial spreadsheets and legal documents to capture hidden anomalies, errors, and potential tax fields.</p>
+                </div>
+                <div class="bg-white dark:bg-[#1C1C1E] p-6 rounded-2xl border border-[#E5E5EA] dark:border-[#2C2C2E] transition-all duration-300 hover:scale-[1.01] hover:border-[#0066CC]">
+                    <div class="font-bold text-[#1D1D1F] dark:text-white text-sm mb-1">🎬 Color Restoration & Motion Synthetics</div>
+                    <p class="text-[#8E8E93] leading-relaxed">Converts legacy black-and-white asset matrices into fully colored high-definition frames powered by the native Veo generative pipeline.</p>
+                </div>
+                <div class="bg-white dark:bg-[#1C1C1E] p-6 rounded-2xl border border-[#E5E5EA] dark:border-[#2C2C2E] transition-all duration-300 hover:scale-[1.01] hover:border-[#0066CC]">
+                    <div class="font-bold text-[#1D1D1F] dark:text-white text-sm mb-1">📚 High-Density Semantic Summarization</div>
+                    <p class="text-[#8E8E93] leading-relaxed">Digests overwhelming 200+ page textbook manuals to extract core study maps and structured text definitions for workflows.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="process" class="space-y-12 border-t border-[#E5E5EA] dark:border-[#2C2C2E] pt-16 scroll-mt-24">
+            <div class="text-center space-y-2">
+                <h2 class="text-3xl md:text-5xl font-black tracking-tight text-[#1D1D1F] dark:text-white">Simple, 3-Step Execution</h2>
+                <p class="text-base text-[#8E8E93]">No technical friction. Fully integrated within seconds.</p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="space-y-3 bg-white dark:bg-[#1C1C1E] p-6 rounded-2xl border border-[#E5E5EA] dark:border-[#2C2C2E]">
-                    <h3 class="font-bold text-sm text-[#0066CC] dark:text-[#2997FF] uppercase tracking-wider">⚡ Service Architecture</h3>
-                    <ul class="space-y-2 text-xs text-[#48484A] dark:text-[#AEAEB2]">
-                        <li class="flex items-center"><span class="text-[#30D158] mr-2">●</span> Solo use saves 88% / Group invites save up to 98%</li>
-                        <li class="flex items-center"><span class="text-[#30D158] mr-2">●</span> 100% official activation path via corporate nodes</li>
-                        <li class="flex items-center"><span class="text-[#30D158] mr-2">---</span> No passwords or sensitive data ever requested</li>
+                <div class="bg-white dark:bg-[#1C1C1E] border border-[#E5E5EA] dark:border-[#2C2C2E] p-6 rounded-2xl relative transition-transform duration-300 hover:translate-y-[-2px]">
+                    <div class="text-[#0066CC] dark:text-[#2997FF] font-black text-2xl mb-2">01</div>
+                    <h3 class="font-bold text-sm text-[#1D1D1F] dark:text-white mb-2">Checkout & Verify</h3>
+                    <p class="text-xs text-[#8E8E93] leading-relaxed">Place your secure order and complete the one-time payment seamlessly via our global financial gateway system.</p>
+                </div>
+                <div class="bg-white dark:bg-[#1C1C1E] border border-[#E5E5EA] dark:border-[#2C2C2E] p-6 rounded-2xl relative transition-transform duration-300 hover:translate-y-[-2px]">
+                    <div class="text-[#0066CC] dark:text-[#2997FF] font-black text-2xl mb-2">02</div>
+                    <h3 class="font-bold text-sm text-[#1D1D1F] dark:text-white mb-2">Automated Dispatch</h3>
+                    <p class="text-xs text-[#8E8E93] leading-relaxed">The infrastructure pipeline immediately processes the activation parameters and drops the secure invitation link right into your inbox.</p>
+                </div>
+                <div class="bg-white dark:bg-[#1C1C1E] border border-[#E5E5EA] dark:border-[#2C2C2E] p-6 rounded-2xl relative transition-transform duration-300 hover:translate-y-[-2px]">
+                    <div class="text-[#0066CC] dark:text-[#2997FF] font-black text-2xl mb-2">03</div>
+                    <h3 class="font-bold text-sm text-[#1D1D1F] dark:text-white mb-2">Instant Upgrade</h3>
+                    <p class="text-xs text-[#8E8E93] leading-relaxed">Open the official connection link, click 'Accept Benefits', and watch your personal account instantly unlock the 2TB pipeline with zero friction.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="security" class="space-y-12 border-t border-[#E5E5EA] dark:border-[#2C2C2E] pt-16 scroll-mt-24">
+            <div class="text-center space-y-2">
+                <h2 class="text-3xl md:text-5xl font-black tracking-tight text-[#1D1D1F] dark:text-white">Absolute Privacy Security</h2>
+                <p class="text-base text-[#8E8E93]">Traditional methods invite security vulnerabilities. We deploy clean corporate-tier cloud logic.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="p-6 rounded-2xl bg-white/40 dark:bg-[#1C1C1E]/40 border border-[#E5E5EA] dark:border-[#2C2C2E] space-y-4">
+                    <h3 class="font-bold text-sm text-[#FF453A] uppercase tracking-wider">❌ Unsafe Third-Party Solutions</h3>
+                    <ul class="space-y-3 text-xs text-[#636366] dark:text-[#8E8E93]">
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-[#FF453A] rounded-full mr-2.5"></span> Forcing you to inherit sketchy, shared account pools.</li>
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-[#FF453A] rounded-full mr-2.5"></span> Requiring sensitive credential password input variables.</li>
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-[#FF453A] rounded-full mr-2.5"></span> Serious structural risk of private logs or cloud files leaking.</li>
                     </ul>
                 </div>
-                <div class="space-y-3 bg-white dark:bg-[#1C1C1E] p-6 rounded-2xl border border-[#E5E5EA] dark:border-[#2C2C2E]">
-                    <h3 class="font-bold text-sm text-[#30D158] uppercase tracking-wider">🔒 Security & Stability</h3>
-                    <ul class="space-y-2 text-xs text-[#48484A] dark:text-[#AEAEB2]">
-                        <li class="flex items-center"><span class="text-[#30D158] mr-2">●</span> Generated through completely official Google B2B benefit channels</li>
-                        <li class="flex items-center"><span class="text-[#30D158] mr-2">●</span> Chats and cloud files are strictly sovereign (Private to you)</li>
-                        <li class="flex items-center"><span class="text-[#30D158] mr-2">●</span> Direct Gemini Advanced badge visible instantly on your account</li>
-                    </ul>
-                </div>
-                <div class="space-y-3 bg-white dark:bg-[#1C1C1E] p-6 rounded-2xl border border-[#E5E5EA] dark:border-[#2C2C2E]">
-                    <h3 class="font-bold text-sm text-[#FF9500] uppercase tracking-wider">🏆 Logistics Guarantee</h3>
-                    <ul class="space-y-2 text-xs text-[#48484A] dark:text-[#AEAEB2]">
-                        <li class="flex items-center"><span class="text-[#30D158] mr-2">●</span> 100% guaranteed same-day automated instant delivery</li>
-                        <li class="flex items-center"><span class="text-[#30D158] mr-2">●</span> 365-Day non-stop automated infrastructure support system</li>
-                        <li class="flex items-center"><span class="text-[#30D158] mr-2">●</span> Industry-leading user satisfaction with a 91% re-activation rate</li>
+                <div class="p-6 rounded-2xl bg-white dark:bg-[#1C1C1E] border border-[#E5E5EA] dark:border-[#2C2C2E] shadow-sm space-y-4">
+                    <h3 class="font-bold text-sm text-[#30D158] uppercase tracking-wider">🏆 Workspace Premium Shield</h3>
+                    <ul class="space-y-3 text-xs text-[#48484A] dark:text-[#E5E5EA]">
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-[#30D158] rounded-full mr-2.5"></span> 100% compliant paths via official Google B2B structures.</li>
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-[#30D158] rounded-full mr-2.5"></span> Pure invitation system &ndash; Zero password entries requested.</li>
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-[#30D158] rounded-full mr-2.5"></span> Locked entirely to your own encryption keys for absolute safety.</li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <section class="space-y-6 border-t border-[#E5E5EA] dark:border-[#2C2C2E] pt-12">
-            <div class="text-center space-y-1.5">
-                <h2 class="text-2xl font-bold tracking-tight text-[#1D1D1F] dark:text-white">How Millions Power Up Their Workflows</h2>
-                <p class="text-sm text-[#8E8E93]">From complex document auditing to high-end media generation &mdash; do it all with Gemini Advanced.</p>
+        <section id="reviews" class="space-y-8 border-t border-[#E5E5EA] dark:border-[#2C2C2E] pt-16 scroll-mt-24">
+            <div class="text-center space-y-2">
+                <h2 class="text-3xl md:text-5xl font-black tracking-tight text-[#1D1D1F] dark:text-white">Validated By Verified Creators</h2>
+                <p class="text-base text-[#8E8E93]">Over 60,000+ active tech professionals deployed their infrastructure upgrade seamlessly.</p>
             </div>
 
-            <div class="space-y-3">
-                <div class="bg-white dark:bg-[#1C1C1E] p-4 rounded-xl border border-[#E5E5EA] dark:border-[#2C2C2E] flex flex-col md:flex-row justify-between text-xs gap-2">
-                    <div class="text-[#8E8E93] font-medium"><i class="fa-solid fa-image"></i> Prompt: "Analyze this refrigerator image and search for recipe variants."</div>
-                    <div class="text-[#0066CC] dark:text-[#2997FF] font-semibold text-right">➔ System accurately recognizes ingredients and compiles targeted culinary lists.</div>
+            <div class="grid grid-cols-3 gap-4 border border-[#E5E5EA] dark:border-[#2C2C2E] rounded-2xl bg-white dark:bg-[#1C1C1E] p-6 text-center">
+                <div class="space-y-1">
+                    <div class="text-3xl font-black text-[#0066CC] dark:text-[#2997FF]">4.9 ★</div>
+                    <div class="text-[10px] text-[#8E8E93] font-bold uppercase tracking-wider">User Satisfaction</div>
                 </div>
-                <div class="bg-white dark:bg-[#1C1C1E] p-4 rounded-xl border border-[#E5E5EA] dark:border-[#2C2C2E] flex flex-col md:flex-row justify-between text-xs gap-2">
-                    <div class="text-[#8E8E93] font-medium"><i class="fa-solid fa-file-pdf"></i> Prompt: "Audit this tax statement PDF and check for missing tax deduction fields."</div>
-                    <div class="text-[#0066CC] dark:text-[#2997FF] font-semibold text-right">➔ Cross-checks financial rows one-by-one to prevent missing variables.</div>
+                <div class="space-y-1">
+                    <div class="text-3xl font-black text-[#1D1D1F] dark:text-white">60K+</div>
+                    <div class="text-[10px] text-[#8E8E93] font-bold uppercase tracking-wider">Active Deployments</div>
                 </div>
-                <div class="bg-white dark:bg-[#1C1C1E] p-4 rounded-xl border border-[#E5E5EA] dark:border-[#2C2C2E] flex flex-col md:flex-row justify-between text-xs gap-2">
-                    <div class="text-[#8E8E93] font-medium"><i class="fa-solid fa-photo-film"></i> Prompt: "Restore this old vintage family photo and convert it into a motion video clip."</div>
-                    <div class="text-[#0066CC] dark:text-[#2997FF] font-semibold text-right">➔ Colors black-and-white pixels perfectly and applies Veo generative cinematic frames.</div>
-                </div>
-                <div class="bg-white dark:bg-[#1C1C1E] p-4 rounded-xl border border-[#E5E5EA] dark:border-[#2C2C2E] flex flex-col md:flex-row justify-between text-xs gap-2">
-                    <div class="text-[#8E8E93] font-medium"><i class="fa-solid fa-book"></i> Prompt: "Analyze this 200-page academic textbook and compile key study notes for exams."</div>
-                    <div class="text-[#0066CC] dark:text-[#2997FF] font-semibold text-right">➔ Processes massive global semantic contexts to build high-density reference books.</div>
-                </div>
-                <div class="bg-white dark:bg-[#1C1C1E] p-4 rounded-xl border border-[#E5E5EA] dark:border-[#2C2C2E] flex flex-col md:flex-row justify-between text-xs gap-2">
-                    <div class="text-[#8E8E93] font-medium"><i class="fa-solid fa-heart"></i> Prompt: "Analyze this medical health checkup chart. Explain variables in easy terms."</div>
-                    <div class="text-[#0066CC] dark:text-[#2997FF] font-semibold text-right">➔ Simplifies overwhelming complex biological charts and gives dietary guidance.</div>
-                </div>
-            </div>
-            <p class="text-xs text-[#8E8E93] text-center italic mt-2">These are basic deployment scenarios. With Google's prime model architecture, anything you visualize can be automated instantly.</p>
-        </section>
-
-        <section class="space-y-6 border-t border-[#E5E5EA] dark:border-[#2C2C2E] pt-12">
-            <div class="text-center space-y-1.5">
-                <h2 class="text-xl md:text-2xl font-bold tracking-tight text-[#1D1D1F] dark:text-white">Seamless Setup Process &mdash; Just 3 Steps</h2>
-                <p class="text-xs text-[#8E8E93]">No complex technical steps. Get fully operational within seconds.</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div class="bg-white dark:bg-[#1C1C1E] border border-[#E5E5EA] dark:border-[#2C2C2E] p-5 rounded-xl space-y-2">
-                    <div class="w-7 h-7 rounded-full bg-[#0066CC] dark:bg-[#2997FF] text-white flex items-center justify-center font-bold text-sm">1</div>
-                    <h3 class="font-bold text-sm text-[#1D1D1F] dark:text-white">Secure Verification & Checkout</h3>
-                    <p class="text-xs text-[#8E8E93] leading-relaxed">Place your order and complete the fixed one-time payment safely through our worldwide encrypted checkout layer.</p>
-                </div>
-                <div class="bg-white dark:bg-[#1C1C1E] border border-[#E5E5EA] dark:border-[#2C2C2E] p-5 rounded-xl space-y-2">
-                    <div class="w-7 h-7 rounded-full bg-[#0066CC] dark:bg-[#2997FF] text-white flex items-center justify-center font-bold text-sm">2</div>
-                    <h3 class="font-bold text-sm text-[#1D1D1F] dark:text-white">Automated Delivery Pipeline</h3>
-                    <p class="text-xs text-[#8E8E93] leading-relaxed">The cloud system immediately registers your request and dispatches your official invitation upgrade right into your email inbox.</p>
-                </div>
-                <div class="bg-white dark:bg-[#1C1C1E] border border-[#E5E5EA] dark:border-[#2C2C2E] p-5 rounded-xl space-y-2">
-                    <div class="w-7 h-7 rounded-full bg-[#0066CC] dark:bg-[#2997FF] text-white flex items-center justify-center font-bold text-sm">3</div>
-                    <h3 class="font-bold text-sm text-[#1D1D1F] dark:text-white">Instant One-Click Activation</h3>
-                    <p class="text-xs text-[#8E8E93] leading-relaxed">Open your personal delivery link, click 'Accept Benefits', and watch your personal account instantly unlock 2TB storage and AI parameters within 1 second.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="space-y-6 border-t border-[#E5E5EA] dark:border-[#2C2C2E] pt-12">
-            <div class="text-center space-y-1.5">
-                <h2 class="text-2xl font-bold tracking-tight text-[#1D1D1F] dark:text-white">Have Technical Concerns? Rest Easy.</h2>
-                <p class="text-sm text-[#8E8E93]">Most gray-market providers use unsafe methods. We deploy absolute corporate compliance frameworks.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="bg-white dark:bg-[#1C1C1E] border border-[#E5E5EA] dark:border-[#2C2C2E] p-6 rounded-2xl space-y-4">
-                    <h3 class="font-bold text-sm text-[#FF453A] uppercase tracking-wide">❌ Traditional Gray Subscriptions</h3>
-                    <ul class="space-y-2.5 text-xs text-[#48484A] dark:text-[#AEAEB2]">
-                        <li>⚠️ Forcing you to inherit sketchy, unknown credentials owned by third parties</li>
-                        <li>⚠️ Requiring directly entering your personal account passwords on unverified hubs</li>
-                        <li>⚠️ Serious operational risk of personal chat logs and private files leaking out</li>
-                        <li>⚠️ Constant dispatch delays and high frequency of sudden provider contact failure</li>
-                    </ul>
-                </div>
-                <div class="bg-white dark:bg-[#1C1C1E] border border-[#E5E5EA] dark:border-[#2C2C2E] p-6 rounded-2xl space-y-4 shadow-sm">
-                    <h3 class="font-bold text-sm text-[#30D158] uppercase tracking-wide">🏆 Workspace Premium Absolute Shield</h3>
-                    <ul class="space-y-2.5 text-xs text-[#48484A] dark:text-[#AEAEB2]">
-                        <li>✅ Generated exclusively through 100% official Google business overstock paths</li>
-                        <li>✅ Deployed directly onto your own personal account &mdash; Zero password sharing</li>
-                        <li>✅ Absolute data sovereignty: All private chats/files stay encrypted solely to you</li>
-                        <li>✅ Guaranteed instant dispatch with a non-stop 365-day logistics support hub</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section class="space-y-6 border-t border-[#E5E5EA] dark:border-[#2C2C2E] pt-12">
-            <div class="text-center space-y-1.5">
-                <h2 class="text-2xl font-bold tracking-tight text-[#1D1D1F] dark:text-white">Real Stories From Verified Active Professionals</h2>
-                <p class="text-sm text-[#8E8E93]">See how over 60,000+ global power users rate their premium upgrade experience.</p>
-            </div>
-
-            <div class="grid grid-cols-3 gap-4 border border-[#E5E5EA] dark:border-[#2C2C2E] rounded-2xl bg-white dark:bg-[#1C1C1E] p-5 text-center mb-6">
-                <div>
-                    <div class="text-2xl font-black text-[#0066CC] dark:text-[#2997FF]">4.9 ★</div>
-                    <div class="text-[10px] text-[#8E8E93] font-bold uppercase mt-1">Average Satisfaction</div>
-                </div>
-                <div>
-                    <div class="text-2xl font-black text-white">60K+</div>
-                    <div class="text-[10px] text-[#8E8E93] font-bold uppercase mt-1">Global Active Users</div>
-                </div>
-                <div>
-                    <div class="text-2xl font-black text-[#30D158]">91%</div>
-                    <div class="text-[10px] text-[#8E8E93] font-bold uppercase mt-1">Re-Activation Rate</div>
+                <div class="space-y-1">
+                    <div class="text-3xl font-black text-[#30D158]">91%</div>
+                    <div class="text-[10px] text-[#8E8E93] font-bold uppercase tracking-wider">Re-Activation Rate</div>
                 </div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
-                <div class="bg-white dark:bg-[#1C1C1E] p-5 rounded-xl border border-[#E5E5EA] dark:border-[#2C2C2E] space-y-2">
-                    <div class="text-[#FFD60A]">★★★★★</div>
-                    <p class="text-[#48484A] dark:text-[#E5E5EA]">"Audited a 200-page research dataset right before my thesis presentation. This priority speed saved my entire semester."</p>
-                    <div class="text-[10px] text-[#8E8E93] font-semibold">&mdash; Kim * Young (Academic Researcher)</div>
+                <div class="bg-white dark:bg-[#1C1C1E] p-6 rounded-2xl border border-[#E5E5EA] dark:border-[#2C2C2E] space-y-2">
+                    <div class="text-[#FFD60A] text-sm">★★★★★</div>
+                    <h4 class="font-bold text-[#1D1D1F] dark:text-white text-sm">"Saved my whole academic semester."</h4>
+                    <p class="text-[#8E8E93] leading-relaxed">Processed a massive 200-page core research document block right before final presentations. Speed levels are incredible.</p>
+                    <div class="text-[10px] text-[#636366] font-semibold">&mdash; Kim * Young (Academic Researcher)</div>
                 </div>
-                <div class="bg-white dark:bg-[#1C1C1E] p-5 rounded-xl border border-[#E5E5EA] dark:border-[#2C2C2E] space-y-2">
-                    <div class="text-[#FFD60A]">★★★★★</div>
-                    <p class="text-[#48484A] dark:text-[#E5E5EA]">"Drafting executive email summaries and project documentation timelines now takes minutes. The workflow leverage is immense."</p>
-                    <div class="text-[10px] text-[#8E8E93] font-semibold">&mdash; Choi * Hyun (Senior Enterprise Architect)</div>
+                <div class="bg-white dark:bg-[#1C1C1E] p-6 rounded-2xl border border-[#E5E5EA] dark:border-[#2C2C2E] space-y-2">
+                    <div class="text-[#FFD60A] text-sm">★★★★★</div>
+                    <h4 class="font-bold text-[#1D1D1F] dark:text-white text-sm">"Workflow optimization at its finest."</h4>
+                    <p class="text-[#8E8E93] leading-relaxed">Drafting executive communications logs and timeline trackers takes seconds now. Outstanding price-to-performance matrix.</p>
+                    <div class="text-[10px] text-[#636366] font-semibold">&mdash; Choi * Hyun (Senior Enterprise Architect)</div>
                 </div>
-                <div class="bg-white dark:bg-[#1C1C1E] p-5 rounded-xl border border-[#E5E5EA] dark:border-[#2C2C2E] space-y-2">
-                    <div class="text-[#FFD60A]">★★★★★</div>
-                    <p class="text-[#48484A] dark:text-[#E5E5EA]">"I render complex intro video animations using the generative prompts directly. Saved thousands of dollars in video editing outsourcing outlays."</p>
-                    <div class="text-[10px] text-[#8E8E93] font-semibold">&mdash; Lee * Jun (Digital Creator)</div>
+                <div class="bg-white dark:bg-[#1C1C1E] p-6 rounded-2xl border border-[#E5E5EA] dark:border-[#2C2C2E] space-y-2">
+                    <div class="text-[#FFD60A] text-sm">★★★★★</div>
+                    <h4 class="font-bold text-[#1D1D1F] dark:text-white text-sm">"Saved thousands in external outsourcing outlays."</h4>
+                    <p class="text-[#8E8E93] leading-relaxed">I generate advanced prompt loops and cinematic animation elements directly via the priority traffic lane. Exceptional stability.</p>
+                    <div class="text-[10px] text-[#636366] font-semibold">&mdash; Lee * Jun (Digital Creator)</div>
                 </div>
-                <div class="bg-white dark:bg-[#1C1C1E] p-5 rounded-xl border border-[#E5E5EA] dark:border-[#2C2C2E] space-y-2">
-                    <div class="text-[#FFD60A]">★★★★★</div>
-                    <p class="text-[#48484A] dark:text-[#E5E5EA]">"My children upload tricky calculus problem images, and the system outputs flawless step-by-step structural formulas. Ideal educational asset."</p>
-                    <div class="text-[10px] text-[#8E8E93] font-semibold">&mdash; Park * Soo (Enterprise Parent)</div>
-                </div>
-                <div class="bg-white dark:bg-[#1C1C1E] p-5 rounded-xl border border-[#E5E5EA] dark:border-[#2C2C2E] space-y-2">
-                    <div class="text-[#FFD60A]">★★★★★</div>
-                    <p class="text-[#48484A] dark:text-[#E5E5EA]">"Typing speed was an obstacle, but conversational voice inputs handle data tasks flawlessly. Deployed this for daily news indexing."</p>
-                    <div class="text-[10px] text-[#8E8E93] font-semibold">&mdash; Jung * Ah (Tech Enthusiast)</div>
-                </div>
-                <div class="bg-white dark:bg-[#1C1C1E] p-5 rounded-xl border border-[#E5E5EA] dark:border-[#2C2C2E] space-y-2">
-                    <div class="text-[#FFD60A]">★★★★★</div>
-                    <p class="text-[#48484A] dark:text-[#E5E5EA]">"Received my secure upgrade invitation link within a tiny window post checkout. One click and the parameters mapped flawlessly."</p>
-                    <div class="text-[10px] text-[#8E8E93] font-semibold">&mdash; Han * Min (Verified Customer)</div>
-                </div>
-                <div class="bg-white dark:bg-[#1C1C1E] p-5 rounded-xl border border-[#E5E5EA] dark:border-[#2C2C2E] space-y-2">
-                    <div class="text-[#FFD60A]">★★★★★</div>
-                    <p class="text-[#48484A] dark:text-[#E5E5EA]">"I was worried shared infrastructure meant others could sneak a peek at my data, but it is completely siloed and safe. Absolute peace of mind."</p>
-                    <div class="text-[10px] text-[#8E8E93] font-semibold">&mdash; Yoon * Ho (Data Analyst)</div>
-                </div>
-                <div class="bg-white dark:bg-[#1C1C1E] p-5 rounded-xl border border-[#E5E5EA] dark:border-[#2C2C2E] space-y-2">
-                    <div class="text-[#FFD60A]">★★★★★</div>
-                    <p class="text-[#48484A] dark:text-[#E5E5EA]">"Saved hundreds of dollars in operational infrastructure fees this year alone. Not dealing with annoying multi-tier monthly recurring billings is fantastic."</p>
-                    <div class="text-[10px] text-[#8E8E93] font-semibold">&mdash; Kang * Yeon (Tech Entrepreneur)</div>
+                <div class="bg-white dark:bg-[#1C1C1E] p-6 rounded-2xl border border-[#E5E5EA] dark:border-[#2C2C2E] space-y-2">
+                    <div class="text-[#FFD60A] text-sm">★★★★★</div>
+                    <h4 class="font-bold text-[#1D1D1F] dark:text-white text-sm">"Flawless educational utility framework."</h4>
+                    <p class="text-[#8E8E93] leading-relaxed">My students analyze mathematical graphs and step-by-step logic formulas instantly. Highly recommended for busy homes.</p>
+                    <div class="text-[10px] text-[#636366] font-semibold">&mdash; Park * Soo (Enterprise Parent)</div>
                 </div>
             </div>
         </section>
 
-        <section class="space-y-6 border-t border-[#E5E5EA] dark:border-[#2C2C2E] pt-12">
-            <div class="text-center space-y-1.5">
-                <h2 class="text-2xl font-bold tracking-tight text-[#1D1D1F] dark:text-white">Frequently Asked Questions</h2>
-                <p class="text-sm text-[#8E8E93]">Everything you need to know before unlocking your premier infrastructure.</p>
+        <section id="faq" class="space-y-8 border-t border-[#E5E5EA] dark:border-[#2C2C2E] pt-16 scroll-mt-24">
+            <div class="text-center space-y-2">
+                <h2 class="text-3xl md:text-5xl font-black tracking-tight text-[#1D1D1F] dark:text-white">Frequently Asked Questions</h2>
+                <p class="text-base text-[#8E8E93]">Clear answers to core infrastructure questions before unlocking access.</p>
             </div>
 
             <div class="space-y-4 text-xs max-w-2xl mx-auto">
                 <div class="bg-white dark:bg-[#1C1C1E] p-5 rounded-xl border border-[#E5E5EA] dark:border-[#2C2C2E] space-y-1.5">
-                    <h4 class="font-bold text-[#1D1D1F] dark:text-white">Q: Is solo use still mathematically advantageous?</h4>
-                    <p class="text-[#8E8E93] leading-relaxed">A: Absolutely. Even if you completely use it solo without sending a single invite, you are still pocketing a flat 88% premium discount, giving you 18 months for the cost of 2 retail months.</p>
+                    <h4 class="font-bold text-sm text-[#1D1D1F] dark:text-white">Q: Is solo deployment still mathematically advantageous?</h4>
+                    <p class="text-[#8E8E93] leading-relaxed">A: Yes. Even without using group invites, your single account scores a flat 88% premium discount instantly &ndash; effectively unlocking 18 months for the standard cost of just 2 regular months.</p>
                 </div>
                 <div class="bg-white dark:bg-[#1C1C1E] p-5 rounded-xl border border-[#E5E5EA] dark:border-[#2C2C2E] space-y-1.5">
-                    <h4 class="font-bold text-[#1D1D1F] dark:text-white">Q: Can I really invite family and coworkers to my group allocation?</h4>
-                    <p class="text-[#8E8E93] leading-relaxed">A: Yes. The system parameters fully allow you to act as the primary infrastructure supervisor, inviting up to 5 additional members (6 total users) onto the 2TB priority cloud pool with no extra fee.</p>
+                    <h4 class="font-bold text-sm text-[#1D1D1F] dark:text-white">Q: Can I really invite teammates and coworkers to my storage cloud?</h4>
+                    <p class="text-[#8E8E93] leading-relaxed">A: Absolutely. The system allows you to step up as the primary allocation manager, inviting up to 5 additional profiles (6 total users) onto the 2TB priority cloud structure with zero extra fees.</p>
                 </div>
                 <div class="bg-white dark:bg-[#1C1C1E] p-5 rounded-xl border border-[#E5E5EA] dark:border-[#2C2C2E] space-y-1.5">
-                    <h4 class="font-bold text-[#1D1D1F] dark:text-white">Q: Can other group members inspect my private file rows or chat history?</h4>
-                    <p class="text-[#8E8E93] leading-relaxed">A: Never. All files, cloud assets, and chat logs are bound to your private sovereign Google encryption key. Zero tracking visibility exists across accounts.</p>
+                    <h4 class="font-bold text-sm text-[#1D1D1F] dark:text-white">Q: Can other invited members inspect my private files or data chains?</h4>
+                    <p class="text-[#8E8E93] leading-relaxed">A: Never. All files, assets, and query search streams are encrypted tightly onto your own personal keys. Zero visibility exists across standard system rows.</p>
                 </div>
                 <div class="bg-white dark:bg-[#1C1C1E] p-5 rounded-xl border border-[#E5E5EA] dark:border-[#2C2C2E] space-y-1.5">
-                    <h4 class="font-bold text-[#1D1D1F] dark:text-white">Q: How long does automated logistic dispatch take?</h4>
-                    <p class="text-[#8E8E93] leading-relaxed">A: The link is processed instantly via automated pipelines upon checkout. Your official invitation upgrades become accessible via your email inbox within seconds.</p>
-                </div>
-                <div class="bg-white dark:bg-[#1C1C1E] p-5 rounded-xl border border-[#E5E5EA] dark:border-[#2C2C2E] space-y-1.5">
-                    <h4 class="font-bold text-[#1D1D1F] dark:text-white">Q: Can this infrastructure operate seamlessly alongside standard YouTube Premium?</h4>
-                    <p class="text-[#8E8E93] leading-relaxed">A: Yes. It runs completely parallel without conflict, enhancing your personal workspace boundaries smoothly.</p>
+                    <h4 class="font-bold text-sm text-[#1D1D1F] dark:text-white">Q: How long does automated logistic dispatch require?</h4>
+                    <p class="text-[#8E8E93] leading-relaxed">A: Transactions trigger instantaneous cloud routing. Upgrade parameters arrive safely in your designated email box within a few moments post checkout.</p>
                 </div>
             </div>
         </section>
@@ -433,7 +400,7 @@
         const sunIcon = document.getElementById('sunIcon');
         const moonIcon = document.getElementById('moonIcon');
 
-        // 🌗  Apple Responsive Theme Switch Engine
+        // 🌗  Apple Responsive Theme Storage Engine
         function initTheme() {
             const cachedTheme = localStorage.getItem('appleCoreTheme');
             const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -473,7 +440,7 @@
 
         initTheme();
 
-        // 📈 Live Purchase 4-Sec Rolling Jitter Engine
+        // 📈 Live Purchase Counter Simulator (4s Jitter)
         function simulateLiveCounter() {
             const counterElement = document.getElementById('liveCounter');
             const now = new Date();
@@ -487,11 +454,11 @@
         setInterval(simulateLiveCounter, 4000);
         simulateLiveCounter();
 
-        // Modal triggers
+        // Modal Layer Toggles
         openModalBtn.addEventListener('click', () => checkoutModal.style.display = 'flex');
         closeModalBtn.addEventListener('click', () => checkoutModal.style.display = 'none');
 
-        // Checkbox conditions mapping
+        // Checkbox Terms Interaction mapping
         checkboxes.forEach(checkbox => {
             checkbox.addEventListener('change', () => {
                 const allChecked = Array.from(checkboxes).every(cb => cb.checked);
@@ -503,7 +470,7 @@
             });
         });
 
-        // PayPal Buttons Deployment ($0.10 Test Mode Configured)
+        // PayPal Buttons Configuration ($0.10 Live Test Mode Active)
         paypal.Buttons({
             style: {
                 layout: 'vertical',
@@ -529,7 +496,7 @@
             },
             onApprove: function(data, actions) {
                 return actions.order.capture().then(function(details) {
-                    alert('Transaction completed by ' + details.payer.name.given_name + '! Your 18-Month Priority Link is on the way.');
+                    alert('Transaction completed by ' + details.payer.name.given_name + '! Your priority upgrade is on the way.');
                     checkoutModal.style.display = 'none';
                 });
             }
