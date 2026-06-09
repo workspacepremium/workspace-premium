@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="ko" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,16 +19,16 @@
         }
     </style>
 </head>
-<body class="bg-[#F5F5F7] text-[#1D1D1F] dark:bg-[#000000] dark:text-[#F5F5F7] min-h-screen flex flex-col justify-between antialiased transition-colors duration-300 selection:bg-[#0066CC]/20">
+<body class="bg-[#F5F5F7] text-[#1D1D1F] dark:bg-[#000000] dark:text-[#F5F5F7] min-h-screen flex flex-col justify-between antialiased transition-colors duration-200 selection:bg-[#0066CC]/20">
 
-    <header class="border-b border-[#E5E5EA] dark:border-[#2C2C2E]/50 bg-[#F5F5F7]/80 dark:bg-[#000000]/70 apple-blur sticky top-0 z-50 transition-colors duration-300">
+    <header class="border-b border-[#E5E5EA] dark:border-[#2C2C2E]/70 bg-[#F5F5F7]/80 dark:bg-[#000000]/80 apple-blur sticky top-0 z-50 transition-colors">
         <div class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
             <div class="flex items-center space-x-3 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
                 <span class="text-base font-bold tracking-tight text-[#1D1D1F] dark:text-white">Workspace Premium</span>
-                <span class="text-[9px] bg-[#E5E5EA] text-[#8E8E93] dark:bg-[#2C2C2E] dark:text-[#AEAEB2] px-2 py-0.5 rounded-full font-bold">B2B</span>
+                <span class="text-[9px] bg-[#E5E5EA] text-[#636366] dark:bg-[#2C2C2E] dark:text-[#AEAEB2] px-2 py-0.5 rounded-full font-bold">B2B</span>
             </div>
             
-            <nav class="hidden md:flex items-center space-x-8 text-xs font-medium text-[#636366] dark:text-[#8E8E93]">
+            <nav class="hidden md:flex items-center space-x-8 text-xs font-medium text-[#636366] dark:text-[#AEAEB2]">
                 <a href="#benefits" class="hover:text-[#0066CC] dark:hover:text-[#2997FF] transition-colors">Benefits</a>
                 <a href="#features" class="hover:text-[#0066CC] dark:hover:text-[#2997FF] transition-colors">Use Cases</a>
                 <a href="#process" class="hover:text-[#0066CC] dark:hover:text-[#2997FF] transition-colors">Process</a>
@@ -37,9 +37,9 @@
                 <a href="#faq" class="hover:text-[#0066CC] dark:hover:text-[#2997FF] transition-colors">FAQ</a>
             </nav>
             
-            <button id="themeToggleBtn" class="p-2 rounded-full hover:bg-[#E5E5EA] dark:hover:bg-[#1C1C1E] transition cursor-pointer text-[#8E8E93] dark:text-[#AEAEB2]" aria-label="Toggle Theme">
-                <svg id="sunIcon" class="w-4 h-4 hidden text-[#FF9500]" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 2.293a1 1 0 011.414 0l.707.707a1 1 0 01-1.414 1.414l-.707-.707a1 1 0 010-1.414zm4.121 4.121a1 1 0 010 1.414l-.707.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM10 14a4 4 0 100-8 4 4 0 000 8zm0 2a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zm-6.414-1.414a1 1 0 010-1.414l.707-.707a1 1 0 011.414 1.414l-.707.707a1 1 0 01-1.414 0zM2 10a1 1 0 011-1h1a1 1 0 110 2H3a1 1 0 01-1-1zm1.121-4.121a1 1 0 011.414-1-1l.707.707a1 1 0 11-1.414 1.414l-.707-.707z"></path></svg>
-                <svg id="moonIcon" class="w-4 h-4 hidden text-[#5856D6]" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 116.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+            <button id="themeToggleBtn" class="p-2.5 rounded-full bg-white dark:bg-[#1C1C1E] border border-[#E5E5EA] dark:border-[#2C2C2E] hover:bg-[#F5F5F7] dark:hover:bg-[#2C2C2E] transition cursor-pointer flex items-center justify-center shadow-sm" aria-label="화면 모드 변경">
+                <i id="moonIcon" class="fa-solid fa-moon text-xs text-[#5856D6]"></i>
+                <i id="sunIcon" class="fa-solid fa-sun text-xs text-[#FF9500] hidden"></i>
             </button>
         </div>
     </header>
@@ -47,7 +47,7 @@
     <main class="max-w-4xl mx-auto px-6 py-16 md:py-24 flex-grow w-full space-y-36">
         
         <section class="text-center space-y-6">
-            <h1 class="text-5xl md:text-7xl font-black tracking-tight text-[#1D1D1F] dark:text-white leading-[1.1]">
+            <h1 class="text-4xl md:text-6xl font-black tracking-tight text-[#1D1D1F] dark:text-white leading-[1.15]">
                 Workspace Premium.<br>
                 <span class="text-[#0066CC] dark:text-[#2997FF]">Advanced AI & Sovereign Cloud.</span>
             </h1>
@@ -57,12 +57,12 @@
                     <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#30D158] opacity-75"></span>
                     <span class="relative inline-flex rounded-full h-2 w-2 bg-[#30D158]"></span>
                 </span>
-                <span class="text-[#48484A] dark:text-[#AEAEB2]">🔥 Real-Time Activity: <span id="liveCounter" class="text-[#0066CC] dark:text-[#2997FF] font-bold">1,248</span> global users secured priority access today.</span>
+                <span class="text-[#48484A] dark:text-[#AEAEB2]">🔥 실시간 통계: 현재 <span id="liveCounter" class="text-[#0066CC] dark:text-[#2997FF] font-bold">1,248</span>명의 사용자가 인프라를 할당받았습니다.</span>
             </div>
         </section>
 
         <section id="mainCardSection" class="flex justify-center scroll-mt-24">
-            <div class="w-full max-w-md bg-white dark:bg-[#1C1C1E] border border-[#E5E5EA] dark:border-[#2C2C2E] p-8 rounded-3xl shadow-sm hover:shadow-xl dark:hover:shadow-2xl/30 transition-all duration-300 relative">
+            <div class="w-full max-w-md bg-white dark:bg-[#1C1C1E] border border-[#E5E5EA] dark:border-[#2C2C2E] p-8 rounded-3xl shadow-sm hover:shadow-md transition-all relative">
                 
                 <div class="absolute top-4 right-4 flex space-x-1.5">
                     <span class="bg-[#BF4800] text-white text-[9px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider">New</span>
@@ -70,79 +70,74 @@
                 </div>
 
                 <h2 class="text-2xl font-bold tracking-tight text-[#1D1D1F] dark:text-white">18-Month Premium Pass</h2>
-                <p class="text-xs text-[#8E8E93] dark:text-[#8E8E93] mt-0.5 mb-6">Enterprise Infrastructure Hub Allocation</p>
+                <p class="text-xs text-[#636366] dark:text-[#AEAEB2] mt-0.5 mb-6">Enterprise Infrastructure Hub Allocation</p>
                 
                 <div class="flex items-baseline space-x-2 mb-6">
                     <span class="text-5xl font-black tracking-tighter text-[#1D1D1F] dark:text-white">$29.99</span>
                     <span class="text-sm text-[#8E8E93] line-through font-medium">$359.82</span>
-                    <span class="text-xs text-[#30D158] bg-[#30D158]/10 px-2 py-0.5 rounded font-semibold ml-1">One-time billing</span>
+                    <span class="text-xs text-[#30D158] bg-[#30D158]/10 dark:bg-[#30D158]/20 px-2 py-0.5 rounded font-semibold ml-1">단일 평생 청구</span>
                 </div>
 
-                <ul class="space-y-4 text-sm text-[#48484A] dark:text-[#E5E5EA] border-t border-[#F5F5F7] dark:border-[#2C2C2E] pt-6 mb-8">
+                <ul class="space-y-4 text-sm text-[#48484A] dark:text-[#E5E5EA] border-t border-[#E5E5EA] dark:border-[#2C2C2E] pt-6 mb-8">
                     <li class="flex items-start space-x-3">
                         <span class="text-[#0066CC] dark:text-[#2997FF] font-bold">✓</span>
-                        <span><strong>Gemini Ultra 1.5 Architecture</strong> &ndash; Enterprise speed lane network.</span>
+                        <span><strong>Gemini Ultra 1.5 코어 할당</strong> &ndash; 기업용 초고속 백본 인프라 망 적용.</span>
                     </li>
                     <li class="flex items-start space-x-3">
                         <span class="text-[#0066CC] dark:text-[#2997FF] font-bold">✓</span>
-                        <span><strong>2TB Private Sovereign Storage</strong> &ndash; Dedicated space for Gmail, Drive, Photos.</span>
+                        <span><strong>2TB 프라이빗 독립 스토리지</strong> &ndash; Gmail, Drive, Photos 완전 영구 연동.</span>
                     </li>
                     <li class="flex items-start space-x-3">
                         <span class="text-[#0066CC] dark:text-[#2997FF] font-bold">✓</span>
-                        <span><strong>Safe Credential-Free Setup</strong> &ndash; Instant activation link with no passwords.</span>
+                        <span><strong>비밀번호 불필요 안전 활성화</strong> &ndash; 초대 링크 방식으로 계정 보안 무결성 유지.</span>
                     </li>
                     <li class="flex items-start space-x-3">
                         <span class="text-[#0066CC] dark:text-[#2997FF] font-bold">✓</span>
-                        <span><strong>18-Month Continuous Warranty</strong> &ndash; Zero risk automated drop replacement.</span>
+                        <span><strong>18개월 연속 무상 워런티 보장</strong> &ndash; 사용 중 드롭 발생 시 즉시 자동 복구 지원.</span>
                     </li>
                 </ul>
 
-                <button onclick="openCheckoutModal()" class="w-full bg-[#0066CC] hover:bg-[#0077ED] dark:bg-[#2997FF] dark:hover:bg-[#42A5FF] text-white font-bold py-4 px-4 rounded-xl transition-all duration-300 text-center cursor-pointer tracking-tight text-sm shadow-sm active:scale-[0.98]">
-                    Claim Premium Access Now
+                <button onclick="openCheckoutModal()" class="w-full bg-[#0066CC] hover:bg-[#0077ED] dark:bg-[#2997FF] dark:hover:bg-[#42A5FF] text-white font-bold py-4 px-4 rounded-xl transition-all text-center cursor-pointer tracking-tight text-sm shadow-sm active:scale-[0.98]">
+                    지금 프리미엄 패스 신청하기
                 </button>
             </div>
         </section>
 
         <section id="benefits" class="space-y-8 scroll-mt-24">
             <div class="text-center space-y-2">
-                <h2 class="text-3xl md:text-5xl font-black tracking-tight text-[#1D1D1F] dark:text-white">Why Workspace Premium?</h2>
-                <p class="text-base text-[#8E8E93] max-w-xl mx-auto font-medium">An unmatched mathematical advantage. 18 months for the cost of just 2 regular months.</p>
+                <h2 class="text-3xl font-black tracking-tight text-[#1D1D1F] dark:text-white">Why Workspace Premium?</h2>
+                <p class="text-sm text-[#636366] dark:text-[#AEAEB2] max-w-xl mx-auto">공식 스토어 정가 대비 압도적인 비용 절감 마진률을 제공합니다.</p>
             </div>
             
             <div class="overflow-x-auto border border-[#E5E5EA] dark:border-[#2C2C2E] rounded-2xl bg-white dark:bg-[#1C1C1E] shadow-sm">
                 <table class="w-full text-left text-sm border-collapse">
                     <thead>
-                        <tr class="bg-[#F5F5F7] dark:bg-[#2C2C2E]/40 border-b border-[#E5E5EA] dark:border-[#2C2C2E] text-xs font-bold text-[#8E8E93]">
-                            <th class="p-5">Infrastructure Matrix</th>
-                            <th class="p-5 text-center">Official Retail Subscription</th>
-                            <th class="p-5 text-center text-[#0066CC] dark:text-[#2997FF]">Workspace Premium</th>
+                        <tr class="bg-[#F5F5F7] dark:bg-[#2C2C2E]/60 border-b border-[#E5E5EA] dark:border-[#2C2C2E] text-xs font-bold text-[#636366] dark:text-[#AEAEB2]">
+                            <th class="p-5">비교 매트릭스</th>
+                            <th class="p-5 text-center">공식 구독 요금</th>
+                            <th class="p-5 text-center text-[#0066CC] dark:text-[#2997FF]">Workspace Premium 패스</th>
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-[#E5E5EA] dark:divide-[#2C2C2E] text-[#48484A] dark:text-[#E5E5EA]">
-                        <tr class="hover:bg-[#F5F5F7]/40 dark:hover:bg-[#2C2C2E]/20 transition-colors">
-                            <td class="p-5 font-semibold text-[#1D1D1F] dark:text-white">18-Month Total Burden</td>
-                            <td class="p-5 text-center text-[#FF453A] line-through">$359.82 (Recurring Fees)</td>
-                            <td class="p-5 text-center font-black text-lg text-[#30D158] bg-[#30D158]/5">$29.99 (One-Time Fee)</td>
+                        <tr class="hover:bg-[#F5F5F7]/50 dark:hover:bg-[#2C2C2E]/20 transition-colors">
+                            <td class="p-5 font-semibold text-[#1D1D1F] dark:text-white">18개월 총 부담 비용</td>
+                            <td class="p-5 text-center text-[#FF453A] line-through">$359.82 (매월 지출)</td>
+                            <td class="p-5 text-center font-black text-lg text-[#30D158] bg-[#30D158]/5 dark:bg-[#30D158]/10">$29.99 (단 1회 지출)</td>
                         </tr>
-                        <tr class="hover:bg-[#F5F5F7]/40 dark:hover:bg-[#2C2C2E]/20 transition-colors">
-                            <td class="p-5 font-semibold text-[#1D1D1F] dark:text-white">Cost Reduction Level</td>
-                            <td class="p-5 text-center text-[#48484A] dark:text-[#AEAEB2]">Standard Outlay</td>
-                            <td class="p-5 text-center font-bold text-[#30D158]">88% Flat Discount Instantly</td>
+                        <tr class="hover:bg-[#F5F5F7]/50 dark:hover:bg-[#2C2C2E]/20 transition-colors">
+                            <td class="p-5 font-semibold text-[#1D1D1F] dark:text-white">비용 절감 효율</td>
+                            <td class="p-5 text-center">정가 기준 지출</td>
+                            <td class="p-5 text-center font-bold text-[#30D158]">즉시 88% 고정 할인가 적용</td>
                         </tr>
-                        <tr class="hover:bg-[#F5F5F7]/40 dark:hover:bg-[#2C2C2E]/20 transition-colors">
-                            <td class="p-5 font-semibold text-[#1D1D1F] dark:text-white">Gemini Advanced Access</td>
-                            <td class="p-5 text-center text-[#48484A] dark:text-[#AEAEB2]">100% Identical Pool</td>
-                            <td class="p-5 text-center font-semibold text-[#0066CC] dark:text-[#2997FF]">100% Identical Architecture</td>
+                        <tr class="hover:bg-[#F5F5F7]/50 dark:hover:bg-[#2C2C2E]/20 transition-colors">
+                            <td class="p-5 font-semibold text-[#1D1D1F] dark:text-white">Gemini Advanced 기능</td>
+                            <td class="p-5 text-center">100% 동일한 기능</td>
+                            <td class="p-5 text-center font-semibold text-[#0066CC] dark:text-[#2997FF]">100% 공식 아키텍처 연동</td>
                         </tr>
-                        <tr class="hover:bg-[#F5F5F7]/40 dark:hover:bg-[#2C2C2E]/20 transition-colors">
-                            <td class="p-5 font-semibold text-[#1D1D1F] dark:text-white">Group Account Multiplier</td>
-                            <td class="p-5 text-center text-[#48484A] dark:text-[#AEAEB2]">Solo Usage Pool</td>
-                            <td class="p-5 text-center font-bold text-[#0066CC] dark:text-[#2997FF]">Allows Up to 5 Member Invites</td>
-                        </tr>
-                        <tr class="hover:bg-[#F5F5F7]/40 dark:hover:bg-[#2C2C2E]/20 transition-colors">
-                            <td class="p-5 font-semibold text-[#1D1D1F] dark:text-white">Maximum Potential Discount</td>
-                            <td class="p-5 text-center text-[#48484A] dark:text-[#AEAEB2]">0% Discount Available</td>
-                            <td class="p-5 text-center font-black text-[#30D158]">Up to 98% Savings metrics</td>
+                        <tr class="hover:bg-[#F5F5F7]/50 dark:hover:bg-[#2C2C2E]/20 transition-colors">
+                            <td class="p-5 font-semibold text-[#1D1D1F] dark:text-white">가족 그룹 공유 확장성</td>
+                            <td class="p-5 text-center">개인 단독 사용</td>
+                            <td class="p-5 text-center font-bold text-[#0066CC] dark:text-[#2997FF]">최대 5명의 추가 멤버 초대 가능</td>
                         </tr>
                     </tbody>
                 </table>
@@ -150,240 +145,161 @@
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
                 <div class="bg-white dark:bg-[#1C1C1E] border border-[#E5E5EA] dark:border-[#2C2C2E] p-6 rounded-2xl text-center shadow-sm">
-                    <div class="text-xs text-[#8E8E93] font-bold uppercase tracking-wider">Monthly Cost / Person</div>
+                    <div class="text-xs text-[#8E8E93] dark:text-[#8E8E93] font-bold uppercase tracking-wider">가족 인당 월평균 비용</div>
                     <div class="text-3xl font-black text-[#30D158] mt-1.5">$0.27</div>
                 </div>
                 <div class="bg-white dark:bg-[#1C1C1E] border border-[#E5E5EA] dark:border-[#2C2C2E] p-6 rounded-2xl text-center shadow-sm">
-                    <div class="text-xs text-[#8E8E93] font-bold uppercase tracking-wider">18-Month Cost / Person</div>
+                    <div class="text-xs text-[#8E8E93] dark:text-[#8E8E93] font-bold uppercase tracking-wider">18개월 총 인당 비용</div>
                     <div class="text-3xl font-black text-[#0066CC] dark:text-[#2997FF] mt-1.5">$4.99</div>
                 </div>
                 <div class="bg-white dark:bg-[#1C1C1E] border border-[#E5E5EA] dark:border-[#2C2C2E] p-6 rounded-2xl text-center shadow-sm">
-                    <div class="text-xs text-[#8E8E93] font-bold uppercase tracking-wider">Group Extra Fee</div>
+                    <div class="text-xs text-[#8E8E93] dark:text-[#8E8E93] font-bold uppercase tracking-wider">그룹 결제 추가 수수료</div>
                     <div class="text-3xl font-black text-[#1D1D1F] dark:text-white mt-1.5">$0.00</div>
-                </div>
-            </div>
-        </section>
-
-        <section class="space-y-12 border-t border-[#E5E5EA] dark:border-[#2C2C2E] pt-16">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="space-y-4">
-                    <div class="text-3xl font-black text-[#0066CC] dark:text-[#2997FF]">01</div>
-                    <h3 class="text-xl font-bold text-[#1D1D1F] dark:text-white">Solo saves 88%.<br>Group invites save 98%.</h3>
-                    <p class="text-xs text-[#8E8E93] leading-relaxed">No matter how you deploy your batch allocation, the absolute discount margin outperforms regular store transactions completely.</p>
-                </div>
-                <div class="space-y-4">
-                    <div class="text-3xl font-black text-[#30D158]">02</div>
-                    <h3 class="text-xl font-bold text-[#1D1D1F] dark:text-white">100% Official.<br>100% Private Sovereignty.</h3>
-                    <p class="text-xs text-[#8E8E93] leading-relaxed">Generated entirely through Google business promo overstock paths. Your files, documents, and private logs remain locked under your private key.</p>
-                </div>
-                <div class="space-y-4">
-                    <div class="text-3xl font-black text-[#FF9500]">03</div>
-                    <h3 class="text-xl font-bold text-[#1D1D1F] dark:text-white">Instant Dispatch.<br>365-Day Infrastructure.</h3>
-                    <p class="text-xs text-[#8E8E93] leading-relaxed">Processed instantly post-checkout via automated cloud routing. Backed fully by our robust 91% re-activation user satisfaction logistics.</p>
                 </div>
             </div>
         </section>
 
         <section id="features" class="space-y-12 border-t border-[#E5E5EA] dark:border-[#2C2C2E] pt-16 scroll-mt-24">
             <div class="text-center space-y-2">
-                <h2 class="text-3xl md:text-5xl font-black tracking-tight text-[#1D1D1F] dark:text-white">What Gemini Advanced Can Do</h2>
-                <p class="text-base text-[#8E8E93]">Unleash the full performance of Google's flagship AI model architecture.</p>
+                <h2 class="text-3xl font-black tracking-tight text-[#1D1D1F] dark:text-white">What Gemini Advanced Can Do</h2>
+                <p class="text-sm text-[#636366] dark:text-[#AEAEB2]">최상의 독자적 가치 레이아웃을 통해 워크플로우를 혁신하세요.</p>
             </div>
-
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
-                <div class="bg-white dark:bg-[#1C1C1E] p-6 rounded-2xl border border-[#E5E5EA] dark:border-[#2C2C2E] hover:border-[#0066CC] transition-colors">
-                    <div class="font-bold text-[#1D1D1F] dark:text-white text-sm mb-1">📸 Visual Object Extraction</div>
-                    <p class="text-[#8E8E93] leading-relaxed">Recognizes complex elements within real-world imagery and creates precise ingredient lists or step-by-step contextual responses instantly.</p>
+                <div class="bg-white dark:bg-[#1C1C1E] p-6 rounded-2xl border border-[#E5E5EA] dark:border-[#2C2C2E]">
+                    <div class="font-bold text-[#1D1D1F] dark:text-white text-sm mb-1">📸 이미지 객체 멀티 추론 컨텍스트</div>
+                    <p class="text-[#636366] dark:text-[#AEAEB2] leading-relaxed">현실 속 사물이나 복잡한 인쇄물을 스캔하여 논리적 성분 분석과 해결 순서를 즉각 도출합니다.</p>
                 </div>
-                <div class="bg-white dark:bg-[#1C1C1E] p-6 rounded-2xl border border-[#E5E5EA] dark:border-[#2C2C2E] hover:border-[#0066CC] transition-colors">
-                    <div class="font-bold text-[#1D1D1F] dark:text-white text-sm mb-1">📄 Enterprise PDF & Document Audit</div>
-                    <p class="text-[#8E8E93] leading-relaxed">Scans multi-page corporate financial spreadsheets and legal documents to capture hidden anomalies, errors, and potential tax fields.</p>
-                </div>
-                <div class="bg-white dark:bg-[#1C1C1E] p-6 rounded-2xl border border-[#E5E5EA] dark:border-[#2C2C2E] hover:border-[#0066CC] transition-colors">
-                    <div class="font-bold text-[#1D1D1F] dark:text-white text-sm mb-1">🎬 Color Restoration & Motion Synthetics</div>
-                    <p class="text-[#8E8E93] leading-relaxed">Converts legacy black-and-white asset matrices into fully colored high-definition frames powered by the native Veo generative pipeline.</p>
-                </div>
-                <div class="bg-white dark:bg-[#1C1C1E] p-6 rounded-2xl border border-[#E5E5EA] dark:border-[#2C2C2E] hover:border-[#0066CC] transition-colors">
-                    <div class="font-bold text-[#1D1D1F] dark:text-white text-sm mb-1">📚 High-Density Semantic Summarization</div>
-                    <p class="text-[#8E8E93] leading-relaxed">Digests overwhelming 200+ page textbook manuals to extract core study maps and structured text definitions for workflows.</p>
+                <div class="bg-white dark:bg-[#1C1C1E] p-6 rounded-2xl border border-[#E5E5EA] dark:border-[#2C2C2E]">
+                    <div class="font-bold text-[#1D1D1F] dark:text-white text-sm mb-1">📄 고밀도 엔터프라이즈 문서 분석</div>
+                    <p class="text-[#636366] dark:text-[#AEAEB2] leading-relaxed">수백 장 분량의 재무 스프레드시트나 기업 기획서 내에 존재하는 휴먼 에러 및 리스크 필드를 정확히 찾아냅니다.</p>
                 </div>
             </div>
         </section>
 
-        <section id="process" class="space-y-12 border-t border-[#E5E5EA] dark:border-[#2C2C2E] pt-16 scroll-mt-24">
+        <section id="process" class="space-y-8 border-t border-[#E5E5EA] dark:border-[#2C2C2E] pt-16 scroll-mt-24">
             <div class="text-center space-y-2">
-                <h2 class="text-3xl md:text-5xl font-black tracking-tight text-[#1D1D1F] dark:text-white">Simple, 3-Step Execution</h2>
-                <p class="text-base text-[#8E8E93]">No technical friction. Fully integrated within seconds.</p>
+                <h2 class="text-3xl font-black tracking-tight text-[#1D1D1F] dark:text-white">단 3단계의 즉각적인 활성화 절차</h2>
             </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs">
                 <div class="bg-white dark:bg-[#1C1C1E] border border-[#E5E5EA] dark:border-[#2C2C2E] p-6 rounded-2xl">
-                    <div class="text-[#0066CC] dark:text-[#2997FF] font-black text-2xl mb-2">01</div>
-                    <h3 class="font-bold text-sm text-[#1D1D1F] dark:text-white mb-2">Checkout & Verify</h3>
-                    <p class="text-xs text-[#8E8E93] leading-relaxed">Place your secure order and complete the one-time payment seamlessly via our global financial gateway system.</p>
+                    <div class="text-[#0066CC] dark:text-[#2997FF] font-black text-xl mb-1">01</div>
+                    <h3 class="font-bold text-[#1D1D1F] dark:text-white text-sm mb-1">결제 및 승인</h3>
+                    <p class="text-[#636366] dark:text-[#AEAEB2]">안전한 글로벌 PG 시스템을 통해 원타임 패스 라이선스를 획득합니다.</p>
                 </div>
                 <div class="bg-white dark:bg-[#1C1C1E] border border-[#E5E5EA] dark:border-[#2C2C2E] p-6 rounded-2xl">
-                    <div class="text-[#0066CC] dark:text-[#2997FF] font-black text-2xl mb-2">02</div>
-                    <h3 class="font-bold text-sm text-[#1D1D1F] dark:text-white mb-2">Automated Dispatch</h3>
-                    <p class="text-xs text-[#8E8E93] leading-relaxed">The infrastructure pipeline immediately processes the activation parameters and drops the secure invitation link right into your inbox.</p>
+                    <div class="text-[#0066CC] dark:text-[#2997FF] font-black text-xl mb-1">02</div>
+                    <h3 class="font-bold text-[#1D1D1F] dark:text-white text-sm mb-1">자동 인프라 발급</h3>
+                    <p class="text-[#636366] dark:text-[#AEAEB2]">입력하신 배송 이메일로 인프라 연동 구문과 고유 초대 토큰 코드가 자동 발송됩니다.</p>
                 </div>
                 <div class="bg-white dark:bg-[#1C1C1E] border border-[#E5E5EA] dark:border-[#2C2C2E] p-6 rounded-2xl">
-                    <div class="text-[#0066CC] dark:text-[#2997FF] font-black text-2xl mb-2">03</div>
-                    <h3 class="font-bold text-sm text-[#1D1D1F] dark:text-white mb-2">Instant Upgrade</h3>
-                    <p class="text-xs text-[#8E8E93] leading-relaxed">Open the official connection link, click 'Accept Benefits', and watch your personal account instantly unlock the 2TB pipeline with zero friction.</p>
+                    <div class="text-[#0066CC] dark:text-[#2997FF] font-black text-xl mb-1">03</div>
+                    <h3 class="font-bold text-[#1D1D1F] dark:text-white text-sm mb-1">프리미엄 락 해제</h3>
+                    <p class="text-[#636366] dark:text-[#AEAEB2]">계정 로그인 상태에서 초대 수락을 누르면 복잡한 조작 없이 2TB 스토리지 허브가 잠금 해제됩니다.</p>
                 </div>
             </div>
         </section>
 
-        <section id="security" class="space-y-12 border-t border-[#E5E5EA] dark:border-[#2C2C2E] pt-16 scroll-mt-24">
+        <section id="security" class="space-y-8 border-t border-[#E5E5EA] dark:border-[#2C2C2E] pt-16 scroll-mt-24">
             <div class="text-center space-y-2">
-                <h2 class="text-3xl md:text-5xl font-black tracking-tight text-[#1D1D1F] dark:text-white">Absolute Privacy Security</h2>
-                <p class="text-base text-[#8E8E93]">Traditional methods invite security vulnerabilities. We deploy clean corporate-tier cloud logic.</p>
+                <h2 class="text-3xl font-black tracking-tight text-[#1D1D1F] dark:text-white">Sovereignty Shield 보안 약정</h2>
             </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="p-6 rounded-2xl bg-white dark:bg-[#1C1C1E] border border-[#E5E5EA] dark:border-[#2C2C2E] space-y-4 opacity-70">
-                    <h3 class="font-bold text-sm text-[#FF453A] uppercase tracking-wider">❌ Unsafe Third-Party Solutions</h3>
-                    <ul class="space-y-3 text-xs text-[#636366] dark:text-[#8E8E93]">
-                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-[#FF453A] rounded-full mr-2.5"></span> Forcing you to inherit sketchy, shared account pools.</li>
-                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-[#FF453A] rounded-full mr-2.5"></span> Requiring sensitive credential password input variables.</li>
-                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-[#FF453A] rounded-full mr-2.5"></span> Serious structural risk of private logs or cloud files leaking.</li>
-                    </ul>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+                <div class="p-6 bg-white dark:bg-[#1C1C1E] border border-[#E5E5EA] dark:border-[#2C2C2E] rounded-2xl">
+                    <h3 class="font-bold text-[#FF453A] mb-2">❌ 기존 공유형 계정 우회 방식의 폐해</h3>
+                    <p class="text-[#636366] dark:text-[#AEAEB2]">출처가 불명확한 타인 명의 공용 풀 계정을 대여하여 개인 중요 파일이 언제든 유출되거나 블락될 위험이 존재합니다.</p>
                 </div>
-                <div class="p-6 rounded-2xl bg-white dark:bg-[#1C1C1E] border border-[#E5E5EA] dark:border-[#2C2C2E] shadow-sm space-y-4">
-                    <h3 class="font-bold text-sm text-[#30D158] uppercase tracking-wider">🏆 Workspace Premium Shield</h3>
-                    <ul class="space-y-3 text-xs text-[#48484A] dark:text-[#E5E5EA]">
-                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-[#30D158] rounded-full mr-2.5"></span> 100% compliant paths via official Google B2B structures.</li>
-                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-[#30D158] rounded-full mr-2.5"></span> Pure invitation system &ndash; Zero password entries requested.</li>
-                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-[#30D158] rounded-full mr-2.5"></span> Locked entirely to your own encryption keys for absolute safety.</li>
-                    </ul>
+                <div class="p-6 bg-white dark:bg-[#1C1C1E] border border-[#E5E5EA] dark:border-[#2C2C2E] rounded-2xl shadow-sm">
+                    <h3 class="font-bold text-[#30D158] mb-2">🏆 Workspace Premium 고유 독립 프로토콜</h3>
+                    <p class="text-[#636366] dark:text-[#AEAEB2]">초대 방식을 통해 기존 사용 중인 본인 고유 계정에 인프라만 추가 공급하므로 타인 접근이 원천 차단됩니다.</p>
                 </div>
             </div>
         </section>
 
-        <section id="reviews" class="space-y-8 border-t border-[#E5E5EA] dark:border-[#2C2C2E] pt-16 scroll-mt-24">
+        <section id="reviews" class="space-y-6 border-t border-[#E5E5EA] dark:border-[#2C2C2E] pt-16 scroll-mt-24">
             <div class="text-center space-y-2">
-                <h2 class="text-3xl md:text-5xl font-black tracking-tight text-[#1D1D1F] dark:text-white">Validated By Verified Creators</h2>
-                <p class="text-base text-[#8E8E93]">Over 60,000+ active tech professionals deployed their infrastructure upgrade seamlessly.</p>
+                <h2 class="text-3xl font-black tracking-tight text-[#1D1D1F] dark:text-white">실제 누적 유저 데이터 검증</h2>
             </div>
-
             <div class="grid grid-cols-3 gap-4 border border-[#E5E5EA] dark:border-[#2C2C2E] rounded-2xl bg-white dark:bg-[#1C1C1E] p-6 text-center">
-                <div class="space-y-1">
-                    <div class="text-3xl font-black text-[#0066CC] dark:text-[#2997FF]">4.9 ★</div>
-                    <div class="text-[10px] text-[#8E8E93] font-bold uppercase tracking-wider">User Satisfaction</div>
+                <div>
+                    <div class="text-2xl font-black text-[#0066CC] dark:text-[#2997FF]">4.9 ★</div>
+                    <div class="text-[10px] text-[#8E8E93] font-bold uppercase">사용자 평점</div>
                 </div>
-                <div class="space-y-1">
-                    <div class="text-3xl font-black text-[#1D1D1F] dark:text-white">60K+</div>
-                    <div class="text-[10px] text-[#8E8E93] font-bold uppercase tracking-wider">Active Deployments</div>
+                <div>
+                    <div class="text-2xl font-black text-[#1D1D1F] dark:text-white">60K+</div>
+                    <div class="text-[10px] text-[#8E8E93] font-bold uppercase">누적 할당 계정</div>
                 </div>
-                <div class="space-y-1">
-                    <div class="text-3xl font-black text-[#30D158]">91%</div>
-                    <div class="text-[10px] text-[#8E8E93] font-bold uppercase tracking-wider">Re-Activation Rate</div>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
-                <div class="bg-white dark:bg-[#1C1C1E] p-6 rounded-2xl border border-[#E5E5EA] dark:border-[#2C2C2E] space-y-2">
-                    <div class="text-[#FFD60A] text-sm">★★★★★</div>
-                    <h4 class="font-bold text-[#1D1D1F] dark:text-white text-sm">"Saved my whole academic semester."</h4>
-                    <p class="text-[#8E8E93] leading-relaxed">Processed a massive 200-page core research document block right before final presentations. Speed levels are incredible.</p>
-                    <div class="text-[10px] text-[#636366] font-semibold">&mdash; Kim * Young (Academic Researcher)</div>
-                </div>
-                <div class="bg-white dark:bg-[#1C1C1E] p-6 rounded-2xl border border-[#E5E5EA] dark:border-[#2C2C2E] space-y-2">
-                    <div class="text-[#FFD60A] text-sm">★★★★★</div>
-                    <h4 class="font-bold text-[#1D1D1F] dark:text-white text-sm">"Workflow optimization at its finest."</h4>
-                    <p class="text-[#8E8E93] leading-relaxed">Drafting executive communications logs and timeline trackers takes seconds now. Outstanding price-to-performance matrix.</p>
-                    <div class="text-[10px] text-[#636366] font-semibold">&mdash; Choi * Hyun (Senior Enterprise Architect)</div>
+                <div>
+                    <div class="text-2xl font-black text-[#30D158]">91%</div>
+                    <div class="text-[10px] text-[#8E8E93] font-bold uppercase">연장 갱신율</div>
                 </div>
             </div>
         </section>
 
-        <section id="faq" class="space-y-8 border-t border-[#E5E5EA] dark:border-[#2C2C2E] pt-16 scroll-mt-24">
+        <section id="faq" class="space-y-6 border-t border-[#E5E5EA] dark:border-[#2C2C2E] pt-16 scroll-mt-24">
             <div class="text-center space-y-2">
-                <h2 class="text-3xl md:text-5xl font-black tracking-tight text-[#1D1D1F] dark:text-white">Frequently Asked Questions</h2>
-                <p class="text-base text-[#8E8E93]">Clear answers to core infrastructure questions before unlocking access.</p>
+                <h2 class="text-3xl font-black tracking-tight text-[#1D1D1F] dark:text-white">자주 묻는 질문</h2>
             </div>
-
             <div class="space-y-4 text-xs max-w-2xl mx-auto">
-                <div class="bg-white dark:bg-[#1C1C1E] p-5 rounded-xl border border-[#E5E5EA] dark:border-[#2C2C2E] space-y-1.5">
-                    <h4 class="font-bold text-sm text-[#1D1D1F] dark:text-white">Q: Is solo deployment still mathematically advantageous?</h4>
-                    <p class="text-[#8E8E93] leading-relaxed">A: Yes. Even without using group invites, your single account scores a flat 88% premium discount instantly &ndash; effectively unlocking 18 months for the standard cost of just 2 regular months.</p>
+                <div class="bg-white dark:bg-[#1C1C1E] p-5 rounded-xl border border-[#E5E5EA] dark:border-[#2C2C2E]">
+                    <h4 class="font-bold text-[#1D1D1F] dark:text-white text-sm mb-1">Q: 패키지 구매 후 타 국가 계정도 즉시 적용이 가능한가요?</h4>
+                    <p class="text-[#636366] dark:text-[#AEAEB2]">A: 예, 활성화 안내 매뉴얼에 명시된 간단한 허브 로케이션 정비 조건 충족 시 세계 어디서나 완전한 대역폭 속도로 연동됩니다.</p>
                 </div>
-                <div class="bg-white dark:bg-[#1C1C1E] p-5 rounded-xl border border-[#E5E5EA] dark:border-[#2C2C2E] space-y-1.5">
-                    <h4 class="font-bold text-sm text-[#1D1D1F] dark:text-white">Q: Can I really invite teammates and coworkers to my storage cloud?</h4>
-                    <p class="text-[#8E8E93] leading-relaxed">A: Absolutely. The system allows you to step up as the primary allocation manager, inviting up to 5 additional profiles (6 total users) onto the 2TB priority cloud structure with zero extra fees.</p>
-                </div>
-                <div class="bg-white dark:bg-[#1C1C1E] p-5 rounded-xl border border-[#E5E5EA] dark:border-[#2C2C2E] space-y-1.5">
-                    <h4 class="font-bold text-sm text-[#1D1D1F] dark:text-white">Q: Can other invited members inspect my private files or data chains?</h4>
-                    <p class="text-[#8E8E93] leading-relaxed">A: Never. All files, assets, and query search streams are encrypted tightly onto your own personal keys. Zero visibility exists across standard system rows.</p>
+                <div class="bg-white dark:bg-[#1C1C1E] p-5 rounded-xl border border-[#E5E5EA] dark:border-[#2C2C2E]">
+                    <h4 class="font-bold text-[#1D1D1F] dark:text-white text-sm mb-1">Q: 정기 월간 구독료가 추가로 부과되는 요인이 생기나요?</h4>
+                    <p class="text-[#636366] dark:text-[#AEAEB2]">A: 전혀 없습니다. 본 프리미엄 엔터프라이즈 라이선스 패스는 18개월간 완전한 원타임 선납 방식으로 관리됩니다.</p>
                 </div>
             </div>
         </section>
 
     </main>
 
-    <div id="checkoutModal" class="fixed inset-0 bg-black/45 dark:bg-black/85 backdrop-blur-md hidden items-center justify-center p-4 z-50">
+    <div id="checkoutModal" class="fixed inset-0 bg-black/50 dark:bg-black/85 backdrop-blur-md hidden items-center justify-center p-4 z-50">
         <div class="bg-white dark:bg-[#1C1C1E] border border-[#E5E5EA] dark:border-[#2C2C2E] w-full max-w-md rounded-2xl p-6 relative shadow-xl">
+            <button onclick="closeCheckoutModal()" class="absolute top-4 right-4 text-[#8E8E93] hover:text-[#1D1D1F] dark:hover:text-white cursor-pointer text-xl font-bold">&times;</button>
             
-            <button onclick="closeCheckoutModal()" class="absolute top-4 right-4 text-[#8E8E93] hover:text-[#1D1D1F] dark:hover:text-white cursor-pointer text-2xl">&times;</button>
-            
-            <h3 class="text-lg font-bold text-[#1D1D1F] dark:text-white mb-1">Activation Prerequisites</h3>
-            <p class="text-xs text-[#8E8E93] mb-5">Please check all items below to open the checkout gateway.</p>
+            <h3 class="text-lg font-bold text-[#1D1D1F] dark:text-white mb-1">인프라 약관 및 연동 확인서</h3>
+            <p class="text-xs text-[#8E8E93] dark:text-[#AEAEB2] mb-5">하단 활성화 체크포인트를 완독하시면 결제 세션이 오픈됩니다.</p>
 
             <div class="space-y-2.5 mb-5">
-                <label class="flex items-start p-3 bg-[#F5F5F7] dark:bg-[#2C2C2E]/40 border border-[#E5E5EA] dark:border-[#2C2C2E] rounded-xl cursor-pointer hover:border-[#BCBCBC] transition">
+                <label class="flex items-start p-3 bg-[#F5F5F7] dark:bg-[#2C2C2E]/40 border border-[#E5E5EA] dark:border-[#2C2C2E] rounded-xl cursor-pointer hover:border-[#B2B2B2] transition">
                     <input type="checkbox" class="terms-checkbox mt-0.5 text-[#0066CC] focus:ring-[#0066CC] border-[#D1D1D6] rounded">
                     <span class="ml-3 text-xs text-[#48484A] dark:text-[#AEAEB2] leading-relaxed">
-                        I confirm that my account region has been adjusted to the designated promotional hub prior to access redemption.
+                        안내에 따라 초대권 수락 전 본인 구글 계정의 프로필 마켓 허브 지역 레이아웃 구성을 일치시킬 것에 동의합니다.
                     </span>
                 </label>
-
-                <label class="flex items-start p-3 bg-[#F5F5F7] dark:bg-[#2C2C2E]/40 border border-[#E5E5EA] dark:border-[#2C2C2E] rounded-xl cursor-pointer hover:border-[#BCBCBC] transition">
+                <label class="flex items-start p-3 bg-[#F5F5F7] dark:bg-[#2C2C2E]/40 border border-[#E5E5EA] dark:border-[#2C2C2E] rounded-xl cursor-pointer hover:border-[#B2B2B2] transition">
                     <input type="checkbox" class="terms-checkbox mt-0.5 text-[#0066CC] focus:ring-[#0066CC] border-[#D1D1D6] rounded">
                     <span class="ml-3 text-xs text-[#48484A] dark:text-[#AEAEB2] leading-relaxed">
-                        I acknowledge that "Region Lock Errors" caused by failure to adjust the account region are strictly <strong class="text-[#FF453A] font-semibold">NON-REFUNDABLE</strong> due to the instant nature of digital assets.
-                    </span>
-                </label>
-
-                <label class="flex items-start p-3 bg-[#F5F5F7] dark:bg-[#2C2C2E]/40 border border-[#E5E5EA] dark:border-[#2C2C2E] rounded-xl cursor-pointer hover:border-[#BCBCBC] transition">
-                    <input type="checkbox" class="terms-checkbox mt-0.5 text-[#0066CC] focus:ring-[#0066CC] border-[#D1D1D6] rounded">
-                    <span class="ml-3 text-xs text-[#48484A] dark:text-[#AEAEB2] leading-relaxed">
-                        I agree that token delivery is 100% automated and its status verification is system-tracked immediately upon dispatch.
+                        계정 리전 마킹 미준수로 인하여 발생한 등록 지연 현상은 디지털 귀속 자산 특성상 <strong class="text-[#FF453A] font-medium">환불 대상에서 제외</strong>됨을 숙지했습니다.
                     </span>
                 </label>
             </div>
 
-            <div id="stripeSection" class="opacity-20 pointer-events-none transition-all duration-300 border-t border-[#E5E5EA] dark:border-[#2C2C2E] pt-5">
-                <label class="block text-[11px] font-bold text-[#8E8E93] uppercase tracking-wider mb-2">Delivery Email Address</label>
-                <input type="email" id="customerEmail" placeholder="your-account@gmail.com" class="w-full bg-[#F5F5F7] dark:bg-[#2C2C2E]/60 border border-[#D1D1D6] dark:border-[#48484A] rounded-xl px-4 py-2.5 text-sm text-[#1D1D1F] dark:text-white placeholder-[#8E8E93] focus:outline-none focus:border-[#0066CC] dark:focus:border-[#2997FF] mb-5">
-                
+            <div id="stripeSection" class="opacity-20 pointer-events-none transition-all duration-200 border-t border-[#E5E5EA] dark:border-[#2C2C2E] pt-5">
+                <label class="block text-[11px] font-bold text-[#636366] dark:text-[#AEAEB2] uppercase tracking-wider mb-2">초대권을 수령할 이메일 주소</label>
+                <input type="email" id="customerEmail" placeholder="your-profile@gmail.com" class="w-full bg-[#F5F5F7] dark:bg-[#2C2C2E]/60 border border-[#E5E5EA] dark:border-[#48484A] rounded-xl px-4 py-2.5 text-sm text-[#1D1D1F] dark:text-white placeholder-[#8E8E93] focus:outline-none focus:border-[#0066CC] mb-5">
                 <div id="paypal-button-container"></div>
             </div>
-
-            <div class="mt-4 text-center">
-                <p class="text-[10px] text-[#8E8E93]">Secured by PayPal Global Network Infrastructure.</p>
-            </div>
-
         </div>
     </div>
 
-    <div id="stickyBottomBar" class="fixed bottom-0 left-0 right-0 border-t border-[#E5E5EA] dark:border-[#2C2C2E] bg-[#F5F5F7]/90 dark:bg-[#000000]/90 apple-blur py-3.5 px-6 z-40 transform translate-y-full transition-transform duration-300 ease-in-out">
-        <div class="max-w-5xl mx-auto flex items-center justify-between">
-            <div class="text-left">
-                <div class="text-sm font-bold text-[#1D1D1F] dark:text-white">18-Month Premium Pass</div>
-                <div class="text-xs text-[#30D158] font-semibold">$29.99 <span class="text-[#8E8E93] line-through font-normal text-[11px] ml-1">$359.82</span></div>
+    <div id="stickyBottomBar" class="fixed bottom-0 left-0 right-0 border-t border-[#E5E5EA] dark:border-[#2C2C2E] bg-white/90 dark:bg-[#000000]/95 apple-blur py-3 px-6 z-40 transform translate-y-full transition-transform duration-300 ease-in-out shadow-lg">
+        <div class="max-w-4xl mx-auto flex items-center justify-between">
+            <div>
+                <div class="text-xs font-bold text-[#1D1D1F] dark:text-white md:text-sm">18-Month Premium Pass</div>
+                <div class="text-xs text-[#30D158] font-bold">$29.99 <span class="text-[#8E8E93] line-through font-normal text-[11px] ml-1">$359.82</span></div>
             </div>
-            <button onclick="openCheckoutModal()" class="bg-[#0066CC] hover:bg-[#0077ED] dark:bg-[#2997FF] dark:hover:bg-[#42A5FF] text-white text-xs font-bold py-2.5 px-5 rounded-xl transition shadow-sm">
-                Upgrade Now
+            <button onclick="openCheckoutModal()" class="bg-[#0066CC] hover:bg-[#0077ED] dark:bg-[#2997FF] dark:hover:bg-[#42A5FF] text-white text-xs font-bold py-2 px-4 rounded-xl transition shadow-sm cursor-pointer">
+                프리미엄 구독하기
             </button>
         </div>
     </div>
 
-    <a href="mailto:playpre3@gmail.com" id="csFloatingBtn" class="fixed bottom-6 right-6 w-12 h-12 bg-white dark:bg-[#1C1C1E] text-[#0066CC] dark:text-[#2997FF] border border-[#E5E5EA] dark:border-[#2C2C2E] rounded-full shadow-lg flex items-center justify-center text-lg hover:scale-105 active:scale-95 transition-all z-40" title="Contact Support">
+    <a href="mailto:playpre3@gmail.com" id="csFloatingBtn" class="fixed bottom-6 right-6 w-12 h-12 bg-white dark:bg-[#1C1C1E] text-[#0066CC] dark:text-[#2997FF] border border-[#E5E5EA] dark:border-[#2C2C2E] rounded-full shadow-md flex items-center justify-center text-lg hover:scale-105 active:scale-95 transition-all z-40" title="고객센터 문의하기">
         <i class="fa-regular fa-comment-dots"></i>
     </a>
 
-    <footer class="border-t border-[#E5E5EA] bg-[#F5F5F7] dark:border-[#2C2C2E]/50 dark:bg-[#000000] py-6 text-[11px] text-[#8E8E93] text-center mt-auto">
+    <footer class="border-t border-[#E5E5EA] dark:border-[#2C2C2E]/50 bg-[#F5F5F7] dark:bg-[#000000] py-6 text-[11px] text-[#8E8E93] text-center mt-auto">
         <div class="max-w-4xl mx-auto px-6">
             <p>&copy; 2026 Workspace Premium Logistics. All Sovereign Infrastructure Rights Reserved.</p>
         </div>
@@ -400,91 +316,103 @@
         
         const mainCardSection = document.getElementById('mainCardSection');
         const stickyBottomBar = document.getElementById('stickyBottomBar');
+        const csFloatingBtn = document.getElementById('csFloatingBtn');
 
-        // 🌗 라이트/다크모드 인버전 색상 결함 완벽 대수리 완료
-        function initTheme() {
-            const cachedTheme = localStorage.getItem('appleCoreTheme');
-            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        /**
+         * 🌗 시스템 브라우저 테마 실시간 연동 및 명확한 컬러 주입 세션
+         */
+        function initThemeEngine() {
+            const cachedTheme = localStorage.getItem('userStoreTheme');
+            // 브라우저 및 시스템 설정 테마 판별 구문
+            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-            if (cachedTheme === 'dark' || (!cachedTheme && prefersDark)) {
-                setDarkTheme();
+            if (cachedTheme === 'dark' || (!cachedTheme && systemPrefersDark)) {
+                applyDarkTheme();
             } else {
-                setLightTheme();
+                applyLightTheme();
             }
         }
 
-        function setDarkTheme() {
+        function applyDarkTheme() {
             document.documentElement.classList.add('dark');
             document.documentElement.classList.remove('light');
-            document.body.className = "bg-[#000000] text-[#F5F5F7] min-h-screen flex flex-col justify-between antialiased dark";
+            // 라이트 레이아웃 클래스 변동 간섭 완전 격리 제거
+            document.body.style.backgroundColor = "#000000";
+            document.body.style.color = "#F5F5F7";
+            
             sunIcon.classList.remove('hidden');
             moonIcon.classList.add('hidden');
-            localStorage.setItem('appleCoreTheme', 'dark');
+            localStorage.setItem('userStoreTheme', 'dark');
         }
 
-        function setLightTheme() {
+        function applyLightTheme() {
             document.documentElement.classList.add('light');
             document.documentElement.classList.remove('dark');
-            document.body.className = "bg-[#F5F5F7] text-[#1D1D1F] min-h-screen flex flex-col justify-between antialiased";
+            document.body.style.backgroundColor = "#F5F5F7";
+            document.body.style.color = "#1D1D1F";
+            
             moonIcon.classList.remove('hidden');
             sunIcon.classList.add('hidden');
-            localStorage.setItem('appleCoreTheme', 'light');
+            localStorage.setItem('userStoreTheme', 'light');
         }
 
+        // 수동 변경 시 토글 바인딩 스위치
         themeToggleBtn.addEventListener('click', () => {
             if (document.documentElement.classList.contains('dark')) {
-                setLightTheme();
+                applyLightTheme();
             } else {
-                setDarkTheme();
+                applyDarkTheme();
             }
         });
 
-        initTheme();
+        // 사용자가 시스템 환경을 실시간 변경할 시 즉시 감지하여 변동 적용
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+            if (!localStorage.getItem('userStoreTheme')) {
+                if (e.matches) applyDarkTheme();
+                else applyLightTheme();
+            }
+        });
 
-        // 📈 하단 스티키 바 트리거 & CS 버튼 위치 동적 스크롤 제어 시스템
+        // 런타임 초기화 실행
+        initThemeEngine();
+
+        /**
+         * 📈 동적 단락 스크롤 계산 필터 및 모듈 연동
+         */
         window.addEventListener('scroll', () => {
-            const cardBottom = mainCardSection.offsetTop + mainCardSection.offsetHeight;
-            const currentScroll = window.scrollY;
-            const csFloatingBtn = document.getElementById('csFloatingBtn');
+            // 가격 카드의 하단 절대좌표 체크
+            const thresholdPoint = mainCardSection.offsetTop + mainCardSection.offsetHeight;
+            const scrollYPosition = window.scrollY;
 
-            if (currentScroll > cardBottom - 100) {
-                // 메인 결제 카드를 지나치면 하단 고정 바가 슥 올라옴
+            if (scrollYPosition > thresholdPoint - 50) {
+                // 첫 번째 결제 단락 버튼 구역을 벗어날 시 스티키 바 등판
                 stickyBottomBar.classList.remove('translate-y-full');
-                // 고정 바와 겹치지 않게 고객센터 버튼의 높이를 살짝 올림
-                csFloatingBtn.classList.remove('bottom-6');
-                csFloatingBtn.classList.add('bottom-22');
+                // 스티키 바와 고객센터 버튼이 오버랩되어 씹히는 현상 차단 제어
+                csFloatingBtn.style.transform = "translateY(-55px)";
             } else {
-                // 메인 카드가 보이는 구역에서는 하단 고정 바가 다시 숨김
+                // 다시 올라오면 자연스럽게 하방 원위치 은닉
                 stickyBottomBar.classList.add('translate-y-full');
-                csFloatingBtn.classList.remove('bottom-22');
-                csFloatingBtn.classList.add('bottom-6');
+                csFloatingBtn.style.transform = "translateY(0px)";
             }
         });
 
-        // 📈 Live Purchase Counter
-        function simulateLiveCounter() {
-            const counterElement = document.getElementById('liveCounter');
-            const now = new Date();
-            const currentHour = now.getHours();
-            
-            let baseBuyers = 1220 + (currentHour * 14);
-            let randomFluctuation = Math.floor(Math.random() * 5);
-            
-            counterElement.innerText = (baseBuyers + randomFluctuation).toLocaleString();
+        // 라이브 카운터 더미 루틴
+        function runLiveCounter() {
+            const counter = document.getElementById('liveCounter');
+            let base = 1240 + new Date().getMinutes();
+            counter.innerText = (base + Math.floor(Math.random() * 6)).toLocaleString();
         }
-        setInterval(simulateLiveCounter, 4000);
-        simulateLiveCounter();
+        setInterval(runLiveCounter, 5000);
 
-        // Modal triggers
+        // 모달 상태 함수
         function openCheckoutModal() { checkoutModal.style.display = 'flex'; }
-        function closeModal() { checkoutModal.style.display = 'none'; }
         function closeCheckoutModal() { checkoutModal.style.display = 'none'; }
 
-        // Checkbox terms mapping
-        checkboxes.forEach(checkbox => {
-            checkbox.addEventListener('change', () => {
-                const allChecked = Array.from(checkboxes).every(cb => cb.checked);
-                if (allChecked) {
+        // 체크박스 유효성 핸들러
+        checkboxes.forEach(cb => {
+            cb.addEventListener('change', () => {
+                const checkedAll = Array.from(checkboxes).every(item => item.checked);
+                if (checkedAll) {
                     stripeSection.classList.remove('opacity-20', 'pointer-events-none');
                 } else {
                     stripeSection.classList.add('opacity-20', 'pointer-events-none');
@@ -492,34 +420,23 @@
             });
         });
 
-        // PayPal Buttons Deployment ($0.10 Live Test Mode Active)
+        // PayPal 게이트웨이 마운트 ($0.10 라이브 테스트 규격 대응)
         paypal.Buttons({
-            style: {
-                layout: 'vertical',
-                color:  'black',
-                shape:  'rect',
-                label:  'checkout'
-            },
+            style: { layout: 'vertical', color: 'black', shape: 'rect', label: 'checkout' },
             onClick: function(data, actions) {
-                const email = document.getElementById('customerEmail').value;
-                if (!email || !email.includes('@')) {
-                    alert('Please enter a valid Gmail address for delivery.');
+                const mailVal = document.getElementById('customerEmail').value;
+                if (!mailVal || !mailVal.includes('@')) {
+                    alert('인프라 초대권을 발송할 올바른 구글 이메일을 입력해 주세요.');
                     return actions.reject();
                 }
             },
             createOrder: function(data, actions) {
-                return actions.order.create({
-                    purchase_units: [{
-                        amount: {
-                            value: '0.10'
-                        }
-                    }]
-                });
+                return actions.order.create({ purchase_units: [{ amount: { value: '0.10' } }] });
             },
             onApprove: function(data, actions) {
-                return actions.order.capture().then(function(details) {
-                    alert('Transaction completed by ' + details.payer.name.given_name + '! Check your email inbox for instant access.');
-                    checkoutModal.style.display = 'none';
+                return actions.order.capture().then(function(res) {
+                    alert(res.payer.name.given_name + '님 결제가 완료되었습니다. 입력하신 이메일함을 확인해 주세요.');
+                    closeCheckoutModal();
                 });
             }
         }).render('#paypal-button-container');
