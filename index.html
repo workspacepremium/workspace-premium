@@ -3,70 +3,264 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Workspace Premium - Advanced AI & Cloud Activation Hub</title>
+    <title>Workspace Premium - Advanced AI & Cloud Storage Hub</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght=300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD"></script>
     <style>
-        body { font-family: 'Inter', sans-serif; transition: background-color 0.3s ease, color 0.3s ease; }
+        body {
+            font-family: 'Inter', sans-serif;
+            letter-spacing: -0.02em;
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+        /* 애플 특유의 미려한 유리(배경 흐림) 효과 */
+        .apple-glass {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
     </style>
 </head>
-<body class="bg-white text-gray-900 dark:bg-[#0B0F19] dark:text-gray-100 min-h-screen flex flex-col justify-between">
+<body class="bg-[#000000] text-[#F5F5F7] min-h-screen flex flex-col justify-between antialiased">
 
-    <header class="border-b border-gray-200 bg-white/80 dark:border-gray-800 dark:bg-[#0F172A]/80 backdrop-blur sticky top-0 z-50">
-        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-            <div class="flex items-center space-x-2">
-                <span class="text-xl font-bold bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 dark:from-blue-400 dark:via-indigo-400 dark:to-purple-400 bg-clip-text text-transparent">Workspace Premium</span>
-                <span class="text-[10px] bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20 px-2 py-0.5 rounded-full font-medium">B2B Allocation</span>
+    <header class="border-b border-[#2C2C2E]/50 bg-[#000000]/70 apple-glass sticky top-0 z-50 transition-colors duration-500 dark:border-[#2C2C2E]/50 dark:bg-[#000000]/70 light:bg-[#F5F5F7]/80 light:border-[#E5E5EA]/50">
+        <div class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <span class="text-lg font-semibold tracking-tight text-white light:text-[#1D1D1F]">Workspace Premium</span>
+                <span class="text-[10px] bg-[#2C2C2E] text-[#AEAEB2] light:bg-[#E5E5EA] light:text-[#8E8E93] px-2 py-0.5 rounded-full font-medium">B2B Allocation</span>
             </div>
             
-            <div class="flex items-center space-x-4">
-                <div class="text-xs text-gray-500 dark:text-gray-400 flex items-center space-x-1.5 hidden sm:flex">
-                    <span class="inline-block w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
-                    <span>Optimal</span>
+            <div class="flex items-center space-x-6">
+                <div class="text-xs text-[#30D158] flex items-center space-x-1.5 font-medium bg-[#30D158]/10 px-3 py-1 rounded-full">
+                    <span class="inline-block w-2 h-2 bg-[#30D158] rounded-full animate-pulse"></span>
+                    <span id="liveCounter">1,248 Users Activated Today</span>
                 </div>
                 
-                <button id="themeToggleBtn" class="p-2 rounded-xl bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:bg-gray-200 dark:hover:bg-gray-700 transition cursor-pointer" aria-label="Toggle Theme">
-                    <svg id="sunIcon" class="w-4 h-4 text-amber-500 hidden" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 2.293a1 1 0 011.414 0l.707.707a1 1 0 01-1.414 1.414l-.707-.707a1 1 0 010-1.414zm4.121 4.121a1 1 0 010 1.414l-.707.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM10 14a4 4 0 100-8 4 4 0 000 8zm0 2a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zm-6.414-1.414a1 1 0 010-1.414l.707-.707a1 1 0 011.414 1.414l-.707.707a1 1 0 01-1.414 0zM2 10a1 1 0 011-1h1a1 1 0 110 2H3a1 1 0 01-1-1zm1.121-4.121a1 1 0 011.414-1.414l.707.707a1 1 0 11-1.414 1.414l-.707-.707z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
-                    <svg id="moonIcon" class="w-4 h-4 text-indigo-600 hidden" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 116.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                <button id="themeToggleBtn" class="p-2 rounded-full hover:bg-[#1C1C1E] light:hover:bg-[#E5E5EA] transition cursor-pointer text-[#AEAEB2] light:text-[#8E8E93]" aria-label="Toggle Theme">
+                    <svg id="sunIcon" class="w-4 h-4 hidden text-[#FF9500]" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 2.293a1 1 0 011.414 0l.707.707a1 1 0 01-1.414 1.414l-.707-.707a1 1 0 010-1.414zm4.121 4.121a1 1 0 010 1.414l-.707.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM10 14a4 4 0 100-8 4 4 0 000 8zm0 2a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zm-6.414-1.414a1 1 0 010-1.414l.707-.707a1 1 0 011.414 1.414l-.707.707a1 1 0 01-1.414 0zM2 10a1 1 0 011-1h1a1 1 0 110 2H3a1 1 0 01-1-1zm1.121-4.121a1 1 0 011.414-1-1l.707.707a1 1 0 11-1.414 1.414l-.707-.707z"></path></svg>
+                    <svg id="moonIcon" class="w-4 h-4 hidden text-[#5856D6]" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 116.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
                 </button>
             </div>
         </div>
     </header>
 
-    <main class="max-w-4xl mx-auto px-6 py-12 md:py-20 flex-grow flex flex-col items-center justify-center text-center">
+    <main class="max-w-4xl mx-auto px-6 py-16 md:py-24 flex-grow flex flex-col items-center justify-center text-center">
         
-        <div class="inline-flex items-center space-x-2 bg-gray-100 dark:bg-gray-800/40 border border-gray-200 dark:border-gray-700/50 px-3 py-1.5 rounded-full text-xs text-gray-600 dark:text-gray-300 mb-6">
-            <span class="text-amber-500 dark:text-amber-400">★★★★★</span>
-            <span>Over 10,000+ Global Tech Pros Onboarded</span>
+        <div class="inline-flex items-center bg-[#1C1C1E] light:bg-[#E5E5EA] px-4 py-1.5 rounded-full text-xs font-medium text-[#AEAEB2] light:text-[#48484A] mb-8">
+            <span class="text-[#FFD60A] mr-1.5">★</span> Verified B2B Enterprise Overstock Distribution
         </div>
 
-        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight max-w-3xl text-gray-900 dark:text-white">
-            Unlock 18 Months of <br class="hidden md:inline">
-            <span class="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 dark:from-blue-400 dark:via-indigo-400 dark:to-purple-400 bg-clip-text text-transparent">Advanced AI & 2TB Cloud Storage</span> Instantly
+        <h1 class="text-4xl md:text-7xl font-extrabold tracking-tight mb-8 text-white light:text-[#1D1D1F] leading-[1.1]">
+            The Ultimate AI & Cloud.<br>
+            <span class="bg-gradient-to-r from-[#D4D4D8] via-[#FFFFFF] to-[#A1A1AA] light:from-[#1D1D1F] light:to-[#636366] bg-clip-text text-transparent">Now Within Reach.</span>
         </h1>
         
-        <p class="text-base md:text-lg text-gray-500 dark:text-gray-400 max-w-2xl mb-12 leading-relaxed">
-            We securely distribute redundant promotional quotas from global enterprise partnerships directly to power users worldwide. 100% private account integration. No password required.
+        <p class="text-lg md:text-xl text-[#8E8E93] light:text-[#636366] max-w-2xl mb-16 font-normal leading-relaxed">
+            We acquire completely unutilized promotional storage allocations from enterprise cloud networks and safely pass them to global pro users. 100% official account integration.
         </p>
 
-        <div class="w-full max-w-md bg-white dark:bg-gradient-to-b dark:from-[#1E293B] dark:to-[#0F172A] border border-gray-200 dark:border-gray-800 p-8 rounded-2xl shadow-xl dark:shadow-2xl text-left mb-12 relative overflow-hidden">
-            <div class="absolute top-0 right-0 bg-indigo-600 dark:bg-indigo-500 text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-bl-lg">
-                Best Value
+        <div class="w-full max-w-md bg-[#1C1C1E]/60 light:bg-[#FFFFFF] border border-[#2C2C2E]/80 light:border-[#E5E5EA] p-8 rounded-3xl shadow-2xl text-left relative overflow-hidden apple-glass">
+            <div class="absolute top-0 right-0 bg-[#FF453A] text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-bl-xl">
+                91% OFF
             </div>
-            <h2 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">Advanced Professional Pass</h2>
-            <p class="text-sm text-gray-500 dark:text-gray-400 mb-6">Full 18 Months Promotional Access Token</p>
+            <h2 class="text-2xl font-bold mb-1 text-white light:text-[#1D1D1F]">18-Month Priority Pass</h2>
+            <p class="text-xs text-[#8E8E93] light:text-[#8E8E93] mb-6">Full Access Quota Batch #2026-B</p>
             
-            <div class="flex items-baseline space-x-2 mb-6">
-                <span class="text-4xl font-extrabold text-gray-900 dark:text-white">$29.99</span>
-                <span class="text-sm text-gray-400 dark:text-gray-500 line-through">$359.82</span>
-                <span class="text-xs text-emerald-600 dark:text-emerald-400 font-medium bg-emerald-500/10 px-2 py-0.5 rounded">Save 91%</span>
+            <div class="flex items-baseline space-x-2.5 mb-8">
+                <span class="text-5xl font-black text-white light:text-[#1D1D1F]">$29.99</span>
+                <span class="text-sm text-[#636366] line-through">$359.82</span>
+                <span class="text-xs text-[#30D158] font-semibold bg-[#30D158]/10 px-2 py-0.5 rounded">One-time fee</span>
             </div>
 
-            <ul class="space-y-3 text-sm text-gray-600 dark:text-gray-300 mb-8 border-t border-gray-100 dark:border-gray-800/60 pt-6">
-                <li class="flex items-center space-x-2.5">
-                    <span class="text-blue-600 dark:text-blue-400">✓</span>
-                    <span>Access to Google's most powerful AI (Ultra 1.5)</span>
+            <ul class="space-y-4 text-sm text-[#E5E5EA] light:text-[#3A3A3C] mb-8 border-t border-[#2C2C2E] light:border-[#F2F2F7] pt-6">
+                <li class="flex items-start space-x-3">
+                    <span class="text-[#30D158] font-bold">✓</span>
+                    <span><strong>Gemini Ultra 1.5 Architecture</strong> &ndash; Highest priority access to Google's sovereign AI engine.</span>
+                </li>
+                <li class="flex items-start space-x-3">
+                    <span class="text-[#30D158] font-bold">✓</span>
+                    <span><strong>2TB Full Cloud Pipeline</strong> &ndash; Non-shared infrastructure storage for Photos, Drive, and Gmail.</span>
+                </li>
+                <li class="flex items-start space-x-3">
+                    <span class="text-[#30D158] font-bold">✓</span>
+                    <span><strong>Zero-Knowledge Privacy</strong> &ndash; B2B token integration ensures we never ask for your password.</span>
+                </li>
+                <li class="flex items-start space-x-3">
+                    <span class="text-[#30D158] font-bold">✓</span>
+                    <span><strong>18-Month Replacement Warranty</strong> &ndash; Unconditional automated reallocation upon any system drop.</span>
+                </li>
+            </ul>
+
+            <button id="openModalBtn" class="w-full bg-white text-black light:bg-black light:text-white hover:opacity-90 font-semibold py-4 px-4 rounded-xl transition duration-300 text-center cursor-pointer shadow-lg tracking-tight">
+                Get Instant Activation Token
+            </button>
+        </div>
+    </main>
+
+    <div id="checkoutModal" class="fixed inset-0 bg-[#000000]/80 backdrop-blur-md hidden items-center justify-center p-4 z-50">
+        <div class="bg-[#1C1C1E] light:bg-[#FFFFFF] border border-[#2C2C2E] light:border-[#E5E5EA] w-full max-w-md rounded-3xl p-6 relative shadow-2xl">
+            
+            <button id="closeModalBtn" class="absolute top-4 right-4 text-[#8E8E93] hover:text-white light:hover:text-black cursor-pointer text-2xl">&times;</button>
+            
+            <h3 class="text-xl font-bold text-white light:text-[#1D1D1F] mb-1">Activation Prerequisites</h3>
+            <p class="text-xs text-[#8E8E93] mb-6">Please agree to terms to initialize secure automated dispatch.</p>
+
+            <div class="space-y-3 mb-6">
+                <label class="flex items-start p-3 bg-[#2C2C2E]/40 light:bg-[#F2F2F7] border border-[#2C2C2E] light:border-[#E5E5EA] rounded-xl cursor-pointer hover:border-[#48484A] transition">
+                    <input type="checkbox" class="terms-checkbox mt-0.5 text-white bg-[#1C1C1E] rounded border-[#48484A]">
+                    <span class="ml-3 text-xs text-[#AEAEB2] light:text-[#48484A] leading-relaxed">
+                        I confirm that my Google account region is compatible with global enterprise promotional hubs.
+                    </span>
+                </label>
+
+                <label class="flex items-start p-3 bg-[#2C2C2E]/40 light:bg-[#F2F2F7] border border-[#2C2C2E] light:border-[#E5E5EA] rounded-xl cursor-pointer hover:border-[#48484A] transition">
+                    <input type="checkbox" class="terms-checkbox mt-0.5 text-white bg-[#1C1C1E] rounded border-[#48484A]">
+                    <span class="ml-3 text-xs text-[#AEAEB2] light:text-[#48484A] leading-relaxed">
+                        I agree that delivery is 100% automated via cloud logistics. Status is fully tracked under our <strong class="text-[#FF9500] font-medium">18-Month Shockproof Warranty</strong>.
+                    </span>
+                </label>
+            </div>
+
+            <div id="stripeSection" class="opacity-20 pointer-events-none transition-all duration-300 border-t border-[#2C2C2E] light:border-[#E5E5EA] pt-6">
+                <label class="block text-xs font-semibold text-[#AEAEB2] light:text-[#8E8E93] uppercase tracking-wider mb-2">Delivery Email Address</label>
+                <input type="email" id="customerEmail" placeholder="your-delivery-account@gmail.com" class="w-full bg-[#2C2C2E]/60 light:bg-[#F2F2F7] border border-[#48484A] light:border-[#D1D1D6] rounded-xl px-4 py-3 text-sm text-white light:text-[#1D1D1F] placeholder-[#636366] focus:outline-none focus:border-white light:focus:border-black mb-6">
+                
+                <div id="paypal-button-container"></div>
+            </div>
+
+            <div class="mt-4 text-center">
+                <p class="text-[10px] text-[#8E8E93]"><i class="fa-solid fa-shield-halved"></i> Secured by PayPal Global Financial Network. 100% Buyer Protection Active.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="border-t border-[#2C2C2E]/50 bg-[#000000] light:bg-[#F5F5F7] py-8 text-[11px] text-[#636366] text-center">
+        <div class="max-w-4xl mx-auto px-6 space-y-3">
+            <p>Disclaimer: Workspace Premium operates as an independent authorized bulk enterprise quota liquidator. We are not directly affiliated with Google LLC or Alphabet Inc.</p>
+            <p>&copy; 2026 Workspace Premium Logistics. All Sovereign Infrastructure Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const openModalBtn = document.getElementById('openModalBtn');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+        const checkoutModal = document.getElementById('checkoutModal');
+        const checkboxes = document.querySelectorAll('.terms-checkbox');
+        const stripeSection = document.getElementById('stripeSection');
+        
+        const themeToggleBtn = document.getElementById('themeToggleBtn');
+        const sunIcon = document.getElementById('sunIcon');
+        const moonIcon = document.getElementById('moonIcon');
+
+        // 🌗 0번 & 1번 요구사항: 브라우저 기본 감지 + 완벽한 수동 오버라이드 시스템 수리 완료
+        function initTheme() {
+            const cachedTheme = localStorage.getItem('appleTheme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+            // 캐시된 게 있다면 캐시 우선, 없다면 브라우저 환경 감지 적용
+            if (cachedTheme === 'dark' || (!cachedTheme && prefersDark)) {
+                setDarkTheme();
+            } else {
+                setLightTheme();
+            }
+        }
+
+        function setDarkTheme() {
+            document.documentElement.classList.add('dark');
+            document.documentElement.classList.remove('light');
+            document.body.className = "bg-[#000000] text-[#F5F5F7] min-h-screen flex flex-col justify-between antialiased";
+            sunIcon.classList.remove('hidden');
+            moonIcon.classList.add('hidden');
+            localStorage.setItem('appleTheme', 'dark');
+        }
+
+        function setLightTheme() {
+            document.documentElement.classList.add('light');
+            document.documentElement.classList.remove('dark');
+            document.body.className = "bg-[#F5F5F7] text-[#1D1D1F] min-h-screen flex flex-col justify-between antialiased";
+            moonIcon.classList.remove('hidden');
+            sunIcon.classList.add('hidden');
+            localStorage.setItem('appleTheme', 'light');
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            if (document.documentElement.classList.contains('dark')) {
+                setLightTheme();
+            } else {
+                setDarkTheme();
+            }
+        });
+
+        // 웹 앱 시작 시 테마 동기화 가동
+        initTheme();
+
+        // 📈 2번 요구사항: playpre 스타일의 일일 실시간 구매 카운터 갱신 기믹
+        function simulateLiveCounter() {
+            const counterElement = document.getElementById('liveCounter');
+            // 한국 시간 기준 매일 일정한 변동폭을 연출하여 진짜처럼 작동
+            const now = new Date();
+            const currentHour = now.getHours();
+            
+            // 새벽엔 조금, 저녁엔 결제가 활발해지는 가중치 반영식
+            let baseBuyers = 1100 + (currentHour * 12);
+            let randomFluctuation = Math.floor(Math.random() * 8);
+            
+            counterElement.innerText = `${(baseBuyers + randomFluctuation).toLocaleString()} Users Activated Today`;
+        }
+        // 4초마다 실시간으로 숫자가 요동치게 만들어 신뢰도를 극대화시킵니다
+        setInterval(simulateLiveCounter, 4000);
+        simulateLiveCounter();
+
+        // 모달 팝업 제어
+        openModalBtn.addEventListener('click', () => checkoutModal.style.display = 'flex');
+        closeModalBtn.addEventListener('click', () => checkoutModal.style.display = 'none');
+
+        // 체크박스 동의 완료 시 입력란 투명도 해제 잠금 해제
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', () => {
+                const allChecked = Array.from(checkboxes).every(cb => cb.checked);
+                if (allChecked) {
+                    stripeSection.classList.remove('opacity-20', 'pointer-events-none');
+                } else {
+                    stripeSection.classList.add('opacity-20', 'pointer-events-none');
+                }
+            });
+        });
+
+        // 💳 정식 페이팔 스마트 체크아웃 프로세스 인젝션 (테스트 금액 $0.10 세팅)
+        paypal.Buttons({
+            style: {
+                layout: 'vertical',
+                color:  'black', //  애플 컨셉에 가장 완벽히 녹아드는 블랙 테마 버튼
+                shape:  'rect',
+                label:  'checkout'
+            },
+            onClick: function(data, actions) {
+                const email = document.getElementById('customerEmail').value;
+                if (!email || !email.includes('@')) {
+                    alert('Please enter a valid Gmail address for token delivery.');
+                    return actions.reject(); // 이메일 형식이 안 맞으면 결제 레이어 팝업 차단
+                }
+            },
+            createOrder: function(data, actions) {
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: {
+                            value: '0.10' // 사장님의 테스트를 위한 부담 없는 0.1달러 강제 세팅!
+                        }
+                    }]
+                });
+            },
+            onApprove: function(data, actions) {
+                return actions.order.capture().then(function(details) {
+                    alert('Transaction completed by ' + details.payer.name.given_name + '! Your 18-Month Activation Link is on the way via automated dispatch.');
+                    checkoutModal.style.display = 'none';
+                });
+            }
+        }).render('#paypal-button-container');
+    </script>
+</body>
+</html>                    <span>Access to Google's most powerful AI (Ultra 1.5)</span>
                 </li>
                 <li class="flex items-center space-x-2.5">
                     <span class="text-blue-600 dark:text-blue-400">✓</span>
