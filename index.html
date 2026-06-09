@@ -6,6 +6,7 @@
     <title>Workspace Premium - Advanced AI & Cloud Activation Hub</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght=300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD"></script>
     <style>
         body { font-family: 'Inter', sans-serif; transition: background-color 0.3s ease, color 0.3s ease; }
     </style>
@@ -120,11 +121,9 @@
 
             <div id="stripeSection" class="opacity-30 pointer-events-none transition-all duration-300 border-t border-gray-100 dark:border-gray-800 pt-6">
                 <label class="block text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2">Delivery Email Address</label>
-                <input type="email" id="customerEmail" placeholder="your-google-account@gmail.com" class="w-full bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-3 text-sm text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:border-indigo-500 mb-4">
+                <input type="email" id="customerEmail" placeholder="your-google-account@gmail.com" class="w-full bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-3 text-sm text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:border-indigo-500 mb-6">
                 
-                <button id="stripePayBtn" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3.5 px-4 rounded-xl transition duration-200 shadow-lg shadow-blue-500/10 text-center cursor-pointer">
-                    Proceed to Secure PayPal Payment
-                </button>
+                <div id="paypal-button-container"></div>
             </div>
 
         </div>
@@ -148,7 +147,7 @@
         const sunIcon = document.getElementById('sunIcon');
         const moonIcon = document.getElementById('moonIcon');
 
-        // 🌗 다크모드/라이트모드 무한 토글 버그 수정 완결판
+        // 테마 토글 시스템
         function initTheme() {
             const localTheme = localStorage.getItem('theme');
             const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -178,15 +177,11 @@
             }
         });
 
-        // 페이지 로드 시 즉시 테마 감지 엔진 구동
         initTheme();
 
-        // ----------------------------------------------------
-        // 모달 팝업 및 동의 체크박스 연동 제어
+        // 모달 및 체크박스 제어
         openModalBtn.addEventListener('click', () => checkoutModal.style.display = 'flex');
-        closeModalBtn.addEventListener('click', () => {
-            checkoutModal.style.display = 'none';
-        });
+        closeModalBtn.addEventListener('click', () => checkoutModal.style.display = 'none');
 
         checkboxes.forEach(checkbox => {
             checkbox.addEventListener('change', () => {
@@ -199,16 +194,37 @@
             });
         });
 
-        // 💳 [버그 전면 수정] 스트라이프 무한 팝업창을 영구 봉인하고 페이팔 결제 연동
-        document.getElementById('stripePayBtn').addEventListener('click', () => {
-            const email = document.getElementById('customerEmail').value;
-            if (!email || !email.includes('@')) {
-                alert('Please enter a valid Gmail address for token delivery.');
-                return;
+        // 💳 페이팔 스마트 버튼 엔진 (테스트 금액 $0.10 반영 완료)
+        paypal.Buttons({
+            style: {
+                layout: 'vertical',
+                color:  'blue',
+                shape:  'rect',
+                label:  'checkout'
+            },
+            onClick: function(data, actions) {
+                const email = document.getElementById('customerEmail').value;
+                if (!email || !email.includes('@')) {
+                    alert('Please enter a valid Gmail address for token delivery.');
+                    return actions.reject();
+                }
+            },
+            createOrder: function(data, actions) {
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: {
+                            value: '0.10' // 🔥 실전 테스트를 위해 0.1달러 청구로 세팅!
+                        }
+                    }]
+                });
+            },
+            onApprove: function(data, actions) {
+                return actions.order.capture().then(function(details) {
+                    alert('Transaction completed by ' + details.payer.name.given_name + '! Your link is on the way.');
+                    checkoutModal.style.display = 'none';
+                });
             }
-            // 옛날 알림창을 완벽히 날려버리고 사장님의 진짜 페이팔 개인 결제창으로 즉각 연결!!
-            window.open('https://paypal.me/testseoksoo/29.99', '_blank');
-        });
+        }).render('#paypal-button-container');
     </script>
 </body>
 </html>
