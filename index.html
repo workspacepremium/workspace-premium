@@ -17,24 +17,62 @@
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
         }
-        /* Premium Micro-Interactions */
+        
+        /* 🎨 UX REVOLUTION: Strict Theme Isolation Style Sheets */
+        html.light body {
+            background-color: #F5F5F7 !important;
+            color: #1D1D1F !important;
+        }
+        html.dark body {
+            background-color: #000000 !important;
+            color: #F5F5F7 !important;
+        }
+
+        /* 📈 INTERACTION REVOLUTION: Premium Micro-Animations */
         .interactive-card {
-            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.4s;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                        box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                        border-color 0.3s ease;
         }
         .interactive-card:hover {
-            transform: translateY(-4px);
+            transform: translateY(-6px) scale(1.01);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
         }
-        .floating-element {
-            animation: floatingMotion 3s ease-in-out infinite;
+        html.dark .interactive-card:hover {
+            box-shadow: 0 20px 40px rgba(255, 255, 255, 0.03);
         }
-        @keyframes floatingMotion {
+
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #0066CC;
+            transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        html.dark .nav-link::after {
+            background-color: #2997FF;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .floating-hero {
+            animation: appleFloating 3.5s ease-in-out infinite;
+        }
+        @keyframes appleFloating {
             0% { transform: translateY(0px); }
-            50% { transform: translateY(-6px); }
+            50% { transform: translateY(-8px); }
             100% { transform: translateY(0px); }
         }
     </style>
 </head>
-<body class="bg-[#F5F5F7] text-[#1D1D1F] dark:bg-[#000000] dark:text-[#F5F5F7] min-h-screen flex flex-col justify-between antialiased transition-colors duration-500 selection:bg-[#0066CC]/20">
+<body class="min-h-screen flex flex-col justify-between antialiased transition-colors duration-500 selection:bg-[#0066CC]/20">
 
     <header class="border-b border-[#E5E5EA] dark:border-[#2C2C2E]/70 bg-[#F5F5F7]/80 dark:bg-[#000000]/80 apple-blur sticky top-0 z-50 transition-colors duration-500">
         <div class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
@@ -44,12 +82,12 @@
             </div>
             
             <nav class="hidden md:flex items-center space-x-8 text-xs font-medium text-[#636366] dark:text-[#AEAEB2]">
-                <a href="#benefits" class="hover:text-[#0066CC] dark:hover:text-[#2997FF] transition-colors duration-200">Benefits</a>
-                <a href="#features" class="hover:text-[#0066CC] dark:hover:text-[#2997FF] transition-colors duration-200">Use Cases</a>
-                <a href="#process" class="hover:text-[#0066CC] dark:hover:text-[#2997FF] transition-colors duration-200">Process</a>
-                <a href="#security" class="hover:text-[#0066CC] dark:hover:text-[#2997FF] transition-colors duration-200">Security</a>
-                <a href="#reviews" class="hover:text-[#0066CC] dark:hover:text-[#2997FF] transition-colors duration-200">Reviews</a>
-                <a href="#faq" class="hover:text-[#0066CC] dark:hover:text-[#2997FF] transition-colors duration-200">FAQ</a>
+                <a href="#benefits" class="nav-link transition-colors">Benefits</a>
+                <a href="#features" class="nav-link transition-colors">Use Cases</a>
+                <a href="#process" class="nav-link transition-colors">Process</a>
+                <a href="#security" class="nav-link transition-colors">Security</a>
+                <a href="#reviews" class="nav-link transition-colors">Reviews</a>
+                <a href="#faq" class="nav-link transition-colors">FAQ</a>
             </nav>
             
             <button id="themeToggleBtn" class="p-2.5 rounded-full bg-white dark:bg-[#1C1C1E] border border-[#E5E5EA] dark:border-[#2C2C2E] hover:bg-[#F5F5F7] dark:hover:bg-[#2C2C2E] transition-all cursor-pointer flex items-center justify-center shadow-sm active:scale-90" aria-label="Toggle Page Theme">
@@ -61,13 +99,13 @@
 
     <main class="max-w-4xl mx-auto px-6 py-16 md:py-24 flex-grow w-full space-y-40">
         
-        <section class="text-center space-y-6 floating-element">
-            <h1 class="text-5xl md:text-7xl font-black tracking-tight text-[#1D1D1F] dark:text-white leading-[1.1] transition-all">
+        <section class="text-center space-y-6 floating-hero">
+            <h1 class="text-5xl md:text-7xl font-black tracking-tight text-[#1D1D1F] dark:text-white leading-[1.1]">
                 Workspace Premium.<br>
                 <span class="text-[#0066CC] dark:text-[#2997FF]">Advanced AI & Sovereign Cloud.</span>
             </h1>
 
-            <div class="inline-flex items-center space-x-2 bg-white dark:bg-[#1C1C1E] border border-[#E5E5EA] dark:border-[#2C2C2E] px-4 py-2 rounded-full text-xs font-semibold shadow-sm transition-all hover:scale-102">
+            <div class="inline-flex items-center space-x-2 bg-white dark:bg-[#1C1C1E] border border-[#E5E5EA] dark:border-[#2C2C2E] px-4 py-2 rounded-full text-xs font-semibold shadow-sm transition-all hover:scale-105">
                 <span class="flex h-2 w-2 relative">
                     <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#30D158] opacity-75"></span>
                     <span class="relative inline-flex rounded-full h-2 w-2 bg-[#30D158]"></span>
@@ -77,7 +115,7 @@
         </section>
 
         <section id="mainCardSection" class="flex justify-center scroll-mt-24">
-            <div class="w-full max-w-md bg-white dark:bg-[#1C1C1E] border border-[#E5E5EA] dark:border-[#2C2C2E] p-8 rounded-3xl shadow-sm hover:shadow-xl dark:hover:shadow-2xl/40 transition-all duration-300 relative group">
+            <div class="w-full max-w-md bg-white dark:bg-[#1C1C1E] border border-[#E5E5EA] dark:border-[#2C2C2E] p-8 rounded-3xl shadow-md hover:shadow-xl dark:hover:shadow-2xl/40 transition-all duration-300 relative group interactive-card">
                 
                 <div class="absolute top-4 right-4 flex space-x-1.5">
                     <span class="bg-[#BF4800] text-white text-[9px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider animate-pulse">New</span>
@@ -100,11 +138,11 @@
                     </li>
                     <li class="flex items-start space-x-3 transition-transform duration-200 hover:translate-x-1">
                         <span class="text-[#0066CC] dark:text-[#2997FF] font-bold">✓</span>
-                        <span class="text-[#48484A] dark:text-[#E5E5EA]"><strong>2TB Private Cloud Pipeline</strong> &ndash; Dedicated sovereign allocation space for Gmail, Drive, Photos.</span>
+                        <span class="text-[#48484A] dark:text-[#E5E5EA]"><strong>2TB Private Cloud Pipeline</strong> &ndash; Dedicated cloud unshared space for Gmail, Drive, Photos.</span>
                     </li>
                     <li class="flex items-start space-x-3 transition-transform duration-200 hover:translate-x-1">
                         <span class="text-[#0066CC] dark:text-[#2997FF] font-bold">✓</span>
-                        <span class="text-[#48484A] dark:text-[#E5E5EA]"><strong>Safe Credential-Free Access</strong> &ndash; Upgraded seamlessly via official invitation token routing.</span>
+                        <span class="text-[#48484A] dark:text-[#E5E5EA]"><strong>Safe Credential-Free Access</strong> &ndash; Upgrade seamlessly via official invitation token.</span>
                     </li>
                     <li class="flex items-start space-x-3 transition-transform duration-200 hover:translate-x-1">
                         <span class="text-[#0066CC] dark:text-[#2997FF] font-bold">✓</span>
@@ -124,7 +162,7 @@
                 <p class="text-sm text-[#636366] dark:text-[#AEAEB2] max-w-xl mx-auto">An overwhelming cost advantage. 18 full months of premium scale access for the retail pricing metric of just 2 months.</p>
             </div>
             
-            <div class="overflow-x-auto border border-[#E5E5EA] dark:border-[#2C2C2E] rounded-3xl bg-white dark:bg-[#1C1C1E] shadow-sm transition-all duration-300">
+            <div class="overflow-x-auto border border-[#E5E5EA] dark:border-[#2C2C2E] rounded-3xl bg-white dark:bg-[#1C1C1E] shadow-sm">
                 <table class="w-full text-left text-sm border-collapse">
                     <thead>
                         <tr class="bg-[#F5F5F7] dark:bg-[#2C2C2E]/60 border-b border-[#E5E5EA] dark:border-[#2C2C2E] text-xs font-bold text-[#636366] dark:text-[#AEAEB2]">
@@ -133,9 +171,9 @@
                             <th class="p-5 text-center text-[#0066CC] dark:text-[#2997FF]">Workspace Premium Plan</th>
                         </tr>
                     </thead>
-                    <tbody class="divide-y divide-[#E5E5EA] dark:divide-[#2C2C2E] text-[#48484A] dark:text-[#E5E5EA]">
+                    <tbody class="divide-y divide-[#E5E5EA] dark:divide-[#2C2C2E]">
                         <tr class="hover:bg-[#F5F5F7] dark:hover:bg-[#2C2C2E]/40 transition-colors">
-                            <td class="p-5 font-semibold text-[#1D1D1F] dark:text-white">18-Month Accumulated Outlay</td>
+                            <td class="p-5 font-semibold text-[#1D1D1F] dark:text-white">18-Month Cumulative Outlay</td>
                             <td class="p-5 text-center text-[#FF453A] line-through">$359.82 (Annually Compounded)</td>
                             <td class="p-5 text-center font-black text-lg text-[#30D158] bg-[#30D158]/5 dark:bg-[#30D158]/10">$29.99 (Fixed One-Time Fee)</td>
                         </tr>
@@ -269,7 +307,7 @@
     </main>
 
     <div id="checkoutModal" class="fixed inset-0 bg-black/45 dark:bg-black/85 backdrop-blur-md hidden items-center justify-center p-4 z-50">
-        <div class="bg-white dark:bg-[#1C1C1E] border border-[#E5E5EA] dark:border-[#2C2C2E] w-full max-w-md rounded-2xl p-6 relative shadow-2xl">
+        <div class="bg-white dark:bg-[#1C1C1E] border border-[#E5E5EA] dark:border-[#2C2C2E] w-full max-w-md rounded-2xl p-6 relative shadow-xl transition-all duration-300">
             <button onclick="closeCheckoutModal()" class="absolute top-4 right-4 text-[#8E8E93] hover:text-[#1D1D1F] dark:hover:text-white cursor-pointer text-xl font-bold transition-colors">&times;</button>
             
             <h3 class="text-lg font-bold text-[#1D1D1F] dark:text-white mb-1">Activation Prerequisites</h3>
@@ -293,12 +331,12 @@
             <div id="stripeSection" class="opacity-20 pointer-events-none transition-all duration-300 border-t border-[#E5E5EA] dark:border-[#2C2C2E] pt-5">
                 <label class="block text-[11px] font-bold text-[#636366] dark:text-[#AEAEB2] uppercase tracking-wider mb-2">Delivery Email Address</label>
                 <input type="email" id="customerEmail" placeholder="your-profile@gmail.com" class="w-full bg-[#F5F5F7] dark:bg-[#2C2C2E]/60 border border-[#E5E5EA] dark:border-[#48484A] rounded-xl px-4 py-2.5 text-sm text-[#1D1D1F] dark:text-white placeholder-[#8E8E93] focus:outline-none focus:border-[#0066CC] dark:focus:border-[#2997FF] mb-5">
-                <div id="paypal-button-container"></div>
+                <div id="paypal-button-container" class="transition-all duration-300"></div>
             </div>
         </div>
     </div>
 
-    <div id="stickyBottomBar" class="fixed bottom-0 left-0 right-0 border-t border-[#E5E5EA] dark:border-[#2C2C2E] bg-white/90 dark:bg-[#000000]/95 apple-blur py-3.5 px-6 z-40 transform translate-y-full transition-transform duration-300 ease-in-out shadow-xl">
+    <div id="stickyBottomBar" class="fixed bottom-0 left-0 right-0 border-t border-[#E5E5EA] dark:border-[#2C2C2E] bg-white/90 dark:bg-[#000000]/95 apple-blur py-3.5 px-6 z-40 transform translate-y-full transition-transform duration-300 ease-in-out shadow-lg">
         <div class="max-w-4xl mx-auto flex items-center justify-between">
             <div>
                 <div class="text-xs font-bold text-[#1D1D1F] dark:text-white md:text-sm">18-Month Premium Pass</div>
@@ -334,7 +372,7 @@
         const csFloatingBtn = document.getElementById('csFloatingBtn');
 
         /**
-         * 🌗 100% Isolated Dual-Theme Mapping & Native System Integration Engine
+         * 🌗 100% ISOLATED SYSTEM THEME ROUTER (Verified & Patched)
          */
         function initThemeEngine() {
             const cachedTheme = localStorage.getItem('userStoreTheme');
@@ -351,7 +389,7 @@
             document.documentElement.classList.add('dark');
             document.documentElement.classList.remove('light');
             
-            // Hard isolation of color boundaries to prevent rendering bleed bugs
+            // Forcing hard variables injector to fix Tailwind v4 boundary anomalies
             document.body.style.backgroundColor = "#000000";
             document.body.style.color = "#F5F5F7";
             
@@ -380,7 +418,7 @@
             }
         });
 
-        // Track live system theme alterations dynamically
+        // Watch live system theme changes seamlessly
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
             if (!localStorage.getItem('userStoreTheme')) {
                 if (e.matches) applyDarkTheme();
@@ -391,7 +429,7 @@
         initThemeEngine();
 
         /**
-         * 📈 Micro-Interaction Scroller Mechanics
+         * 📈 Micro-Interaction Scroller Engine (Dynamic UI Repositioning)
          */
         window.addEventListener('scroll', () => {
             const thresholdPoint = mainCardSection.offsetTop + mainCardSection.offsetHeight;
