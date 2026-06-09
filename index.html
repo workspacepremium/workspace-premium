@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Workspace Premium - Advanced AI & Cloud Activation Hub</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght=300;400;600;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; transition: background-color 0.3s ease, color 0.3s ease; }
     </style>
@@ -118,11 +118,11 @@
                 </label>
             </div>
 
-<div id="stripeSection" class="opacity-30 pointer-events-none transition-all duration-300 border-t border-gray-100 dark:border-gray-800 pt-6">
+            <div id="stripeSection" class="opacity-30 pointer-events-none transition-all duration-300 border-t border-gray-100 dark:border-gray-800 pt-6">
                 <label class="block text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2">Delivery Email Address</label>
                 <input type="email" id="customerEmail" placeholder="your-google-account@gmail.com" class="w-full bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-3 text-sm text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:border-indigo-500 mb-4">
                 
-                <button id="stripePayBtn" onclick="window.open('https://paypal.me/testseoksoo/29.99', '_blank')" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3.5 px-4 rounded-xl transition duration-200 shadow-lg shadow-blue-500/10 text-center cursor-pointer">
+                <button id="stripePayBtn" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3.5 px-4 rounded-xl transition duration-200 shadow-lg shadow-blue-500/10 text-center cursor-pointer">
                     Proceed to Secure PayPal Payment
                 </button>
             </div>
@@ -148,11 +148,9 @@
         const sunIcon = document.getElementById('sunIcon');
         const moonIcon = document.getElementById('moonIcon');
 
-        // 🌗 테마 시스템 (자동 감지 + 수동 토글 토글 기믹)
+        // 🌗 다크모드/라이트모드 무한 토글 버그 수정 완결판
         function initTheme() {
-            // 1. 기존에 수동으로 설정한 캐시가 있는지 확인
             const localTheme = localStorage.getItem('theme');
-            // 2. 캐시가 없다면 브라우저 시스템 기본 설정을 확인 (다크모드인지 확인)
             const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
             if (localTheme === 'dark' || (!localTheme && systemPrefersDark)) {
@@ -166,7 +164,6 @@
             }
         }
 
-        // 테마 토글 버튼 클릭 처리
         themeToggleBtn.addEventListener('click', () => {
             if (document.documentElement.classList.contains('dark')) {
                 document.documentElement.classList.remove('dark');
@@ -181,13 +178,15 @@
             }
         });
 
-        // 페이지 시작 시 테마 시스템 구동
+        // 페이지 로드 시 즉시 테마 감지 엔진 구동
         initTheme();
 
         // ----------------------------------------------------
-        // 모달 및 체크박스 제어 시스템
+        // 모달 팝업 및 동의 체크박스 연동 제어
         openModalBtn.addEventListener('click', () => checkoutModal.style.display = 'flex');
-        closeModalBtn.addEventListener('click', () => checkoutModal.style.display = 'none');
+        closeModalBtn.addEventListener('click', () => {
+            checkoutModal.style.display = 'none';
+        });
 
         checkboxes.forEach(checkbox => {
             checkbox.addEventListener('change', () => {
@@ -200,13 +199,15 @@
             });
         });
 
+        // 💳 [버그 전면 수정] 스트라이프 무한 팝업창을 영구 봉인하고 페이팔 결제 연동
         document.getElementById('stripePayBtn').addEventListener('click', () => {
             const email = document.getElementById('customerEmail').value;
             if (!email || !email.includes('@')) {
                 alert('Please enter a valid Gmail address for token delivery.');
                 return;
             }
-            alert('Connecting to Stripe Secure Gateway... (This will trigger Stripe Checkout via Make.com)');
+            // 옛날 알림창을 완벽히 날려버리고 사장님의 진짜 페이팔 개인 결제창으로 즉각 연결!!
+            window.open('https://paypal.me/testseoksoo/29.99', '_blank');
         });
     </script>
 </body>
