@@ -14,13 +14,63 @@
             letter-spacing: -0.015em;
             background-color: #000000 !important;
             color: #F5F5F7 !important;
+            overflow-x: hidden;
         }
         .apple-blur {
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
         }
         
-        /* 📈 ADVANCED INTERACTION: Premium Micro-Transitions */
+        /* 🌌 CINEMATIC INTERACTION: Animated Space Background */
+        .space-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 550px;
+            background: radial-gradient(circle at 50% 50%, #0d1b2a 0%, #000000 80%);
+            overflow: hidden;
+            z-index: 0;
+        }
+        .star {
+            position: absolute;
+            background-color: #ffffff;
+            border-radius: 50%;
+            animation: twinkle 3s infinite ease-in-out;
+        }
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; transform: scale(0.8); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+
+        /* 🐈 REFERENCE INTEGRATION: Pixel Cat Running Animation Loop */
+        .pixel-cat {
+            position: absolute;
+            bottom: 40px;
+            left: -100px;
+            font-size: 32px;
+            user-select: none;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            animation: catRun horizontalRun 18s linear infinite, catLeap leapMotion 0.6s ease-in-out infinite;
+        }
+        
+        /* CSS Keyframe Code for Space Cat Vector Mechanics */
+        @keyframes horizontalRun {
+            0% { left: -100px; transform: scaleX(1); }
+            48% { left: 110%; transform: scaleX(1); }
+            50% { left: 110%; transform: scaleX(-1); }
+            98% { left: -100px; transform: scaleX(-1); }
+            100% { left: -100px; transform: scaleX(1); }
+        }
+        @keyframes leapMotion {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-14px); }
+        }
+
+        /* Premium Components Transition Scripts */
         .interactive-card {
             transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
                         box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
@@ -31,7 +81,6 @@
             box-shadow: 0 20px 40px rgba(255, 255, 255, 0.03);
             border-color: #2997FF !important;
         }
-
         .nav-link {
             position: relative;
         }
@@ -47,15 +96,6 @@
         }
         .nav-link:hover::after {
             width: 100%;
-        }
-
-        .floating-hero {
-            animation: appleFloating 3.5s ease-in-out infinite;
-        }
-        @keyframes appleFloating {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-8px); }
-            100% { transform: translateY(0px); }
         }
     </style>
 </head>
@@ -79,15 +119,18 @@
         </div>
     </header>
 
-    <main class="max-w-4xl mx-auto px-6 py-16 md:py-24 flex-grow w-full space-y-40">
-        
-        <section class="text-center space-y-6 floating-hero">
+    <div class="relative w-full overflow-hidden flex items-center justify-center pt-24 pb-16">
+        <div class="space-bg" id="spaceCanvas">
+            <div class="pixel-cat">🐈‍⬛</div>
+        </div>
+
+        <section class="text-center space-y-6 z-10 max-w-4xl mx-auto px-6">
             <h1 class="text-5xl md:text-7xl font-black tracking-tight text-white leading-[1.1]">
                 Workspace Premium.<br>
                 <span class="text-[#2997FF]">Advanced AI & Sovereign Cloud.</span>
             </h1>
 
-            <div class="inline-flex items-center space-x-2 bg-[#1C1C1E] border border-[#2C2C2E] px-4 py-2 rounded-full text-xs font-semibold shadow-sm transition-all hover:scale-105">
+            <div class="inline-flex items-center space-x-2 bg-[#1C1C1E]/90 border border-[#2C2C2E] px-4 py-2 rounded-full text-xs font-semibold shadow-sm backdrop-blur-sm transition-all hover:scale-105">
                 <span class="flex h-2 w-2 relative">
                     <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#30D158] opacity-75"></span>
                     <span class="relative inline-flex rounded-full h-2 w-2 bg-[#30D158]"></span>
@@ -95,6 +138,9 @@
                 <span class="text-[#AEAEB2]">🔥 Live Activity: <span class="text-[#2997FF] font-bold" id="liveCounter">1,248</span> users deployed priority cloud logistics today.</span>
             </div>
         </section>
+    </div>
+
+    <main class="max-w-4xl mx-auto px-6 py-12 flex-grow w-full space-y-40">
 
         <section id="mainCardSection" class="flex justify-center scroll-mt-24">
             <div class="w-full max-w-md bg-[#1C1C1E] border border-[#2C2C2E] p-8 rounded-3xl shadow-sm transition-all duration-300 relative group interactive-card">
@@ -211,65 +257,6 @@
             </div>
         </section>
 
-        <section id="process" class="space-y-8 border-t border-[#2C2C2E] pt-16 scroll-mt-24">
-            <div class="text-center space-y-2">
-                <h2 class="text-3xl md:text-5xl font-black tracking-tight text-white">Completed in 3 Simple Steps</h2>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs">
-                <div class="bg-[#1C1C1E] border border-[#2C2C2E] p-6 rounded-2xl interactive-card">
-                    <div class="text-[#2997FF] font-black text-2xl mb-1">01</div>
-                    <h3 class="font-bold text-white text-sm mb-1">Secure Gateway Checkout</h3>
-                    <p class="text-[#AEAEB2] leading-relaxed">Secure your license parameters effortlessly through our world-class encrypted payment layers.</p>
-                </div>
-                <div class="bg-[#1C1C1E] border border-[#2C2C2E] p-6 rounded-2xl interactive-card">
-                    <div class="text-[#2997FF] font-black text-2xl mb-1">02</div>
-                    <h3 class="font-bold text-white text-sm mb-1">Automated Link Dispatch</h3>
-                    <p class="text-[#AEAEB2] leading-relaxed">The processing core maps constraints immediately and dispatches your official invitation directly to your inbox.</p>
-                </div>
-                <div class="bg-[#1C1C1E] border border-[#2C2C2E] p-6 rounded-2xl interactive-card">
-                    <div class="text-[#2997FF] font-black text-2xl mb-1">03</div>
-                    <h3 class="font-bold text-white text-sm mb-1">One-Second Mapping</h3>
-                    <p class="text-[#AEAEB2] leading-relaxed">Accept your official group credentials to seamlessly provision the 2TB pipeline directly to your account matrix.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="security" class="space-y-8 border-t border-[#2C2C2E] pt-16 scroll-mt-24">
-            <div class="text-center space-y-2">
-                <h2 class="text-3xl md:text-5xl font-black tracking-tight text-white">Sovereignty Shield Compliance</h2>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
-                <div class="p-6 bg-[#1C1C1E] border border-[#2C2C2E] rounded-2xl opacity-60">
-                    <h3 class="font-bold text-[#FF453A] mb-2 uppercase tracking-wider"><i class="fa-solid fa-triangle-exclamation"></i> Unsafe Third-Party Solutions</h3>
-                    <p class="text-[#AEAEB2] leading-relaxed">Forcing users to inherit unstable public shared credentials or sensitive password matrices, risking permanent profile blocking errors.</p>
-                </div>
-                <div class="p-6 bg-[#1C1C1E] border border-[#2C2C2E] rounded-2xl shadow-md border-l-4 border-l-[#30D158]">
-                    <h3 class="font-bold text-[#30D158] mb-2 uppercase tracking-wider"><i class="fa-solid fa-shield-halved"></i> Private Pipeline Architecture</h3>
-                    <p class="text-[#F5F5F7] leading-relaxed">Direct enterprise-grade invitation structures across your private personal parameters. Total sovereign encryption control guaranteed.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="reviews" class="space-y-8 border-t border-[#2C2C2E] pt-16 scroll-mt-24">
-            <div class="text-center space-y-2">
-                <h2 class="text-3xl md:text-5xl font-black tracking-tight text-white">Global Scalability Verification</h2>
-            </div>
-            <div class="grid grid-cols-3 gap-4 border border-[#2C2C2E] rounded-3xl bg-[#1C1C1E] p-6 text-center">
-                <div>
-                    <div class="text-3xl font-black text-[#2997FF]">4.9 ★</div>
-                    <div class="text-[10px] text-[#AEAEB2] font-bold uppercase mt-1 tracking-wider">Satisfaction Score</div>
-                </div>
-                <div>
-                    <div class="text-3xl font-black text-white">60K+</div>
-                    <div class="text-[10px] text-[#AEAEB2] font-bold uppercase mt-1 tracking-wider">Active Allocations</div>
-                </div>
-                <div>
-                    <div class="text-3xl font-black text-[#30D158]">91%</div>
-                    <div class="text-[10px] text-[#AEAEB2] font-bold uppercase mt-1 tracking-wider">Re-Activation Rate</div>
-                </div>
-            </div>
-        </section>
-
         <section id="faq" class="space-y-6 border-t border-[#2C2C2E] pt-16 scroll-mt-24">
             <div class="text-center space-y-2">
                 <h2 class="text-3xl md:text-5xl font-black tracking-tight text-white">Frequently Asked Questions</h2>
@@ -279,21 +266,17 @@
                     <h4 class="font-bold text-white text-sm mb-1">Q: Does this deployment model support international or cross-border profiles?</h4>
                     <p class="text-[#AEAEB2] leading-relaxed">A: Yes. Aligning your baseline hub metrics according to our instant automated dispatch manual ensures seamless full-speed mapping worldwide.</p>
                 </div>
-                <div class="bg-[#1C1C1E] p-5 rounded-xl border border-[#2C2C2E] interactive-card">
-                    <h4 class="font-bold text-white text-sm mb-1">Q: Will any recurring billing profiles trigger post 18-month completion?</h4>
-                    <p class="text-[#AEAEB2] leading-relaxed">A: Absolutely not. This infrastructure is managed entirely on an automated corporate quota liquidating pipeline via a fixed one-time payment architecture.</p>
-                </div>
             </div>
         </section>
 
     </main>
 
     <div id="checkoutModal" class="fixed inset-0 bg-black/85 backdrop-blur-md hidden items-center justify-center p-4 z-50">
-        <div class="bg-[#1C1C1E] border border-[#2C2C2E] w-full max-w-md rounded-2xl p-6 relative shadow-2xl transition-all duration-300">
+        <div class="bg-[#1C1C1E] border border-[#2C2C2E] w-full max-w-md rounded-2xl p-6 relative shadow-2xl">
             <button onclick="closeCheckoutModal()" class="absolute top-4 right-4 text-[#8E8E93] hover:text-white cursor-pointer text-xl font-bold transition-colors">&times;</button>
             
             <h3 class="text-lg font-bold text-white mb-1">Activation Prerequisites</h3>
-            <p class="text-xs text-[#AEAEB2] mb-5">Please acknowledge the system constraints below to unlock the secure gateway.</p>
+            <p class="text-xs text-[#8E8E93] dark:text-[#AEAEB2] mb-5">Please acknowledge the system constraints below to unlock the secure gateway.</p>
 
             <div class="space-y-2.5 mb-5">
                 <label class="flex items-start p-3 bg-[#2C2C2E]/40 border border-[#2C2C2E] rounded-xl cursor-pointer hover:border-[#444444] transition-all">
@@ -350,6 +333,34 @@
         const csFloatingBtn = document.getElementById('csFloatingBtn');
 
         /**
+         * 🌌 DYNAMIC INTERACTION: Generate Floating Twinkle Stars onto Space Canvas
+         */
+        function generateCosmicStars() {
+            const spaceCanvas = document.getElementById('spaceCanvas');
+            const totalStarsCount = 45;
+
+            for (let i = 0; i < totalStarsCount; i++) {
+                const starElement = document.createElement('div');
+                starElement.className = 'star';
+                
+                // Random position & scale arrays
+                const randomX = Math.random() * 100;
+                const randomY = Math.random() * 100;
+                const randomSize = Math.random() * 2.5 + 0.5;
+                const randomDelay = Math.random() * 3;
+
+                starElement.style.left = `${randomX}%`;
+                starElement.style.top = `${randomY}%`;
+                starElement.style.width = `${randomSize}px`;
+                starElement.style.height = `${randomSize}px`;
+                starElement.style.animationDelay = `${randomDelay}s`;
+
+                spaceCanvas.appendChild(starElement);
+            }
+        }
+        generateCosmicStars();
+
+        /**
          * 📈 Micro-Interaction Scroller Mechanics
          */
         window.addEventListener('scroll', () => {
@@ -390,7 +401,7 @@
             });
         });
 
-        // PayPal Buttons Hub Integration (Pure English Runtime Exception Handling)
+        // PayPal Buttons Hub Integration
         paypal.Buttons({
             style: { layout: 'vertical', color: 'black', shape: 'rect', label: 'checkout' },
             onClick: function(data, actions) {
